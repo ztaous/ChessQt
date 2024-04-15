@@ -2,6 +2,7 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include "chess_logic/board.h"
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -19,5 +20,8 @@ public:
 
 private:
     Ui::MainWindow *ui;
+
+    void setupBoard();
+    void updateBoard();
 };
 #endif // MAINWINDOW_H

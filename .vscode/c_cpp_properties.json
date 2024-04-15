@@ -4,7 +4,8 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/home/ZT/Qt/6.7.0/gcc_64/include/QtCore"
+                "/home/ZT/Qt/6.7.0/gcc_64/include/QtCore",
+                "/usr/include/qt6"
             ],
             "defines": [],
             "compilerPath": "/usr/lib64/ccache/gcc",
