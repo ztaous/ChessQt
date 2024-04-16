@@ -1,8 +1,9 @@
 #include "piece.h"
+#include "board.h"
 
 
-void Piece::setPosition(Position inputPosition, const Board& board)
+void Piece::setPosition(const Position& newPosition, const Board& board)
 { 
-    if (board.isPositionValid(inputPosition))
-        position = inputPosition;
+    if (board.isPositionValid(newPosition))
+        position = newPosition;
 }

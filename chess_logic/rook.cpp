@@ -1,4 +1,6 @@
 #include "rook.h"
+#include "board.h"
+
 
 std::vector<Position> Rook::getValidMoves(const Board& board) const
 {

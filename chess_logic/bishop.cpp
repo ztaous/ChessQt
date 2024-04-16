@@ -1,4 +1,5 @@
 #include "bishop.h"
+#include "board.h"
 
 
 std::vector<Position> Bishop::getValidMoves(const Board& board) const

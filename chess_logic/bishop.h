@@ -3,7 +3,6 @@
 #include <iostream>
 #include <vector>
 #include "piece.h"
-#include "board.h"
 
 
 class Bishop : public Piece

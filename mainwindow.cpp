@@ -5,22 +5,10 @@ MainWindow::MainWindow(QWidget *parent)
     : QMainWindow(parent), ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    setupBoard();
-    updateBoard();
 }
 
 MainWindow::~MainWindow()
 {
     delete ui;
-}
-
-void MainWindow::setupBoard()
-{
-    
-}
-
-void MainWindow::updateBoard()
-{
-    
 }
 

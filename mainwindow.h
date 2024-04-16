@@ -21,7 +21,5 @@ public:
 private:
     Ui::MainWindow *ui;
 
-    void setupBoard();
-    void updateBoard();
 };
 #endif // MAINWINDOW_H

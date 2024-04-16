@@ -3,7 +3,6 @@
 #include <iostream>
 #include <vector>
 #include "piece.h"
-#include "board.h"
 
 
 class King : public Piece
@@ -13,6 +12,7 @@ public:
     ~King() = default;
     
     std::vector<Position> getValidMoves(const Board& board) const override;
-    bool isCheck();
     
+    bool isPositionCheck(Position position, const Board& board) const;
+    bool isCheck(const Board& board) const;
 };

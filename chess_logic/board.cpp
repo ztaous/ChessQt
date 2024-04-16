@@ -1,4 +1,4 @@
-#include <board.h>
+#include "board.h"
 
 
 Board::Board() : grid(rows, std::vector<Piece*>(columns, nullptr))
@@ -19,13 +19,50 @@ Board::~Board()
 }
 
 
-bool Board::isOppositePiece(Position pos, bool currentPieceIsWhite) const
+bool Board::isOppositePiece(Position pos, Colour currentPieceColour) const
 {
     const  Piece* pieceAtPosition = getPiece(pos);
     
     if (pieceAtPosition == nullptr)
         return false;
     
-    return pieceAtPosition->isWhite() != currentPieceIsWhite;
+    return pieceAtPosition->getColour() != currentPieceColour;
 }
 
+
+bool Board::movePiece(Position current, Position destination)
+{
+    // validation du mouvement
+    if (!isPositionValid(current) || !isPositionValid(destination))
+        return false;
+
+    Piece* piece = getPiece(current);
+    if (piece == nullptr)
+        return false;
+        
+    std::vector<Position> validMoves = piece->getValidMoves(*this);
+    if(std::find(validMoves.begin(), validMoves.end(), destination) == validMoves.end()) {
+        return false;
+    }
+
+
+    // capture des pieces
+    Piece* targetPiece = getPiece(destination);
+    if (targetPiece != nullptr) {
+        if (piece->getColour() != targetPiece->getColour()) {
+            delete targetPiece;
+            grid[destination.y][destination.x] = nullptr;
+        }
+        else {
+            return false;
+        }
+    }
+
+
+    // bouge la piece si toutes les conditions sont respectees
+    grid[destination.y][destination.x] = piece;
+    grid[current.y][current.x] = nullptr;
+    piece->setPosition(destination, *this);
+    
+    return true;
+}
