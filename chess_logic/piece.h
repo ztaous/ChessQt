@@ -4,21 +4,47 @@
 #include <vector>
 #include <algorithm>
 
-#include "colour.h"
-#include "position.h"
+
+namespace chess {
+
+enum class Colour
+{
+    Black,
+    White
+};
+
+enum class PieceType
+{
+    King,
+    Queen,
+    Bishop,
+    Knight,
+    Rook,
+    Pawn
+};
+
+struct Position
+{
+    int x = 0;
+    int y = 0;
+
+    bool operator==(const Position& other) const {
+        return x == other.x && y == other.y;
+    }
+};
 
 
 class Board;
 
-
 class Piece
 {
 public:
-    Piece(Colour inputColour) : colour(inputColour) {};
+    explicit Piece(Colour inputColour) : colour(inputColour) {};
     virtual ~Piece() = default;
 
     virtual std::vector<Position> getValidMoves(const Board& board) const = 0;
-    
+    virtual PieceType type() const = 0;
+
     void setPosition(const Position& newPosition, const Board& board) {};
     Position getPosition() const { return position; }
     
@@ -30,3 +56,5 @@ protected:
     Colour colour;
     Position position;
 };
+
+}

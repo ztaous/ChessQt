@@ -9,6 +9,8 @@
 #include "bishop.h"
 
 
+namespace chess {
+
 class Board
 {
 public:
@@ -28,3 +30,5 @@ public:
 private:
     std::vector<std::vector<Piece*>> grid;
 };
+
+}

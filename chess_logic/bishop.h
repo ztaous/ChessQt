@@ -5,11 +5,16 @@
 #include "piece.h"
 
 
+namespace chess {
+
 class Bishop : public Piece
 {
 public:
-    Bishop(Colour colour) : Piece(colour) {};
+    explicit Bishop(Colour colour) : Piece(colour) {};
     ~Bishop() = default;
 
     std::vector<Position> getValidMoves(const Board& board) const override;
+    PieceType type() const override { return chess::PieceType::Bishop; }
 };
+
+}

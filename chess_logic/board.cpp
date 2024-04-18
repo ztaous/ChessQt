@@ -1,5 +1,6 @@
 #include "board.h"
 
+namespace chess {
 
 Board::Board() : grid(rows, std::vector<Piece*>(columns, nullptr))
 {
@@ -21,7 +22,7 @@ Board::~Board()
 
 bool Board::isOppositePiece(Position pos, Colour currentPieceColour) const
 {
-    const  Piece* pieceAtPosition = getPiece(pos);
+    const Piece* pieceAtPosition = getPiece(pos);
     
     if (pieceAtPosition == nullptr)
         return false;
@@ -41,10 +42,8 @@ bool Board::movePiece(Position current, Position destination)
         return false;
         
     std::vector<Position> validMoves = piece->getValidMoves(*this);
-    if(std::find(validMoves.begin(), validMoves.end(), destination) == validMoves.end()) {
+    if(std::find(validMoves.begin(), validMoves.end(), destination) == validMoves.end())
         return false;
-    }
-
 
     // capture des pieces
     Piece* targetPiece = getPiece(destination);
@@ -58,11 +57,12 @@ bool Board::movePiece(Position current, Position destination)
         }
     }
 
-
     // bouge la piece si toutes les conditions sont respectees
     grid[destination.y][destination.x] = piece;
     grid[current.y][current.x] = nullptr;
     piece->setPosition(destination, *this);
     
     return true;
+}
+
 }

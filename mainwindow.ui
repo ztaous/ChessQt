@@ -28,6 +28,9 @@
   <property name="animated">
    <bool>false</bool>
   </property>
+  <property name="tabShape">
+   <enum>QTabWidget::Rounded</enum>
+  </property>
   <widget class="QWidget" name="centralwidget">
    <widget class="QPushButton" name="startButton">
     <property name="geometry">
@@ -35,8 +38,20 @@
       <x>700</x>
       <y>280</y>
       <width>92</width>
-      <height>28</height>
+      <height>71</height>
      </rect>
+    </property>
+    <property name="sizePolicy">
+     <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+      <horstretch>0</horstretch>
+      <verstretch>0</verstretch>
+     </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>71</width>
+      <height>71</height>
+     </size>
     </property>
     <property name="text">
      <string>Start</string>
@@ -45,17 +60,29 @@
    <widget class="QWidget" name="gridLayoutWidget_2">
     <property name="geometry">
      <rect>
-      <x>40</x>
-      <y>50</y>
-      <width>571</width>
-      <height>521</height>
+      <x>30</x>
+      <y>20</y>
+      <width>592</width>
+      <height>585</height>
      </rect>
     </property>
     <property name="sizePolicy">
-     <sizepolicy hsizetype="Preferred" vsizetype="Minimum">
+     <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
       <horstretch>0</horstretch>
       <verstretch>0</verstretch>
      </sizepolicy>
+    </property>
+    <property name="minimumSize">
+     <size>
+      <width>72</width>
+      <height>72</height>
+     </size>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777214</width>
+      <height>16777214</height>
+     </size>
     </property>
     <layout class="QGridLayout" name="gridLayout">
      <property name="spacing">
@@ -64,10 +91,22 @@
      <item row="1" column="6">
       <widget class="QPushButton" name="pushButton_14">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -77,15 +116,33 @@ background-color: rgb(117, 139, 173);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item row="5" column="3">
       <widget class="QPushButton" name="pushButton_43">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -94,6 +151,12 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -103,10 +166,22 @@ background-color: rgb(229, 233, 235);</string>
      <item row="5" column="2">
       <widget class="QPushButton" name="pushButton_42">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -115,16 +190,34 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="5" column="6">
       <widget class="QPushButton" name="pushButton_46">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -133,6 +226,12 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -142,10 +241,22 @@ background-color: rgb(117, 139, 173);</string>
      <item row="6" column="3">
       <widget class="QPushButton" name="pushButton_51">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -154,6 +265,12 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -163,10 +280,22 @@ background-color: rgb(117, 139, 173);</string>
      <item row="4" column="5">
       <widget class="QPushButton" name="pushButton_37">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -176,15 +305,33 @@ background-color: rgb(117, 139, 173);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item row="6" column="6">
       <widget class="QPushButton" name="pushButton_54">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -193,6 +340,12 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -202,10 +355,28 @@ background-color: rgb(229, 233, 235);</string>
      <item row="7" column="7">
       <widget class="QPushButton" name="pushButton_63">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
+       </property>
+       <property name="layoutDirection">
+        <enum>Qt::LeftToRight</enum>
+       </property>
+       <property name="autoFillBackground">
+        <bool>false</bool>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -214,6 +385,12 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -223,10 +400,22 @@ background-color: rgb(229, 233, 235);</string>
      <item row="0" column="7">
       <widget class="QPushButton" name="pushButton_7">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -235,16 +424,34 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="4" column="4">
       <widget class="QPushButton" name="pushButton_36">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -254,15 +461,33 @@ background-color: rgb(229, 233, 235);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item row="1" column="4">
       <widget class="QPushButton" name="pushButton_12">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -272,15 +497,33 @@ background-color: rgb(117, 139, 173);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item row="6" column="4">
       <widget class="QPushButton" name="pushButton_52">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -289,6 +532,12 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -298,10 +547,22 @@ background-color: rgb(229, 233, 235);</string>
      <item row="3" column="4">
       <widget class="QPushButton" name="pushButton_28">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -311,15 +572,33 @@ background-color: rgb(117, 139, 173);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item row="7" column="5">
       <widget class="QPushButton" name="pushButton_61">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -328,6 +607,12 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -337,10 +622,22 @@ background-color: rgb(229, 233, 235);</string>
      <item row="1" column="0">
       <widget class="QPushButton" name="pushButton_8">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -350,15 +647,33 @@ background-color: rgb(117, 139, 173);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item row="5" column="5">
       <widget class="QPushButton" name="pushButton_45">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -368,6 +683,12 @@ background-color: rgb(229, 233, 235);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
        <property name="flat">
         <bool>false</bool>
        </property>
@@ -376,10 +697,22 @@ background-color: rgb(229, 233, 235);</string>
      <item row="7" column="6">
       <widget class="QPushButton" name="pushButton_62">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="autoFillBackground">
         <bool>false</bool>
@@ -393,6 +726,12 @@ background-color: rgb(117, 139, 173);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
        <property name="flat">
         <bool>false</bool>
        </property>
@@ -401,10 +740,22 @@ background-color: rgb(117, 139, 173);</string>
      <item row="1" column="3">
       <widget class="QPushButton" name="pushButton_11">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -413,16 +764,34 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="6" column="0">
       <widget class="QPushButton" name="pushButton_48">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -431,6 +800,12 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -438,12 +813,24 @@ background-color: rgb(229, 233, 235);</string>
       </widget>
      </item>
      <item row="0" column="1">
-      <widget class="QPushButton" name="pushButton">
+      <widget class="QPushButton" name="pushButton_1">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -452,16 +839,34 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="0" column="3">
       <widget class="QPushButton" name="pushButton_3">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -470,16 +875,34 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="3" column="2">
       <widget class="QPushButton" name="pushButton_26">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -488,16 +911,34 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="3" column="5">
       <widget class="QPushButton" name="pushButton_29">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -506,16 +947,34 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="4" column="2">
       <widget class="QPushButton" name="pushButton_34">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -524,16 +983,34 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="0" column="6">
       <widget class="QPushButton" name="pushButton_6">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -543,15 +1020,33 @@ background-color: rgb(229, 233, 235);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item row="6" column="1">
       <widget class="QPushButton" name="pushButton_49">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -560,6 +1055,12 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -569,10 +1070,22 @@ background-color: rgb(117, 139, 173);</string>
      <item row="3" column="7">
       <widget class="QPushButton" name="pushButton_31">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -581,16 +1094,34 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="4" column="6">
       <widget class="QPushButton" name="pushButton_38">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -600,15 +1131,33 @@ background-color: rgb(229, 233, 235);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item row="7" column="2">
       <widget class="QPushButton" name="pushButton_58">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -617,6 +1166,12 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -624,12 +1179,24 @@ background-color: rgb(117, 139, 173);</string>
       </widget>
      </item>
      <item row="0" column="0">
-      <widget class="QPushButton" name="pushButton_65">
+      <widget class="QPushButton" name="pushButton">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -639,15 +1206,33 @@ background-color: rgb(229, 233, 235);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item row="2" column="7">
       <widget class="QPushButton" name="pushButton_23">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -657,15 +1242,33 @@ background-color: rgb(117, 139, 173);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item row="6" column="2">
       <widget class="QPushButton" name="pushButton_50">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -674,6 +1277,12 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -683,10 +1292,22 @@ background-color: rgb(229, 233, 235);</string>
      <item row="2" column="3">
       <widget class="QPushButton" name="pushButton_19">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -695,16 +1316,34 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="1" column="7">
       <widget class="QPushButton" name="pushButton_15">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -713,16 +1352,34 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="4" column="0">
       <widget class="QPushButton" name="pushButton_32">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -732,15 +1389,33 @@ background-color: rgb(229, 233, 235);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item row="6" column="5">
       <widget class="QPushButton" name="pushButton_53">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -749,6 +1424,12 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -758,10 +1439,22 @@ background-color: rgb(117, 139, 173);</string>
      <item row="5" column="4">
       <widget class="QPushButton" name="pushButton_44">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -770,6 +1463,12 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -779,10 +1478,22 @@ background-color: rgb(117, 139, 173);</string>
      <item row="7" column="3">
       <widget class="QPushButton" name="pushButton_59">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -791,6 +1502,12 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -800,10 +1517,22 @@ background-color: rgb(229, 233, 235);</string>
      <item row="7" column="0">
       <widget class="QPushButton" name="pushButton_56">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -812,6 +1541,12 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -821,10 +1556,22 @@ background-color: rgb(117, 139, 173);</string>
      <item row="3" column="0">
       <widget class="QPushButton" name="pushButton_24">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -833,16 +1580,34 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="3" column="1">
       <widget class="QPushButton" name="pushButton_25">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -851,16 +1616,34 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="0" column="5">
       <widget class="QPushButton" name="pushButton_5">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -869,16 +1652,34 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="2" column="2">
       <widget class="QPushButton" name="pushButton_18">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -887,16 +1688,34 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="0" column="4">
       <widget class="QPushButton" name="pushButton_4">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -905,16 +1724,34 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="1" column="2">
       <widget class="QPushButton" name="pushButton_10">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -923,16 +1760,34 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="5" column="0">
       <widget class="QPushButton" name="pushButton_40">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -942,15 +1797,33 @@ background-color: rgb(117, 139, 173);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item row="5" column="1">
       <widget class="QPushButton" name="pushButton_41">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -959,16 +1832,34 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="5" column="7">
       <widget class="QPushButton" name="pushButton_47">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -977,6 +1868,12 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -986,10 +1883,22 @@ background-color: rgb(229, 233, 235);</string>
      <item row="3" column="3">
       <widget class="QPushButton" name="pushButton_27">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -998,16 +1907,34 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="2" column="0">
       <widget class="QPushButton" name="pushButton_16">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -1017,15 +1944,33 @@ background-color: rgb(229, 233, 235);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item row="0" column="2">
       <widget class="QPushButton" name="pushButton_2">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -1035,15 +1980,33 @@ background-color: rgb(229, 233, 235);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item row="2" column="5">
       <widget class="QPushButton" name="pushButton_21">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -1053,15 +2016,33 @@ background-color: rgb(117, 139, 173);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item row="7" column="1">
       <widget class="QPushButton" name="pushButton_57">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -1070,6 +2051,12 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -1079,10 +2066,22 @@ background-color: rgb(229, 233, 235);</string>
      <item row="3" column="6">
       <widget class="QPushButton" name="pushButton_30">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -1091,16 +2090,34 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="4" column="1">
       <widget class="QPushButton" name="pushButton_33">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -1109,16 +2126,34 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="7" column="4">
       <widget class="QPushButton" name="pushButton_60">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -1127,6 +2162,12 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -1136,10 +2177,22 @@ background-color: rgb(117, 139, 173);</string>
      <item row="6" column="7">
       <widget class="QPushButton" name="pushButton_55">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -1148,6 +2201,12 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
        <property name="flat">
         <bool>false</bool>
@@ -1157,10 +2216,22 @@ background-color: rgb(117, 139, 173);</string>
      <item row="1" column="5">
       <widget class="QPushButton" name="pushButton_13">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -1169,16 +2240,34 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="4" column="3">
       <widget class="QPushButton" name="pushButton_35">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -1187,16 +2276,34 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="2" column="1">
       <widget class="QPushButton" name="pushButton_17">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -1205,16 +2312,34 @@ background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="1" column="1">
       <widget class="QPushButton" name="pushButton_9">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -1224,15 +2349,33 @@ background-color: rgb(229, 233, 235);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item row="4" column="7">
       <widget class="QPushButton" name="pushButton_39">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string notr="true">padding:0px;
@@ -1242,15 +2385,33 @@ background-color: rgb(117, 139, 173);</string>
        <property name="text">
         <string/>
        </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
+       </property>
       </widget>
      </item>
      <item row="2" column="6">
       <widget class="QPushButton" name="pushButton_22">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -1259,16 +2420,34 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>
      <item row="2" column="4">
       <widget class="QPushButton" name="pushButton_20">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
+       </property>
+       <property name="minimumSize">
+        <size>
+         <width>72</width>
+         <height>72</height>
+        </size>
+       </property>
+       <property name="maximumSize">
+        <size>
+         <width>16777214</width>
+         <height>16777214</height>
+        </size>
        </property>
        <property name="styleSheet">
         <string>padding:0px;
@@ -1277,6 +2456,12 @@ background-color: rgb(229, 233, 235);</string>
        </property>
        <property name="text">
         <string/>
+       </property>
+       <property name="iconSize">
+        <size>
+         <width>16</width>
+         <height>16</height>
+        </size>
        </property>
       </widget>
      </item>

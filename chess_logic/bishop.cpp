@@ -2,6 +2,8 @@
 #include "board.h"
 
 
+namespace chess {
+
 std::vector<Position> Bishop::getValidMoves(const Board& board) const
 {
     std::vector<Position> possibleMoves;
@@ -21,7 +23,7 @@ std::vector<Position> Bishop::getValidMoves(const Board& board) const
                 break;
 
             if (board.isOccupied(newPos)) {
-                if (board.isOppositePiece(newPos, this->isWhite())) {
+                if (board.isOppositePiece(newPos, this->getColour())) {
                     possibleMoves.push_back(newPos);
                 }
                 break;
@@ -32,4 +34,6 @@ std::vector<Position> Bishop::getValidMoves(const Board& board) const
     }
 
     return possibleMoves;
+}
+
 }

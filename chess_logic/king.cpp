@@ -2,6 +2,8 @@
 #include "board.h"
 
 
+namespace chess {
+
 std::vector<Position> King::getValidMoves(const Board& board) const
 {
     std::vector<Position> possibleMoves;
@@ -13,7 +15,7 @@ std::vector<Position> King::getValidMoves(const Board& board) const
     for (auto& dir : directions) {
         Position newPos = {currentPos.x + dir.first, currentPos.y + dir.second};
 
-        if (board.isPositionValid(newPos) && !board.isOccupied(newPos) || board.isOppositePiece(newPos, this->isWhite())) {
+        if (board.isPositionValid(newPos) && !board.isOccupied(newPos) || board.isOppositePiece(newPos, this->getColour())) {
             // if (!isPositionCheck(newPos, board)) {
             //     possibleMoves.push_back(newPos);
             // }
@@ -37,4 +39,6 @@ bool King::isCheck(const Board& board) const
     Position currentPos = this->getPosition();
 
     return isPositionCheck(currentPos, board);
+}
+
 }
