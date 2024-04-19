@@ -4,7 +4,7 @@
             "name": "Linux",
             "includePath": [
                 "${workspaceFolder}/**",
-                "/home/ZT/Qt/6.7.0/gcc_64/include/QtCore",
+                "/usr/include/qt5",
                 "/usr/include/qt6"
             ],
             "defines": [],

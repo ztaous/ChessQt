@@ -8,7 +8,8 @@ Board::Board() : grid(rows, std::vector<Piece*>(columns, nullptr))
         grid[0][7] = new King(Colour::White, {7, 0});
         grid[4][3] = new Rook(Colour::Black, {3, 4});
         grid[2][1] = new Bishop(Colour::White, {1, 2});
-        
+        grid[3][6] = new Bishop(Colour::Black, {6,3});
+
         // test d'exception
         // grid[2][7] = new King(Colour::White, {7, 2});
     }

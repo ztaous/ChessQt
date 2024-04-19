@@ -84,14 +84,11 @@ void MainWindow::squareClicked(int rows, int columns)
     chess::Position position{columns, rows};
     chess::Piece* piece = board->getPiece(position);
     
-    // si une piece n'a pas encore ete selectionnee auparavant
-    // permettre au joueur de choisir la piece a jouer
     if (pieceSelected == false && piece != nullptr) {
         clickedPosition = position;
         pieceSelected = true;
     }
-    // dans le cas ou une piece est deja selectionnee
-    // on bouge la piece a la case cliquee
+    
     else if (pieceSelected == true) {
         if (board->movePiece(clickedPosition, position) == true) {
             pieceSelected = false;
