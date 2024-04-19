@@ -39,13 +39,13 @@ class Board;
 class Piece
 {
 public:
-    explicit Piece(Colour inputColour) : colour(inputColour) {};
+    Piece(Colour inputColour, const Position& startPosition) : colour(inputColour), position(startPosition) {};
     virtual ~Piece() = default;
 
     virtual std::vector<Position> getValidMoves(const Board& board) const = 0;
     virtual PieceType type() const = 0;
 
-    void setPosition(const Position& newPosition, const Board& board) {};
+    void setPosition(const Position& newPosition) { position = newPosition; }
     Position getPosition() const { return position; }
     
     Colour getColour() const { return colour; }

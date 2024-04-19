@@ -1,5 +1,4 @@
 #include "bishop.h"
-#include "board.h"
 
 
 namespace chess {
@@ -7,7 +6,7 @@ namespace chess {
 std::vector<Position> Bishop::getValidMoves(const Board& board) const
 {
     std::vector<Position> possibleMoves;
-    Position currentPos = getPosition();
+    Position currentPos = this->getPosition();
 
     std::vector<std::pair<int, int>> directions = {{1, 1}, {-1, 1}, {-1, -1}, {1, -1}};
     
@@ -23,7 +22,9 @@ std::vector<Position> Bishop::getValidMoves(const Board& board) const
                 break;
 
             if (board.isOccupied(newPos)) {
-                if (board.isOppositePiece(newPos, this->getColour())) {
+                Piece* piece = board.getPiece(newPos);
+                
+                if (board.isOppositePiece(piece, this)) {
                     possibleMoves.push_back(newPos);
                 }
                 break;

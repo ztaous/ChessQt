@@ -24,64 +24,6 @@ MainWindow::~MainWindow()
     delete board;
 }
 
-void MainWindow::loadIcons()
-{
-    pieceIcons["BlackKing"] = QIcon("../images/Chess_kdt45.svg");
-    pieceIcons["WhiteKing"] = QIcon("../images/Chess_klt45.svg");
-    pieceIcons["BlackBishop"] = QIcon("../images/Chess_bdt45.svg");
-    pieceIcons["WhiteBishop"] = QIcon("../images/Chess_blt45.svg");
-    pieceIcons["BlackRook"] = QIcon("../images/Chess_rdt45.svg");
-    pieceIcons["WhiteRook"] = QIcon("../images/Chess_rlt45.svg");
-}
-
-void MainWindow::prepareBoard()
-{
-    for (int rows = 0; rows < 8; rows++) {
-        for (int columns = 0; columns < 8; columns++) {
-            QPushButton* button = qobject_cast<QPushButton*>(ui->gridLayout->itemAtPosition(rows, columns)->widget());
-            connect(button, &QPushButton::clicked, this, [this, rows, columns]() { this->squareClicked(rows, columns); });
-        }
-    }
-}
-
-
-void MainWindow::squareClicked(int rows, int columns)
-{
-    QPushButton* button = qobject_cast<QPushButton*>(ui->gridLayout->itemAtPosition(rows, columns)->widget());
-
-    // changer la couleur des cases dispoonibles a la piece selectionnee
-    
-    chess::Position position{columns, rows};
-    chess::Piece* piece = board->getPiece(position);
-
-    if (piece != nullptr) {
-        // continuer la logique du mouvement
-    }
-
-    this->refreshBoard();
-}
-
-
-void MainWindow::refreshBoard()
-{   
-    for (int rows = 0; rows < 8; rows++) {
-        for (int columns = 0; columns < 8; columns++) {
-            QPushButton* button = qobject_cast<QPushButton*>(ui->gridLayout->itemAtPosition(rows, columns)->widget());
-            chess::Position position{columns, rows};
-            chess::Piece* piece = board->getPiece(position);
-
-            if (piece != nullptr) {
-                QString key = (piece->isBlack() ? "Black" : "White") + pieceTypeToString(piece->type());
-                button->setIcon(pieceIcons[key]);
-                button->setIconSize(button->size());
-
-            } else {
-                button->setIcon(QIcon());
-            }
-        }
-    }
-}
-
 
 QString MainWindow::pieceTypeToString(chess::PieceType type)
 {
@@ -109,3 +51,91 @@ QString MainWindow::pieceTypeToString(chess::PieceType type)
     }
 }
 
+
+void MainWindow::loadIcons()
+{
+    pieceIcons["BlackKing"] = QIcon("images/Chess_kdt45.svg");
+    pieceIcons["WhiteKing"] = QIcon("images/Chess_klt45.svg");
+    pieceIcons["BlackBishop"] = QIcon("images/Chess_bdt45.svg");
+    pieceIcons["WhiteBishop"] = QIcon("images/Chess_blt45.svg");
+    pieceIcons["BlackRook"] = QIcon("images/Chess_rdt45.svg");
+    pieceIcons["WhiteRook"] = QIcon("images/Chess_rlt45.svg");
+}
+
+
+void MainWindow::prepareBoard()
+{
+    for (int rows = 0; rows < 8; rows++) {
+        for (int columns = 0; columns < 8; columns++) {
+            QPushButton* button = qobject_cast<QPushButton*>(ui->gridLayout->itemAtPosition(rows, columns)->widget());
+            connect(button, &QPushButton::clicked, this, [this, rows, columns]() { this->squareClicked(rows, columns); });
+        }
+    }
+
+    QPushButton* resetButton = qobject_cast<QPushButton*>(ui->resetButton);
+    connect(resetButton, &QPushButton::clicked, this, [this]() { this->resetClicked(); });
+}
+
+
+void MainWindow::squareClicked(int rows, int columns)
+{
+    QPushButton* button = qobject_cast<QPushButton*>(ui->gridLayout->itemAtPosition(rows, columns)->widget());
+    
+    chess::Position position{columns, rows};
+    chess::Piece* piece = board->getPiece(position);
+    
+    // si une piece n'a pas encore ete selectionnee auparavant
+    // permettre au joueur de choisir la piece a jouer
+    if (pieceSelected == false && piece != nullptr) {
+        clickedPosition = position;
+        pieceSelected = true;
+    }
+    // dans le cas ou une piece est deja selectionnee
+    // on bouge la piece a la case cliquee
+    else if (pieceSelected == true) {
+        if (board->movePiece(clickedPosition, position) == true) {
+            pieceSelected = false;
+            refreshBoard();
+        }
+        else {
+            pieceSelected = false;
+        }
+    }
+
+    refreshBoard();
+}
+
+
+void MainWindow::refreshBoard()
+{   
+    for (int rows = 0; rows < 8; rows++) {
+        for (int columns = 0; columns < 8; columns++) {
+            QPushButton* button = qobject_cast<QPushButton*>(ui->gridLayout->itemAtPosition(rows, columns)->widget());
+            chess::Position position{columns, rows};
+            chess::Piece* piece = board->getPiece(position);
+
+            if (piece != nullptr) {
+                QString key = (piece->isBlack() ? "Black" : "White") + pieceTypeToString(piece->type());
+                button->setIcon(pieceIcons[key]);
+                button->setIconSize(QSize(67, 67));
+
+            } else {
+                button->setIcon(QIcon());
+            }
+
+            // if (pieceSelected && position == clickedPosition) {
+            //     button->setStyleSheet("background-color: rgb(200, 200, 100);"); // Highlight selected piece
+            // } else {
+            //     button->setStyleSheet(""); // Reset to default or alternating colors based on grid position
+            // }
+        }
+    }
+}
+
+
+void MainWindow::resetClicked()
+{
+    delete board;
+    board = new chess::Board();
+    refreshBoard();
+}

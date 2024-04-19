@@ -9,6 +9,7 @@
 #include "chess_logic/board.h"
 #include "chess_logic/piece.h"
 
+
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -26,13 +27,17 @@ public:
 private:
     Ui::MainWindow *ui;
     chess::Board* board;
+
     QMap<QString, QIcon> pieceIcons;
+    QString pieceTypeToString(chess::PieceType type);
 
     void loadIcons();
     void prepareBoard();
     void squareClicked(int row, int col);
-    void refreshBoard();
-    QString pieceTypeToString(chess::PieceType type);
-    
+    void refreshBoard(); 
+    void resetClicked();
+
+    bool pieceSelected = false;
+    chess::Position clickedPosition;
 };
 #endif // MAINWINDOW_H

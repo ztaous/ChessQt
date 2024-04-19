@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include "piece.h"
+#include "board.h"
 
 
 namespace chess {
@@ -10,7 +11,7 @@ namespace chess {
 class Bishop : public Piece
 {
 public:
-    explicit Bishop(Colour colour) : Piece(colour) {};
+    Bishop(Colour inputColour, const Position& startPosition) : Piece(inputColour, startPosition) {};
     ~Bishop() = default;
 
     std::vector<Position> getValidMoves(const Board& board) const override;
