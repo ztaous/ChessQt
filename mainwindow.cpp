@@ -1,11 +1,11 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-#include "chess_logic/piece.h"
-#include "chess_logic/board.h"
-#include "chess_logic/king.h"
-#include "chess_logic/rook.h"
-#include "chess_logic/bishop.h"
+#include "piece.h"
+#include "board.h"
+#include "king.h"
+#include "rook.h"
+#include "bishop.h"
 
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow), board(new chess::Board())

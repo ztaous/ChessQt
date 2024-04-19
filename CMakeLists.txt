@@ -20,15 +20,15 @@ set(PROJECT_SOURCES
         mainwindow.h
         mainwindow.ui
 
-        chess_logic/board.cpp
-        chess_logic/board.h
-        chess_logic/piece.h
-        chess_logic/king.cpp
-        chess_logic/king.h
-        chess_logic/rook.cpp
-        chess_logic/rook.h
-        chess_logic/bishop.cpp
-        chess_logic/bishop.h
+        board.cpp
+        board.h
+        piece.h
+        king.cpp
+        king.h
+        rook.cpp
+        rook.h
+        bishop.cpp
+        bishop.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

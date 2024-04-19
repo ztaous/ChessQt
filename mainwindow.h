@@ -6,8 +6,8 @@
 #include <QMap>
 #include <QString>
 
-#include "chess_logic/board.h"
-#include "chess_logic/piece.h"
+#include "board.h"
+#include "piece.h"
 
 
 QT_BEGIN_NAMESPACE
