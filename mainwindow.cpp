@@ -122,12 +122,6 @@ void MainWindow::refreshBoard()
             } else {
                 button->setIcon(QIcon());
             }
-
-            // if (pieceSelected && position == clickedPosition) {
-            //     button->setStyleSheet("background-color: rgb(200, 200, 100);"); // Highlight selected piece
-            // } else {
-            //     button->setStyleSheet(""); // Reset to default or alternating colors based on grid position
-            // }
         }
     }
 }

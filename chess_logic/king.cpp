@@ -58,8 +58,6 @@ std::vector<Position> King::getValidMoves(const Board& board) const
 
 bool King::isPositionCheck(Position kingPosition, const Board& board) const
 {
-    // iterer sur toutes les pieces de la grille et verifier
-    // qu'elles n'attaquent pas la nouvelle position
     for (int i = 0; i < Board::rows; i++) {
         for (int j = 0; j < Board::columns; j++) {
             

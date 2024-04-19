@@ -11,7 +11,6 @@ Board::Board() : grid(rows, std::vector<Piece*>(columns, nullptr))
         
         // test d'exception
         // grid[2][7] = new King(Colour::White, {7, 2});
-        
     }
     catch (const std::runtime_error& e) {
         std::cerr << e.what() << '\n';
@@ -45,7 +44,7 @@ bool Board::isOppositePiece(const Piece* piece1, const Piece* piece2) const
 
 bool Board::movePiece(Position current, Position destination)
 {
-    // validation du mouvement
+    
     if (!isPositionValid(current) || !isPositionValid(destination))
         return false;
 
@@ -57,14 +56,13 @@ bool Board::movePiece(Position current, Position destination)
     if(std::find(validMoves.begin(), validMoves.end(), destination) == validMoves.end())
         return false;
 
-    // capture des pieces
+    
     Piece* targetPiece = getPiece(destination);
     if (targetPiece != nullptr && isOppositePiece(targetPiece, piece)) {
         delete targetPiece;
         grid[destination.y][destination.x] = nullptr;
     }
 
-    // bouge la piece si toutes les conditions sont respectees
     grid[destination.y][destination.x] = piece;
     grid[current.y][current.x] = nullptr;
     piece->setPosition(destination);
