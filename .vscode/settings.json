@@ -65,6 +65,9 @@
         "streambuf": "cpp",
         "thread": "cpp",
         "typeinfo": "cpp",
-        "variant": "cpp"
+        "variant": "cpp",
+        "qtimer": "cpp",
+        "qstring": "cpp",
+        "text_encoding": "cpp"
     }
 }

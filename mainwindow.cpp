@@ -6,6 +6,7 @@
 #include "king.h"
 #include "rook.h"
 #include "bishop.h"
+#include "knight.h"
 
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow), board(new chess::Board())
@@ -60,6 +61,8 @@ void MainWindow::loadIcons()
     pieceIcons["WhiteBishop"] = QIcon("images/Chess_blt45.svg");
     pieceIcons["BlackRook"] = QIcon("images/Chess_rdt45.svg");
     pieceIcons["WhiteRook"] = QIcon("images/Chess_rlt45.svg");
+    pieceIcons["BlackKnight"] = QIcon("images/Chess_ndt45.svg");
+    pieceIcons["WhiteKnight"] = QIcon("images/Chess_nlt45.svg");
 }
 
 
@@ -86,15 +89,21 @@ void MainWindow::squareClicked(int rows, int columns)
     
     if (pieceSelected == false && piece != nullptr) {
         clickedPosition = position;
+        clickedButton = button;
         pieceSelected = true;
+
+        buttonColor = clickedButton->styleSheet();
+        QString greenColor = "background-color: rgb(95, 158, 160)";
+        clickedButton->setStyleSheet(greenColor);
     }
     
     else if (pieceSelected == true) {
         if (board->movePiece(clickedPosition, position) == true) {
             pieceSelected = false;
-            refreshBoard();
+            clickedButton->setStyleSheet(buttonColor);
         }
         else {
+            flashSquareRed(clickedButton);
             pieceSelected = false;
         }
     }
@@ -108,6 +117,7 @@ void MainWindow::refreshBoard()
     for (int rows = 0; rows < 8; rows++) {
         for (int columns = 0; columns < 8; columns++) {
             QPushButton* button = qobject_cast<QPushButton*>(ui->gridLayout->itemAtPosition(rows, columns)->widget());
+            
             chess::Position position{columns, rows};
             chess::Piece* piece = board->getPiece(position);
 
@@ -129,4 +139,14 @@ void MainWindow::resetClicked()
     delete board;
     board = new chess::Board();
     refreshBoard();
+}
+
+
+void MainWindow::flashSquareRed(QPushButton* button)
+{
+    int flashDuration = 500; // ms
+    QString redColor = "background-color: rgb(170, 74, 68)";
+
+    button->setStyleSheet(redColor);
+    QTimer::singleShot(flashDuration, [this, button]() { button->setStyleSheet(buttonColor); });
 }

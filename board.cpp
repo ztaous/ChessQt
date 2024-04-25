@@ -8,7 +8,8 @@ Board::Board() : grid(rows, std::vector<Piece*>(columns, nullptr))
         grid[0][7] = new King(Colour::White, {7, 0});
         grid[4][3] = new Rook(Colour::Black, {3, 4});
         grid[2][1] = new Bishop(Colour::White, {1, 2});
-        grid[3][6] = new Bishop(Colour::Black, {6,3});
+        grid[3][6] = new Bishop(Colour::Black, {6, 3});
+        grid[5][4] = new Knight(Colour::White, {4, 5});
 
         // test d'exception
         // grid[2][7] = new King(Colour::White, {7, 2});
@@ -45,7 +46,6 @@ bool Board::isOppositePiece(const Piece* piece1, const Piece* piece2) const
 
 bool Board::movePiece(Position current, Position destination)
 {
-    
     if (!isPositionValid(current) || !isPositionValid(destination))
         return false;
 
@@ -57,7 +57,7 @@ bool Board::movePiece(Position current, Position destination)
     if(std::find(validMoves.begin(), validMoves.end(), destination) == validMoves.end())
         return false;
 
-    
+
     Piece* targetPiece = getPiece(destination);
     if (targetPiece != nullptr && isOppositePiece(targetPiece, piece)) {
         delete targetPiece;

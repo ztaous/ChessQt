@@ -2,9 +2,11 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
+#include <QPushButton>
+#include <QString>
 #include <QIcon>
 #include <QMap>
-#include <QString>
+#include <QTimer>
 
 #include "board.h"
 #include "piece.h"
@@ -36,8 +38,11 @@ private:
     void squareClicked(int row, int col);
     void refreshBoard(); 
     void resetClicked();
+    void flashSquareRed(QPushButton* button);
 
     bool pieceSelected = false;
+    QPushButton* clickedButton; 
     chess::Position clickedPosition;
+    QString buttonColor;
 };
 #endif // MAINWINDOW_H

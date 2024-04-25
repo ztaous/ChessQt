@@ -11,9 +11,8 @@ King::King(Colour inputColour, const Position& startPosition) : Piece(inputColou
     bool whiteKingMaxed = (inputColour == Colour::White && whiteKingCount >= 1);
     bool blackKingMaxed = (inputColour == Colour::Black && blackKingCount >= 1);
  
-    if (whiteKingMaxed || blackKingMaxed) {
+    if (whiteKingMaxed || blackKingMaxed)
         throw std::runtime_error("Instancier deux rois de la même couleur n'est pas permis");
-    }
 
     if (colour == Colour::White)
         whiteKingCount++;
@@ -46,9 +45,8 @@ std::vector<Position> King::getValidMoves(const Board& board) const
 
         if (board.isPositionValid(newPos) && (!board.isOccupied(newPos) || board.isOppositePiece(this, board.getPiece(newPos)))) {
             
-            if (!isPositionCheck(newPos, board)) {
+            if (!isPositionCheck(newPos, board))
                 possibleMoves.push_back(newPos);
-            }
         }
     }
          
@@ -66,9 +64,8 @@ bool King::isPositionCheck(Position kingPosition, const Board& board) const
             if (piece != nullptr && board.isOppositePiece(piece, this) && piece->type() != PieceType::King) {
                 std::vector<Position> dangerMoves = piece->getValidMoves(board);
 
-                if (std::find(dangerMoves.begin(), dangerMoves.end(), kingPosition) != dangerMoves.end()) {
+                if (std::find(dangerMoves.begin(), dangerMoves.end(), kingPosition) != dangerMoves.end())
                     return true;
-                }
             }     
         }
     }

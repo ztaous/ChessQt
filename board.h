@@ -7,6 +7,7 @@
 #include "king.h"
 #include "rook.h"
 #include "bishop.h"
+#include "knight.h"
 
 
 namespace chess {

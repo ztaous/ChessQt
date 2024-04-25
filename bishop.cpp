@@ -24,9 +24,9 @@ std::vector<Position> Bishop::getValidMoves(const Board& board) const
             if (board.isOccupied(newPos)) {
                 Piece* piece = board.getPiece(newPos);
                 
-                if (board.isOppositePiece(piece, this)) {
+                if (board.isOppositePiece(piece, this))
                     possibleMoves.push_back(newPos);
-                }
+
                 break;
             }
 

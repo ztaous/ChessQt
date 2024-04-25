@@ -29,6 +29,8 @@ set(PROJECT_SOURCES
         rook.h
         bishop.cpp
         bishop.h
+        knight.cpp
+        knight.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)
