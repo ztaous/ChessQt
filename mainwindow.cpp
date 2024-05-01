@@ -71,12 +71,12 @@ void MainWindow::prepareBoard()
     for (int rows = 0; rows < 8; rows++) {
         for (int columns = 0; columns < 8; columns++) {
             QPushButton* button = qobject_cast<QPushButton*>(ui->gridLayout->itemAtPosition(rows, columns)->widget());
-            connect(button, &QPushButton::clicked, this, [this, rows, columns]() { this->squareClicked(rows, columns); });
+            connect(button, &QPushButton::clicked, this, [this, rows, columns](){ this->squareClicked(rows, columns); });
         }
     }
 
     QPushButton* resetButton = qobject_cast<QPushButton*>(ui->resetButton);
-    connect(resetButton, &QPushButton::clicked, this, [this]() { this->resetClicked(); });
+    connect(resetButton, &QPushButton::clicked, this, [this](){ this->resetClicked(); });
 }
 
 
@@ -146,7 +146,13 @@ void MainWindow::flashSquareRed(QPushButton* button)
 {
     int flashDuration = 500; // ms
     QString redColor = "background-color: rgb(170, 74, 68)";
-
+    
     button->setStyleSheet(redColor);
-    QTimer::singleShot(flashDuration, [this, button]() { button->setStyleSheet(buttonColor); });
+    button->setEnabled(false);
+
+    QTimer::singleShot(flashDuration, [this, button]()
+    { 
+        button->setStyleSheet(buttonColor);
+        button->setEnabled(true); 
+    });
 }

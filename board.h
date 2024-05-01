@@ -19,11 +19,11 @@ public:
     ~Board();
     void cleanBoard();
     
-    bool isPositionValid(Position pos) const { return (pos.x >= 0 && pos.x < 8 && pos.y >= 0 && pos.y < 8); }
-    bool isOccupied(Position pos) const { return grid[pos.y][pos.x] != nullptr; }
+    bool isPositionValid(Position pos) const;
+    bool isOccupied(Position pos) const;
     bool isOppositePiece(const Piece* piece1, const Piece* piece2) const;
    
-    Piece* getPiece(const Position& pos) const { return grid[pos.y][pos.x]; }
+    Piece* getPiece(const Position& pos) const;
     bool movePiece(Position current, Position destination);
 
     static const int rows = 8; 

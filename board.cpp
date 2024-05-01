@@ -38,9 +38,27 @@ void Board::cleanBoard()
 }
 
 
+bool Board::isPositionValid(Position pos) const
+{ 
+    return (pos.x >= 0 && pos.x < 8 && pos.y >= 0 && pos.y < 8); 
+}
+
+
+bool Board::isOccupied(Position pos) const 
+{
+    return grid[pos.y][pos.x] != nullptr;  
+}
+
+
 bool Board::isOppositePiece(const Piece* piece1, const Piece* piece2) const
 {    
     return piece1->getColour() != piece2->getColour();
+}
+
+
+Piece* Board::getPiece(const Position& pos) const
+{ 
+    return grid[pos.y][pos.x]; 
 }
 
 
