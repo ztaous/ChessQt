@@ -26,6 +26,11 @@ public:
     MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
+private slots:
+    void resetGame();
+    void selectScenario(int scenario);
+    void squareClicked(int row, int col);
+
 private:
     Ui::MainWindow *ui;
     chess::Board* board;
@@ -35,9 +40,7 @@ private:
 
     void loadIcons();
     void prepareBoard();
-    void squareClicked(int row, int col);
     void refreshBoard(); 
-    void resetClicked();
     void flashSquareRed(QPushButton* button);
 
     bool pieceSelected = false;

@@ -13,6 +13,13 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 {
     ui->setupUi(this);
 
+    connect(ui->actionReset, &QAction::triggered, this, &MainWindow::resetGame);
+    connect(ui->actionQuit, &QAction::triggered, this, &QMainWindow::close);
+
+    connect(ui->menuPositions->actions().at(1), &QAction::triggered, this, [this](){ selectScenario(1); });
+    connect(ui->menuPositions->actions().at(2), &QAction::triggered, this, [this](){ selectScenario(2); });
+    connect(ui->menuPositions->actions().at(3), &QAction::triggered, this, [this](){ selectScenario(3); });
+
     loadIcons();
     prepareBoard();
     refreshBoard();
@@ -66,6 +73,13 @@ void MainWindow::loadIcons()
 }
 
 
+void MainWindow::selectScenario(int scenario)
+{
+    board->setupBoard(scenario);
+    refreshBoard();
+}
+
+
 void MainWindow::prepareBoard()
 {
     for (int rows = 0; rows < 8; rows++) {
@@ -74,9 +88,6 @@ void MainWindow::prepareBoard()
             connect(button, &QPushButton::clicked, this, [this, rows, columns](){ this->squareClicked(rows, columns); });
         }
     }
-
-    QPushButton* resetButton = qobject_cast<QPushButton*>(ui->resetButton);
-    connect(resetButton, &QPushButton::clicked, this, [this](){ this->resetClicked(); });
 }
 
 
@@ -134,7 +145,7 @@ void MainWindow::refreshBoard()
 }
 
 
-void MainWindow::resetClicked()
+void MainWindow::resetGame()
 {
     delete board;
     board = new chess::Board();

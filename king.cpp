@@ -1,35 +1,8 @@
 #include "king.h"
+#include "tempMovePiece.h"
 
 
 namespace chess {
-
-int King::blackKingCount = 0;
-int King::whiteKingCount = 0;
-
-King::King(Colour inputColour, const Position& startPosition) : Piece(inputColour, startPosition)
-{
-    bool whiteKingMaxed = (inputColour == Colour::White && whiteKingCount >= 1);
-    bool blackKingMaxed = (inputColour == Colour::Black && blackKingCount >= 1);
- 
-    if (whiteKingMaxed || blackKingMaxed)
-        throw std::runtime_error("Instancier deux rois de la même couleur n'est pas permis");
-
-    if (colour == Colour::White)
-        whiteKingCount++;
-
-    else if (colour == Colour::Black)
-        blackKingCount++;
-}
-
-
-King::~King()
-{
-    if (colour == Colour::White)
-        whiteKingCount--;
-
-    else if (colour == Colour::Black)
-        blackKingCount--;
-}
 
 
 std::vector<Position> King::getValidMoves(const Board& board) const
@@ -44,8 +17,9 @@ std::vector<Position> King::getValidMoves(const Board& board) const
         Position newPos = {currentPos.x + dir.first, currentPos.y + dir.second};
 
         if (board.isPositionValid(newPos) && (!board.isOccupied(newPos) || board.isOppositePiece(this, board.getPiece(newPos)))) {
+            tempMovePiece temp(const_cast<King*>(this), newPos);
             
-            if (!isPositionCheck(newPos, board))
+            if (!isPositionAttacked(newPos, board) && !otherKingAttack(newPos, board))
                 possibleMoves.push_back(newPos);
         }
     }
@@ -54,7 +28,7 @@ std::vector<Position> King::getValidMoves(const Board& board) const
 }
 
 
-bool King::isPositionCheck(Position kingPosition, const Board& board) const
+bool King::isPositionAttacked(Position kingPosition, const Board& board) const
 {
     for (int i = 0; i < Board::rows; i++) {
         for (int j = 0; j < Board::columns; j++) {
@@ -74,10 +48,36 @@ bool King::isPositionCheck(Position kingPosition, const Board& board) const
 }
 
 
+bool King::otherKingAttack(Position kingPosition, const Board& board) const
+{
+    std::vector<std::pair<int, int>> directions = {{1, 0}, {0, 1}, {0, -1}, {-1, 0}, {1, 1}, {-1, -1}, {1, -1}, {-1, 1}};
+    for (auto& dir : directions) {
+        Position checkPos = {kingPosition.x + dir.first, kingPosition.y + dir.second};
+        if (board.isPositionValid(checkPos)) {
+            Piece* piece = board.getPiece(checkPos);
+            if (piece && piece->type() == PieceType::King && board.isOppositePiece(piece, this)) {
+                return true;
+            }
+        }
+    }
+    return false;
+}
+
+
 bool King::isCheck(const Board& board) const
 {
     Position currentPos = this->getPosition();
-    return isPositionCheck(currentPos, board);
+    return isPositionAttacked(currentPos, board) || otherKingAttack(currentPos, board);
+}
+
+
+bool King::isCheckMate(const Board& board) const
+{ 
+    // ne correspond pas au comportement exact, 
+    // mais fonctionne generalement bien pour les fins de jeu
+    
+    std::vector<Position> possibleMoves = this->getValidMoves(board);
+    return possibleMoves.empty() && isCheck(board);
 }
 
 }

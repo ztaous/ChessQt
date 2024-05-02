@@ -18,6 +18,7 @@ public:
     Board();
     ~Board();
     void cleanBoard();
+    void setupBoard(int scenario);
     
     bool isPositionValid(Position pos) const;
     bool isOccupied(Position pos) const;
@@ -30,7 +31,7 @@ public:
     static const int columns = 8; 
 
 private:
-    std::vector<std::vector<Piece*>> grid;
+    Piece* grid[rows][columns];
 };
 
 }

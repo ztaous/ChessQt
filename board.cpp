@@ -2,28 +2,53 @@
 
 namespace chess {
 
-Board::Board() : grid(rows, std::vector<Piece*>(columns, nullptr))
+Board::Board() : grid{}
 {
-    try {
-        grid[0][7] = new King(Colour::White, {7, 0});
-        grid[4][3] = new Rook(Colour::Black, {3, 4});
-        grid[2][1] = new Bishop(Colour::White, {1, 2});
-        grid[3][6] = new Bishop(Colour::Black, {6, 3});
-        grid[5][4] = new Knight(Colour::White, {4, 5});
-
-        // test d'exception
-        // grid[2][7] = new King(Colour::White, {7, 2});
-    }
-    catch (const std::runtime_error& e) {
-        std::cerr << e.what() << '\n';
-        cleanBoard();
-    }     
+    setupBoard(0);
 }
 
 
 Board::~Board()
 {
     cleanBoard();
+}
+
+
+void Board::setupBoard(int scenario)
+{
+    cleanBoard();
+
+    switch(scenario) {
+        case 0:
+            grid[0][4] = new King(Colour::Black, {4, 0});
+            grid[7][4] = new King(Colour::White, {4, 7});
+            break;
+        
+        case 1:
+            grid[0][4] = new King(Colour::Black, {4, 0});
+            grid[7][4] = new King(Colour::White, {4, 7});
+            grid[4][3] = new Rook(Colour::Black, {3, 4});
+            break;
+        
+        case 2:
+            grid[0][4] = new King(Colour::Black, {4, 0});
+            grid[7][4] = new King(Colour::White, {4, 7});
+            grid[2][1] = new Bishop(Colour::White, {1, 2});
+            grid[3][6] = new Bishop(Colour::Black, {6, 3});
+            grid[5][4] = new Knight(Colour::White, {4, 5});
+            break;
+
+        case 3:
+            grid[0][4] = new King(Colour::Black, {4, 0});
+            grid[7][4] = new King(Colour::White, {4, 7});
+            grid[0][0] = new Rook(Colour::White, {0, 0});
+            break;    
+        
+        default:
+            grid[0][4] = new King(Colour::Black, {4, 0});
+            grid[7][4] = new King(Colour::White, {3, 7});
+            break;  
+    }
 }
 
 
@@ -40,7 +65,7 @@ void Board::cleanBoard()
 
 bool Board::isPositionValid(Position pos) const
 { 
-    return (pos.x >= 0 && pos.x < 8 && pos.y >= 0 && pos.y < 8); 
+    return (pos.x >= 0 && pos.x < columns && pos.y >= 0 && pos.y < rows); 
 }
 
 
