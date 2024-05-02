@@ -8,8 +8,13 @@
 #include <QMap>
 #include <QTimer>
 
-#include "board.h"
 #include "piece.h"
+#include "board.h"
+#include "king.h"
+#include "rook.h"
+#include "bishop.h"
+#include "knight.h"
+#include "queen.h"
 
 
 QT_BEGIN_NAMESPACE
@@ -38,7 +43,7 @@ private:
     QMap<QString, QIcon> pieceIcons;
     QString pieceTypeToString(chess::PieceType type);
 
-    void loadIcons();
+    void loadImages();
     void prepareBoard();
     void refreshBoard(); 
     void flashSquareRed(QPushButton* button);

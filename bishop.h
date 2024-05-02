@@ -11,7 +11,7 @@ namespace chess {
 class Bishop : public Piece
 {
 public:
-    Bishop(Colour inputColour, const Position& startPosition) : Piece(inputColour, startPosition) {};
+    Bishop(Colour inputColour, const Position& startPosition) : Piece(inputColour, startPosition) {}
     ~Bishop() = default;
 
     std::vector<Position> getValidMoves(const Board& board) const override;

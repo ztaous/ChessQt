@@ -3096,17 +3096,17 @@ li.checked::marker { content: &quot;\2612&quot;; }
   </action>
   <action name="actionposition_1">
    <property name="text">
-    <string>position 1</string>
+    <string>two Rooks vs. two Bishops</string>
    </property>
   </action>
   <action name="actionposition_2">
    <property name="text">
-    <string>position 2</string>
+    <string>Rook vs. Knight</string>
    </property>
   </action>
   <action name="actionposition_3">
    <property name="text">
-    <string>position 3</string>
+    <string>Queen vs. Knight and Bishop</string>
    </property>
   </action>
  </widget>

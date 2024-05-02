@@ -23,6 +23,8 @@ set(PROJECT_SOURCES
         piece.h
         king.cpp
         king.h
+        queen.cpp
+        queen.h
         rook.cpp
         rook.h
         bishop.cpp

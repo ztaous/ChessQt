@@ -1,5 +1,6 @@
 #include "board.h"
 
+
 namespace chess {
 
 Board::Board() : grid{}
@@ -21,27 +22,31 @@ void Board::setupBoard(int scenario)
     switch(scenario) {
         case 0:
             grid[0][4] = new King(Colour::Black, {4, 0});
-            grid[7][4] = new King(Colour::White, {4, 7});
+            grid[7][4] = new King(Colour::White, {3, 7});
             break;
         
         case 1:
-            grid[0][4] = new King(Colour::Black, {4, 0});
-            grid[7][4] = new King(Colour::White, {4, 7});
-            grid[4][3] = new Rook(Colour::Black, {3, 4});
+            grid[1][5] = new King(Colour::Black, {5, 1});
+            grid[7][2] = new King(Colour::White, {2, 7});
+            grid[7][3] = new Rook(Colour::White, {3, 7});
+            grid[6][3] = new Rook(Colour::White, {3, 6});
+            grid[3][4] = new Bishop(Colour::Black, {4, 3});
+            grid[2][6] = new Bishop(Colour::Black, {6, 2});
             break;
         
         case 2:
-            grid[0][4] = new King(Colour::Black, {4, 0});
-            grid[7][4] = new King(Colour::White, {4, 7});
-            grid[2][1] = new Bishop(Colour::White, {1, 2});
-            grid[3][6] = new Bishop(Colour::Black, {6, 3});
-            grid[5][4] = new Knight(Colour::White, {4, 5});
+            grid[5][7] = new King(Colour::Black, {7, 5});
+            grid[2][4] = new King(Colour::White, {4, 2});
+            grid[2][1] = new Knight(Colour::Black, {1, 2});
+            grid[1][5] = new Rook(Colour::White, {5, 1});
             break;
 
         case 3:
-            grid[0][4] = new King(Colour::Black, {4, 0});
-            grid[7][4] = new King(Colour::White, {4, 7});
-            grid[0][0] = new Rook(Colour::White, {0, 0});
+            grid[7][2] = new King(Colour::Black, {2, 7});
+            grid[1][1] = new King(Colour::White, {1, 1});
+            grid[5][0] = new Knight(Colour::White, {0, 5});
+            grid[2][0] = new Rook(Colour::White, {0, 2});
+            grid[4][3] = new Queen(Colour::Black, {3, 4});
             break;    
         
         default:

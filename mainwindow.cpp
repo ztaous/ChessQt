@@ -1,13 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-#include "piece.h"
-#include "board.h"
-#include "king.h"
-#include "rook.h"
-#include "bishop.h"
-#include "knight.h"
-
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow), board(new chess::Board())
 {
@@ -20,7 +13,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     connect(ui->menuPositions->actions().at(2), &QAction::triggered, this, [this](){ selectScenario(2); });
     connect(ui->menuPositions->actions().at(3), &QAction::triggered, this, [this](){ selectScenario(3); });
 
-    loadIcons();
+    loadImages();
     prepareBoard();
     refreshBoard();
 }
@@ -60,16 +53,25 @@ QString MainWindow::pieceTypeToString(chess::PieceType type)
 }
 
 
-void MainWindow::loadIcons()
+void MainWindow::loadImages()
 {
     pieceIcons["BlackKing"] = QIcon("images/Chess_kdt45.svg");
     pieceIcons["WhiteKing"] = QIcon("images/Chess_klt45.svg");
+
+    pieceIcons["BlackQueen"] = QIcon("images/Chess_qdt45.svg");
+    pieceIcons["WhiteQueen"] = QIcon("images/Chess_qlt45.svg");
+
     pieceIcons["BlackBishop"] = QIcon("images/Chess_bdt45.svg");
     pieceIcons["WhiteBishop"] = QIcon("images/Chess_blt45.svg");
+
     pieceIcons["BlackRook"] = QIcon("images/Chess_rdt45.svg");
     pieceIcons["WhiteRook"] = QIcon("images/Chess_rlt45.svg");
+
     pieceIcons["BlackKnight"] = QIcon("images/Chess_ndt45.svg");
     pieceIcons["WhiteKnight"] = QIcon("images/Chess_nlt45.svg");
+
+    pieceIcons["BlackPawn"] = QIcon("images/Chess_pdt45.svg");
+    pieceIcons["WhitePawn"] = QIcon("images/Chess_plt45.svg");
 }
 
 
@@ -84,6 +86,7 @@ void MainWindow::prepareBoard()
 {
     for (int rows = 0; rows < 8; rows++) {
         for (int columns = 0; columns < 8; columns++) {
+            
             QPushButton* button = qobject_cast<QPushButton*>(ui->gridLayout->itemAtPosition(rows, columns)->widget());
             connect(button, &QPushButton::clicked, this, [this, rows, columns](){ this->squareClicked(rows, columns); });
         }
@@ -94,7 +97,6 @@ void MainWindow::prepareBoard()
 void MainWindow::squareClicked(int rows, int columns)
 {
     QPushButton* button = qobject_cast<QPushButton*>(ui->gridLayout->itemAtPosition(rows, columns)->widget());
-    
     chess::Position position{columns, rows};
     chess::Piece* piece = board->getPiece(position);
     
@@ -109,7 +111,7 @@ void MainWindow::squareClicked(int rows, int columns)
     }
     
     else if (pieceSelected == true) {
-        if (board->movePiece(clickedPosition, position) == true) {
+        if (board->movePiece(clickedPosition, position)) {
             pieceSelected = false;
             clickedButton->setStyleSheet(buttonColor);
         }
@@ -127,8 +129,8 @@ void MainWindow::refreshBoard()
 {   
     for (int rows = 0; rows < 8; rows++) {
         for (int columns = 0; columns < 8; columns++) {
-            QPushButton* button = qobject_cast<QPushButton*>(ui->gridLayout->itemAtPosition(rows, columns)->widget());
             
+            QPushButton* button = qobject_cast<QPushButton*>(ui->gridLayout->itemAtPosition(rows, columns)->widget());
             chess::Position position{columns, rows};
             chess::Piece* piece = board->getPiece(position);
 
@@ -136,8 +138,8 @@ void MainWindow::refreshBoard()
                 QString key = (piece->isBlack() ? "Black" : "White") + pieceTypeToString(piece->type());
                 button->setIcon(pieceIcons[key]);
                 button->setIconSize(QSize(67, 67));
-
-            } else {
+            } 
+            else {
                 button->setIcon(QIcon());
             }
         }
