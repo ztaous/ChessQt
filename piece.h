@@ -40,22 +40,22 @@ class Board;
 class Piece
 {
 public:
-    Piece(Colour inputColour, const Position& startPosition) : colour(inputColour), position(startPosition) {}
+    Piece(Colour inputColour, const Position& startPosition) : colour_(inputColour), position_(startPosition) {}
     virtual ~Piece() = default;
 
     virtual std::vector<Position> getValidMoves(const Board& board) const = 0;
     virtual PieceType type() const = 0;
 
-    void setPosition(const Position& newPosition) { position = newPosition; }
-    Position getPosition() const { return position; }
+    void setPosition(const Position& newPosition) { position_ = newPosition; }
+    Position getPosition() const { return position_; }
     
-    Colour getColour() const { return colour; }
-    bool isBlack() const { return colour == Colour::Black; }
-    bool isWhite() const { return colour == Colour::White; }
+    Colour getColour() const { return colour_; }
+    bool isBlack() const { return colour_ == Colour::Black; }
+    bool isWhite() const { return colour_ == Colour::White; }
 
 protected:
-    Colour colour;
-    Position position;
+    Colour colour_;
+    Position position_;
 };
 
 }

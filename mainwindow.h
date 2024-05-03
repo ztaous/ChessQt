@@ -19,13 +19,6 @@
 #include "queen.h"
 
 
-enum class Player
-{
-    White,
-    Black
-};
-
-
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -43,7 +36,7 @@ public:
 private slots:
     void resetGame();
     void selectScenario(int scenario);
-    void squareClicked(int row, int col);
+    void squareClick(int row, int col);
 
 private:
     Ui::MainWindow *ui;
@@ -56,13 +49,12 @@ private:
     void prepareBoard();
     void refreshBoard(); 
     void flashSquareRed(QPushButton* button);
-    void switchPlayer();
+    void updateGameStatus();
 
     bool pieceSelected = false;
     QPushButton* clickedButton; 
     chess::Position clickedPosition;
     QString buttonColor;
-    Player currentPlayer = Player::White;
     int savedScenario;
 };
 #endif // MAINWINDOW_H

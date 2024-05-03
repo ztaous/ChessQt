@@ -11,6 +11,13 @@
 #include "knight.h"
 
 
+enum class Player
+{
+    White,
+    Black
+};
+
+
 namespace chess {
 
 class Board
@@ -27,12 +34,16 @@ public:
    
     Piece* getPiece(const Position& pos) const;
     bool movePiece(Position current, Position destination);
+    Player getCurrentPlayer() { return currentPlayer_; }
+    void switchPlayer();
+   
 
     static const int rows = 8; 
     static const int columns = 8; 
 
 private:
     Piece* grid[rows][columns];
+    Player currentPlayer_ = Player::White;
 };
 
 }

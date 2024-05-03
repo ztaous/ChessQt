@@ -94,23 +94,24 @@ void MainWindow::prepareBoard()
         for (int columns = 0; columns < 8; columns++) {
             
             QPushButton* button = qobject_cast<QPushButton*>(ui->gridLayout->itemAtPosition(rows, columns)->widget());
-            connect(button, &QPushButton::clicked, this, [this, rows, columns](){ this->squareClicked(rows, columns); });
+            connect(button, &QPushButton::clicked, this, [this, rows, columns](){ this->squareClick(rows, columns); });
         }
     }
 }
 
 
-void MainWindow::squareClicked(int rows, int columns)
+void MainWindow::squareClick(int rows, int columns)
 {
     QPushButton* button = qobject_cast<QPushButton*>(ui->gridLayout->itemAtPosition(rows, columns)->widget());
     chess::Position position{columns, rows};
     chess::Piece* piece = board->getPiece(position);
     
     if (!pieceSelected && piece != nullptr) {
-
-        bool isPieceBlack = piece->isBlack();
         
-        if ((isPieceBlack && currentPlayer == Player::Black) || (!isPieceBlack && currentPlayer == Player::White)) {
+        bool isCurrentPlayerBlack = piece->isBlack() && board->getCurrentPlayer() == Player::Black;
+        bool isCurrentPlayerWhite = piece->isWhite() && board->getCurrentPlayer() == Player::White;
+
+        if (isCurrentPlayerBlack || isCurrentPlayerWhite) {
             clickedPosition = position;
             clickedButton = button;
             pieceSelected = true;
@@ -119,6 +120,7 @@ void MainWindow::squareClicked(int rows, int columns)
             QString greenColor = "background-color: rgb(95, 158, 160)";
             clickedButton->setStyleSheet(greenColor);
         }
+            
     }
     
     else if (pieceSelected) {
@@ -126,7 +128,7 @@ void MainWindow::squareClicked(int rows, int columns)
         if (board->movePiece(clickedPosition, position)) {
             pieceSelected = false;
             clickedButton->setStyleSheet(buttonColor);
-            switchPlayer();
+            updateGameStatus();
         }
         else {
             flashSquareRed(clickedButton);
@@ -166,7 +168,6 @@ void MainWindow::resetGame()
     board = new chess::Board();
 
     board->setupBoard(savedScenario);
-    currentPlayer = Player::White;
     ui->gameStatus->setText("White to move");
 
     refreshBoard();
@@ -189,19 +190,8 @@ void MainWindow::flashSquareRed(QPushButton* button)
 }
 
 
-void MainWindow::switchPlayer()
+void MainWindow::updateGameStatus()
 {
-    QString colorToPlay;
-
-    if (currentPlayer == Player::White) {
-        currentPlayer = Player::Black;
-        colorToPlay = "Black to move";
-    }
-        
-    else {
-        currentPlayer = Player::White;
-        colorToPlay = "White to move";
-    }
-
+    QString colorToPlay = (board->getCurrentPlayer() == Player::White) ? "White to move" : "Black to move";
     ui->gameStatus->setText(colorToPlay);    
 }

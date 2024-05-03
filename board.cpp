@@ -100,7 +100,6 @@ bool Board::movePiece(Position current, Position destination)
     if(std::find(validMoves.begin(), validMoves.end(), destination) == validMoves.end())
         return false;
 
-
     Piece* targetPiece = getPiece(destination);
     if (targetPiece != nullptr && isOppositePiece(targetPiece, piece)) {
         delete targetPiece;
@@ -110,8 +109,20 @@ bool Board::movePiece(Position current, Position destination)
     grid[destination.y][destination.x] = piece;
     grid[current.y][current.x] = nullptr;
     piece->setPosition(destination);
+    switchPlayer();
     
     return true;
+}
+
+
+void Board::switchPlayer()
+{
+    if (currentPlayer_ == Player::White) {
+        currentPlayer_ = Player::Black;
+    }
+    else {
+        currentPlayer_ = Player::White;
+    }
 }
 
 }
