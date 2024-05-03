@@ -34,9 +34,10 @@ public:
    
     Piece* getPiece(const Position& pos) const;
     bool movePiece(Position current, Position destination);
-    Player getCurrentPlayer() { return currentPlayer_; }
+    
     void switchPlayer();
-   
+    Player getCurrentPlayer() const { return currentPlayer_; }
+    void setCurrentPlayer(const Player& player) { currentPlayer_ = player; }
 
     static const int rows = 8; 
     static const int columns = 8; 

@@ -82,6 +82,7 @@ void MainWindow::selectScenario(int scenario)
     savedScenario = scenario;
     board->setupBoard(scenario);
 
+    board->setCurrentPlayer(Player::White);
     ui->gameStatus->setText("White to move");
 
     refreshBoard();
@@ -166,11 +167,8 @@ void MainWindow::resetGame()
 {
     delete board;
     board = new chess::Board();
-
-    board->setupBoard(savedScenario);
-    ui->gameStatus->setText("White to move");
-
-    refreshBoard();
+    
+    selectScenario(savedScenario);
 }
 
 
