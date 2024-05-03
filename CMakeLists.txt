@@ -12,6 +12,8 @@ set(CMAKE_CXX_STANDARD_REQUIRED ON)
 find_package(QT NAMES Qt6 Qt5 REQUIRED COMPONENTS Widgets Svg)
 find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Svg)
 
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++2a -fsigned-char -Wall -Wextra -Wpedantic -Woverloaded-virtual -Wno-unknown-pragmas -Wno-enum-compare --coverage")
+
 set(PROJECT_SOURCES
         main.cpp
         mainwindow.cpp
@@ -20,15 +22,21 @@ set(PROJECT_SOURCES
 
         board.cpp
         board.h
+        
         piece.h
+
         king.cpp
         king.h
+
         queen.cpp
         queen.h
+
         rook.cpp
         rook.h
+
         bishop.cpp
         bishop.h
+
         knight.cpp
         knight.h
 )

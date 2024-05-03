@@ -7,6 +7,8 @@
 #include <QIcon>
 #include <QMap>
 #include <QTimer>
+#include <QStatusBar>
+#include <QLabel>
 
 #include "piece.h"
 #include "board.h"
@@ -15,6 +17,13 @@
 #include "bishop.h"
 #include "knight.h"
 #include "queen.h"
+
+
+enum class Player
+{
+    White,
+    Black
+};
 
 
 QT_BEGIN_NAMESPACE
@@ -47,10 +56,13 @@ private:
     void prepareBoard();
     void refreshBoard(); 
     void flashSquareRed(QPushButton* button);
+    void switchPlayer();
 
     bool pieceSelected = false;
     QPushButton* clickedButton; 
     chess::Position clickedPosition;
     QString buttonColor;
+    Player currentPlayer = Player::White;
+    int savedScenario;
 };
 #endif // MAINWINDOW_H

@@ -20,11 +20,6 @@ void Board::setupBoard(int scenario)
     cleanBoard();
 
     switch(scenario) {
-        case 0:
-            grid[0][4] = new King(Colour::Black, {4, 0});
-            grid[7][4] = new King(Colour::White, {3, 7});
-            break;
-        
         case 1:
             grid[1][5] = new King(Colour::Black, {5, 1});
             grid[7][2] = new King(Colour::White, {2, 7});
