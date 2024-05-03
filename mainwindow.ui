@@ -71,7 +71,7 @@ background-color: rgb(229, 233, 235);</string>
      <item row="1" column="7">
       <widget class="QPushButton" name="pushButton_15">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -89,8 +89,7 @@ background-color: rgb(229, 233, 235);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -116,7 +115,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="6" column="3">
       <widget class="QPushButton" name="pushButton_51">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -134,8 +133,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -161,7 +159,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="4" column="2">
       <widget class="QPushButton" name="pushButton_34">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -179,8 +177,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -206,7 +203,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="0" column="1">
       <widget class="QPushButton" name="pushButton_1">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -224,8 +221,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -251,7 +247,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="7" column="0">
       <widget class="QPushButton" name="pushButton_56">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -269,8 +265,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -296,7 +291,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="1" column="6">
       <widget class="QPushButton" name="pushButton_14">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -314,8 +309,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -341,7 +335,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="7" column="1">
       <widget class="QPushButton" name="pushButton_57">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -359,8 +353,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -386,7 +379,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="7" column="6">
       <widget class="QPushButton" name="pushButton_62">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -407,8 +400,7 @@ background-color: rgb(233, 241, 245);</string>
         <bool>false</bool>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -434,7 +426,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="0" column="4">
       <widget class="QPushButton" name="pushButton_4">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -452,8 +444,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -479,7 +470,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="7" column="4">
       <widget class="QPushButton" name="pushButton_60">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -497,8 +488,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -524,7 +514,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="3" column="4">
       <widget class="QPushButton" name="pushButton_28">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -542,8 +532,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -569,7 +558,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="2" column="7">
       <widget class="QPushButton" name="pushButton_23">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -587,8 +576,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -614,7 +602,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="3" column="2">
       <widget class="QPushButton" name="pushButton_26">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -632,8 +620,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -659,7 +646,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="2" column="2">
       <widget class="QPushButton" name="pushButton_18">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -677,8 +664,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -704,7 +690,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="1" column="2">
       <widget class="QPushButton" name="pushButton_10">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -722,8 +708,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -749,7 +734,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="5" column="7">
       <widget class="QPushButton" name="pushButton_47">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -767,8 +752,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -794,7 +778,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="5" column="5">
       <widget class="QPushButton" name="pushButton_45">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -812,8 +796,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -839,7 +822,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="2" column="4">
       <widget class="QPushButton" name="pushButton_20">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -857,8 +840,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -884,7 +866,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="2" column="5">
       <widget class="QPushButton" name="pushButton_21">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -902,8 +884,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -929,7 +910,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="6" column="7">
       <widget class="QPushButton" name="pushButton_55">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -947,8 +928,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -974,7 +954,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="2" column="6">
       <widget class="QPushButton" name="pushButton_22">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -992,8 +972,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -1019,7 +998,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="0" column="6">
       <widget class="QPushButton" name="pushButton_6">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1037,8 +1016,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -1064,7 +1042,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="4" column="6">
       <widget class="QPushButton" name="pushButton_38">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1082,8 +1060,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -1109,7 +1086,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="1" column="3">
       <widget class="QPushButton" name="pushButton_11">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1127,8 +1104,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -1154,7 +1130,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="0" column="3">
       <widget class="QPushButton" name="pushButton_3">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1172,8 +1148,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -1199,7 +1174,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="6" column="5">
       <widget class="QPushButton" name="pushButton_53">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1217,8 +1192,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -1244,7 +1218,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="4" column="4">
       <widget class="QPushButton" name="pushButton_36">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1262,8 +1236,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -1289,7 +1262,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="5" column="3">
       <widget class="QPushButton" name="pushButton_43">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1307,8 +1280,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -1334,7 +1306,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="4" column="0">
       <widget class="QPushButton" name="pushButton_32">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1352,8 +1324,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -1379,7 +1350,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="3" column="6">
       <widget class="QPushButton" name="pushButton_30">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1397,8 +1368,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -1424,7 +1394,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="7" column="3">
       <widget class="QPushButton" name="pushButton_59">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1442,8 +1412,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -1469,7 +1438,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="4" column="7">
       <widget class="QPushButton" name="pushButton_39">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1487,8 +1456,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -1514,7 +1482,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="1" column="0">
       <widget class="QPushButton" name="pushButton_8">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1532,8 +1500,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -1559,7 +1526,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="2" column="0">
       <widget class="QPushButton" name="pushButton_16">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1577,8 +1544,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -1604,7 +1570,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="4" column="1">
       <widget class="QPushButton" name="pushButton_33">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1622,8 +1588,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -1649,7 +1614,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="6" column="6">
       <widget class="QPushButton" name="pushButton_54">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1667,8 +1632,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -1694,7 +1658,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="6" column="4">
       <widget class="QPushButton" name="pushButton_52">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Minimum" vsizetype="Minimum">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1712,8 +1676,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -1739,7 +1702,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="6" column="2">
       <widget class="QPushButton" name="pushButton_50">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1757,8 +1720,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -1784,7 +1746,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="4" column="5">
       <widget class="QPushButton" name="pushButton_37">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1802,8 +1764,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -1829,7 +1790,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="5" column="4">
       <widget class="QPushButton" name="pushButton_44">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1847,8 +1808,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -1874,7 +1834,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="1" column="1">
       <widget class="QPushButton" name="pushButton_9">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1892,8 +1852,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -1919,7 +1878,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="0" column="2">
       <widget class="QPushButton" name="pushButton_2">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1937,8 +1896,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -1964,7 +1922,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="3" column="7">
       <widget class="QPushButton" name="pushButton_31">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -1982,8 +1940,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -2009,7 +1966,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="1" column="4">
       <widget class="QPushButton" name="pushButton_12">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2027,8 +1984,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -2054,7 +2010,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="5" column="0">
       <widget class="QPushButton" name="pushButton_40">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2072,8 +2028,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -2099,7 +2054,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="0" column="5">
       <widget class="QPushButton" name="pushButton_5">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2117,8 +2072,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -2144,7 +2098,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="4" column="3">
       <widget class="QPushButton" name="pushButton_35">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2162,8 +2116,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -2189,7 +2142,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="7" column="7">
       <widget class="QPushButton" name="pushButton_63">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2213,8 +2166,7 @@ background-color: rgb(117, 139, 173);</string>
         <bool>false</bool>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -2240,7 +2192,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="0" column="7">
       <widget class="QPushButton" name="pushButton_7">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2258,8 +2210,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -2285,7 +2236,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="6" column="0">
       <widget class="QPushButton" name="pushButton_48">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2303,8 +2254,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -2330,7 +2280,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="5" column="2">
       <widget class="QPushButton" name="pushButton_42">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2348,8 +2298,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -2375,7 +2324,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="3" column="5">
       <widget class="QPushButton" name="pushButton_29">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2393,8 +2342,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -2420,7 +2368,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="2" column="3">
       <widget class="QPushButton" name="pushButton_19">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2438,8 +2386,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -2465,7 +2412,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="5" column="6">
       <widget class="QPushButton" name="pushButton_46">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2483,8 +2430,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -2510,7 +2456,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="0" column="0">
       <widget class="QPushButton" name="pushButton">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2528,8 +2474,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -2555,7 +2500,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="3" column="0">
       <widget class="QPushButton" name="pushButton_24">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2573,8 +2518,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -2600,7 +2544,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="2" column="1">
       <widget class="QPushButton" name="pushButton_17">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2618,8 +2562,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -2645,7 +2588,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="1" column="5">
       <widget class="QPushButton" name="pushButton_13">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2663,8 +2606,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -2690,7 +2632,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="7" column="5">
       <widget class="QPushButton" name="pushButton_61">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2708,8 +2650,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -2735,7 +2676,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="7" column="2">
       <widget class="QPushButton" name="pushButton_58">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2753,8 +2694,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -2780,7 +2720,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="3" column="3">
       <widget class="QPushButton" name="pushButton_27">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2798,8 +2738,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -2825,7 +2764,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="6" column="1">
       <widget class="QPushButton" name="pushButton_49">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2843,8 +2782,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(117, 139, 173);</string>
        </property>
        <property name="text">
@@ -2870,7 +2808,7 @@ background-color: rgb(117, 139, 173);</string>
      <item row="3" column="1">
       <widget class="QPushButton" name="pushButton_25">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2888,8 +2826,7 @@ background-color: rgb(117, 139, 173);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -2915,7 +2852,7 @@ background-color: rgb(233, 241, 245);</string>
      <item row="5" column="1">
       <widget class="QPushButton" name="pushButton_41">
        <property name="sizePolicy">
-        <sizepolicy hsizetype="Fixed" vsizetype="Fixed">
+        <sizepolicy hsizetype="Expanding" vsizetype="Expanding">
          <horstretch>0</horstretch>
          <verstretch>0</verstretch>
         </sizepolicy>
@@ -2933,8 +2870,7 @@ background-color: rgb(233, 241, 245);</string>
         </size>
        </property>
        <property name="styleSheet">
-        <string notr="true">padding: 0px;
-border: none;
+        <string notr="true">border: none;
 background-color: rgb(233, 241, 245);</string>
        </property>
        <property name="text">
@@ -2959,103 +2895,6 @@ background-color: rgb(233, 241, 245);</string>
      </item>
     </layout>
    </widget>
-   <widget class="QTextEdit" name="horizontal_label">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>636</y>
-      <width>581</width>
-      <height>31</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="verticalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="readOnly">
-     <bool>true</bool>
-    </property>
-    <property name="html">
-     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;        a                      b                    c                     d                     e                     f                     g                     h&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
-   <widget class="QTextEdit" name="vertical_label">
-    <property name="geometry">
-     <rect>
-      <x>20</x>
-      <y>50</y>
-      <width>31</width>
-      <height>581</height>
-     </rect>
-    </property>
-    <property name="frameShape">
-     <enum>QFrame::NoFrame</enum>
-    </property>
-    <property name="lineWidth">
-     <number>0</number>
-    </property>
-    <property name="verticalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="horizontalScrollBarPolicy">
-     <enum>Qt::ScrollBarAlwaysOff</enum>
-    </property>
-    <property name="readOnly">
-     <bool>true</bool>
-    </property>
-    <property name="html">
-     <string>&lt;!DOCTYPE HTML PUBLIC &quot;-//W3C//DTD HTML 4.0//EN&quot; &quot;http://www.w3.org/TR/REC-html40/strict.dtd&quot;&gt;
-&lt;html&gt;&lt;head&gt;&lt;meta name=&quot;qrichtext&quot; content=&quot;1&quot; /&gt;&lt;meta charset=&quot;utf-8&quot; /&gt;&lt;style type=&quot;text/css&quot;&gt;
-p, li { white-space: pre-wrap; }
-hr { height: 1px; border-width: 0; }
-li.unchecked::marker { content: &quot;\2610&quot;; }
-li.checked::marker { content: &quot;\2612&quot;; }
-&lt;/style&gt;&lt;/head&gt;&lt;body style=&quot; font-family:'Lato'; font-size:12pt; font-weight:400; font-style:normal;&quot;&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;8&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;7&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;6&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;5&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;4&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;3&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;2&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:10pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;&quot;&gt;&lt;span style=&quot; font-size:11pt;&quot;&gt;1&lt;/span&gt;&lt;/p&gt;
-&lt;p align=&quot;center&quot; style=&quot;-qt-paragraph-type:empty; margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px; font-size:11pt;&quot;&gt;&lt;br /&gt;&lt;/p&gt;&lt;/body&gt;&lt;/html&gt;</string>
-    </property>
-   </widget>
    <widget class="QLabel" name="gameStatus">
     <property name="geometry">
      <rect>
@@ -3077,6 +2916,196 @@ li.checked::marker { content: &quot;\2612&quot;; }
     <property name="alignment">
      <set>Qt::AlignCenter</set>
     </property>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget">
+    <property name="geometry">
+     <rect>
+      <x>60</x>
+      <y>630</y>
+      <width>581</width>
+      <height>20</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="horizontalCoordinates">
+     <item row="0" column="3">
+      <widget class="QLabel" name="label_12">
+       <property name="text">
+        <string>d</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="7">
+      <widget class="QLabel" name="label_16">
+       <property name="text">
+        <string>h</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="5">
+      <widget class="QLabel" name="label_14">
+       <property name="text">
+        <string>f</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label_9">
+       <property name="text">
+        <string>a</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="1">
+      <widget class="QLabel" name="label_10">
+       <property name="text">
+        <string>b</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="6">
+      <widget class="QLabel" name="label_15">
+       <property name="text">
+        <string>g</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="2">
+      <widget class="QLabel" name="label_11">
+       <property name="text">
+        <string>c</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="4">
+      <widget class="QLabel" name="label_13">
+       <property name="text">
+        <string>e</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QWidget" name="gridLayoutWidget_3">
+    <property name="geometry">
+     <rect>
+      <x>30</x>
+      <y>50</y>
+      <width>20</width>
+      <height>571</height>
+     </rect>
+    </property>
+    <layout class="QGridLayout" name="verticalCoordinates">
+     <property name="horizontalSpacing">
+      <number>0</number>
+     </property>
+     <property name="verticalSpacing">
+      <number>2</number>
+     </property>
+     <item row="2" column="0">
+      <widget class="QLabel" name="label_3">
+       <property name="text">
+        <string>6</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>1</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="1" column="0">
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>7</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>4</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>3</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="3" column="0">
+      <widget class="QLabel" name="label_4">
+       <property name="text">
+        <string>5</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="0" column="0">
+      <widget class="QLabel" name="label">
+       <property name="text">
+        <string>8</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="6" column="0">
+      <widget class="QLabel" name="label_7">
+       <property name="text">
+        <string>2</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+    </layout>
    </widget>
   </widget>
   <widget class="QMenuBar" name="menuBar">
