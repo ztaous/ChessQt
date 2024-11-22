@@ -15,30 +15,24 @@ find_package(Qt${QT_VERSION_MAJOR} REQUIRED COMPONENTS Widgets Svg)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++2a -fsigned-char -Wall -Wextra -Wpedantic -Woverloaded-virtual -Wno-unknown-pragmas -Wno-enum-compare --coverage")
 
 set(PROJECT_SOURCES
-        main.cpp
-        mainwindow.cpp
-        mainwindow.h
-        mainwindow.ui
+    src/main.cpp
+    src/gui/mainwindow.cpp
+    src/gui/mainwindow.h
+    src/gui/mainwindow.ui
 
-        board.cpp
-        board.h
-        
-        piece.h
-
-        king.cpp
-        king.h
-
-        queen.cpp
-        queen.h
-
-        rook.cpp
-        rook.h
-
-        bishop.cpp
-        bishop.h
-
-        knight.cpp
-        knight.h
+    src/board.cpp
+    src/board.h
+    src/piece.h
+    src/king.cpp
+    src/king.h
+    src/queen.cpp
+    src/queen.h
+    src/rook.cpp
+    src/rook.h
+    src/bishop.cpp
+    src/bishop.h
+    src/knight.cpp
+    src/knight.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

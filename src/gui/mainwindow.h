@@ -10,13 +10,13 @@
 #include <QStatusBar>
 #include <QLabel>
 
-#include "piece.h"
-#include "board.h"
-#include "king.h"
-#include "rook.h"
-#include "bishop.h"
-#include "knight.h"
-#include "queen.h"
+#include "../piece.h"
+#include "../board.h"
+#include "../king.h"
+#include "../rook.h"
+#include "../bishop.h"
+#include "../knight.h"
+#include "../queen.h"
 
 
 QT_BEGIN_NAMESPACE

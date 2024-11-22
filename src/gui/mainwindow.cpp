@@ -1,7 +1,6 @@
 #include "mainwindow.h"
 #include "./ui_mainwindow.h"
 
-
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow), board(new chess::Board())
 {
     ui->setupUi(this);
@@ -57,23 +56,25 @@ QString MainWindow::pieceTypeToString(chess::PieceType type)
 
 void MainWindow::loadImages()
 {
-    pieceIcons["BlackKing"] = QIcon("../images/Chess_kdt45.svg");
-    pieceIcons["WhiteKing"] = QIcon("../images/Chess_klt45.svg");
+    QString basePath = "resources/chess_icons/";
 
-    pieceIcons["BlackQueen"] = QIcon("../images/Chess_qdt45.svg");
-    pieceIcons["WhiteQueen"] = QIcon("../images/Chess_qlt45.svg");
+    pieceIcons["BlackKing"] = QIcon(basePath + "Chess_kdt45.svg");
+    pieceIcons["WhiteKing"] = QIcon(basePath + "Chess_klt45.svg");
 
-    pieceIcons["BlackBishop"] = QIcon("../images/Chess_bdt45.svg");
-    pieceIcons["WhiteBishop"] = QIcon("../images/Chess_blt45.svg");
+    pieceIcons["BlackQueen"] = QIcon(basePath + "Chess_qdt45.svg");
+    pieceIcons["WhiteQueen"] = QIcon(basePath + "Chess_qlt45.svg");
 
-    pieceIcons["BlackRook"] = QIcon("../images/Chess_rdt45.svg");
-    pieceIcons["WhiteRook"] = QIcon("../images/Chess_rlt45.svg");
+    pieceIcons["BlackBishop"] = QIcon(basePath + "Chess_bdt45.svg");
+    pieceIcons["WhiteBishop"] = QIcon(basePath + "Chess_blt45.svg");
 
-    pieceIcons["BlackKnight"] = QIcon("../images/Chess_ndt45.svg");
-    pieceIcons["WhiteKnight"] = QIcon("../images/Chess_nlt45.svg");
+    pieceIcons["BlackRook"] = QIcon(basePath + "Chess_rdt45.svg");
+    pieceIcons["WhiteRook"] = QIcon(basePath + "Chess_rlt45.svg");
 
-    pieceIcons["BlackPawn"] = QIcon("../images/Chess_pdt45.svg");
-    pieceIcons["WhitePawn"] = QIcon("../images/Chess_plt45.svg");
+    pieceIcons["BlackKnight"] = QIcon(basePath + "Chess_ndt45.svg");
+    pieceIcons["WhiteKnight"] = QIcon(basePath + "Chess_nlt45.svg");
+
+    pieceIcons["BlackPawn"] = QIcon(basePath + "Chess_pdt45.svg");
+    pieceIcons["WhitePawn"] = QIcon(basePath + "Chess_plt45.svg");
 }
 
 

@@ -68,6 +68,7 @@
         "variant": "cpp",
         "qtimer": "cpp",
         "qstring": "cpp",
-        "text_encoding": "cpp"
+        "text_encoding": "cpp",
+        "qapplication": "cpp"
     }
 }

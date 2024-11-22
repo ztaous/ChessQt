@@ -74,4 +74,4 @@ CMakeLists.txt.user*
 
 build
 git rm -f --cached build
-
+.vscode
