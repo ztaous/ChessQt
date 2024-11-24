@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <algorithm>
+#include <string>
 
 
 namespace chess {
@@ -34,7 +35,6 @@ struct Position
     }
 };
 
-
 class Board;
 
 class Piece
@@ -45,6 +45,7 @@ public:
 
     virtual std::vector<Position> getValidMoves(const Board& board) const = 0;
     virtual PieceType type() const = 0;
+    virtual std::string typeAsString() const = 0;
 
     void setPosition(const Position& newPosition) { position_ = newPosition; }
     Position getPosition() const { return position_; }

@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <vector>
+#include <string>
 #include "piece.h"
 #include "board.h"
 
@@ -16,6 +17,7 @@ public:
 
     std::vector<Position> getValidMoves(const Board& board) const override;
     PieceType type() const override { return chess::PieceType::Queen; }
+    std::string typeAsString() const override { return "Queen"; }
 };
 
 }

@@ -69,6 +69,7 @@
         "qtimer": "cpp",
         "qstring": "cpp",
         "text_encoding": "cpp",
-        "qapplication": "cpp"
+        "qapplication": "cpp",
+        "qpropertyanimation": "cpp"
     }
 }

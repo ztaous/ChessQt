@@ -10,7 +10,6 @@ std::vector<Position> Rook::getValidMoves(const Board& board) const
 
     std::vector<std::pair<int, int>> directions = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
     
-    
     for (auto& dir : directions) {
         Position newPos = currentPos;
 

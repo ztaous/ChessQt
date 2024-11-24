@@ -4,7 +4,6 @@
 
 namespace chess {
 
-
 std::vector<Position> King::getValidMoves(const Board& board) const
 {
     std::vector<Position> possibleMoves;
@@ -27,7 +26,6 @@ std::vector<Position> King::getValidMoves(const Board& board) const
     return possibleMoves;
 }
 
-
 bool King::isPositionAttacked(Position kingPosition, const Board& board) const
 {
     for (int i = 0; i < Board::rows; i++) {
@@ -47,7 +45,6 @@ bool King::isPositionAttacked(Position kingPosition, const Board& board) const
     return false;
 }
 
-
 bool King::otherKingAttack(Position kingPosition, const Board& board) const
 {
     std::vector<std::pair<int, int>> directions = {{1, 0}, {0, 1}, {0, -1}, {-1, 0}, {1, 1}, {-1, -1}, {1, -1}, {-1, 1}};
@@ -63,18 +60,17 @@ bool King::otherKingAttack(Position kingPosition, const Board& board) const
     return false;
 }
 
-
 bool King::isCheck(const Board& board) const
 {
     Position currentPos = this->getPosition();
     return isPositionAttacked(currentPos, board) || otherKingAttack(currentPos, board);
 }
 
-
 bool King::isCheckMate(const Board& board) const
 { 
     // ne correspond pas au comportement exact, 
     // mais fonctionne generalement bien pour les fins de jeu
+    // À RECTIFIER
     
     std::vector<Position> possibleMoves = this->getValidMoves(board);
     return possibleMoves.empty() && isCheck(board);

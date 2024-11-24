@@ -3,17 +3,15 @@
 
 namespace chess {
 
-Board::Board() : grid{}
+Board::Board(QObject* parent) : QObject(parent), grid{}
 {
     setupBoard(0);
 }
-
 
 Board::~Board()
 {
     cleanBoard();
 }
-
 
 void Board::setupBoard(int scenario)
 {
@@ -51,11 +49,10 @@ void Board::setupBoard(int scenario)
     }
 }
 
-
 void Board::cleanBoard()
 {
-    for (int i = 0; i < rows; i++) {
-        for (int j = 0; j < columns; j++) {
+    for (int i = 0; i < rows; ++i) {
+        for (int j = 0; j < columns; ++j) {
             delete grid[i][j];
             grid[i][j] = nullptr;
         }
@@ -68,24 +65,20 @@ bool Board::isPositionValid(Position pos) const
     return (pos.x >= 0 && pos.x < columns && pos.y >= 0 && pos.y < rows); 
 }
 
-
 bool Board::isOccupied(Position pos) const 
 {
     return grid[pos.y][pos.x] != nullptr;  
 }
-
 
 bool Board::isOppositePiece(const Piece* piece1, const Piece* piece2) const
 {    
     return piece1->getColour() != piece2->getColour();
 }
 
-
 Piece* Board::getPiece(const Position& pos) const
 { 
     return grid[pos.y][pos.x]; 
 }
-
 
 bool Board::movePiece(Position current, Position destination)
 {

@@ -10,7 +10,6 @@ std::vector<Position> Queen::getValidMoves(const Board& board) const
 
     std::vector<std::pair<int, int>> directions = {{1, 0}, {0, 1}, {0, -1}, {-1, 0}, {1, 1}, {-1, -1}, {1, -1}, {-1, 1}};
     
-    
     for (auto& dir : directions) {
         Position newPos = currentPos;
 

@@ -18,6 +18,10 @@
 #include "../knight.h"
 #include "../queen.h"
 
+#include <QMainWindow>
+#include "../board.h"
+#include "boardview.h"
+
 
 QT_BEGIN_NAMESPACE
 namespace Ui {
@@ -36,25 +40,26 @@ public:
 private slots:
     void resetGame();
     void selectScenario(int scenario);
-    void squareClick(int row, int col);
+    // void squareClick(int row, int col);
 
 private:
     Ui::MainWindow *ui;
     chess::Board* board;
+    BoardView* boardView;
 
-    QMap<QString, QIcon> pieceIcons;
-    QString pieceTypeToString(chess::PieceType type);
+    // QMap<QString, QIcon> pieceIcons;
+    // QString pieceTypeToString(chess::PieceType type);
 
-    void loadImages();
-    void prepareBoard();
-    void refreshBoard(); 
-    void flashSquareRed(QPushButton* button);
+    // void loadImages();
+    // void prepareBoard();
+    // void refreshBoard(); 
+    // void flashSquareRed(QPushButton* button);
     void updateGameStatus();
 
-    bool pieceSelected = false;
-    QPushButton* clickedButton; 
-    chess::Position clickedPosition;
-    QString buttonColor;
-    int savedScenario;
+    // bool pieceSelected = false;
+    // QPushButton* clickedButton; 
+    // chess::Position clickedPosition;
+    // QString buttonColor;
+    int savedScenario = 0;
 };
 #endif // MAINWINDOW_H

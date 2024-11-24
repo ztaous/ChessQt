@@ -2,6 +2,7 @@
 
 #include <iostream>
 #include <vector>
+#include <QObject>
 
 #include "piece.h"
 #include "king.h"
@@ -20,10 +21,13 @@ enum class Player
 
 namespace chess {
 
-class Board
+class Board : public QObject
 {
+
+    Q_OBJECT
+
 public:
-    Board();
+    explicit Board(QObject *parent = nullptr);
     ~Board();
     void cleanBoard();
     void setupBoard(int scenario);
@@ -34,15 +38,19 @@ public:
    
     Piece* getPiece(const Position& pos) const;
     bool movePiece(Position current, Position destination);
-    
-    void switchPlayer();
+
     Player getCurrentPlayer() const { return currentPlayer_; }
     void setCurrentPlayer(const Player& player) { currentPlayer_ = player; }
 
     static const int rows = 8; 
     static const int columns = 8; 
-
+    
+signals:
+    void pieceMoved(const Position &current, const Position &destination);
+    
 private:
+    void switchPlayer();
+
     Piece* grid[rows][columns];
     Player currentPlayer_ = Player::White;
 };

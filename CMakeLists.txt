@@ -19,6 +19,8 @@ set(PROJECT_SOURCES
     src/gui/mainwindow.cpp
     src/gui/mainwindow.h
     src/gui/mainwindow.ui
+    src/gui/boardview.h
+    src/gui/boardview.cpp
 
     src/board.cpp
     src/board.h
