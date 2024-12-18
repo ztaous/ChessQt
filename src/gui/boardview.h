@@ -15,11 +15,11 @@ class BoardView : public QGraphicsView
     Q_OBJECT
 
 public:
-    explicit BoardView(chess::Board *board, QGraphicsView* view = nullptr);
+    explicit BoardView(chess::Board* board, QGraphicsView* view = nullptr);
     void updateBoard();
 
 signals:
-    void pieceMoved(const chess::Position &from, const chess::Position &to);
+    void pieceMoved(const chess::Position& from, const chess::Position& to);
 
 protected:
     void mousePressEvent(QMouseEvent *event) override;

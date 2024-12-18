@@ -7,7 +7,7 @@
 #include "boardview.h"
 
 
-BoardView::BoardView(chess::Board *board, QGraphicsView* view) : QGraphicsView(view), scene(new QGraphicsScene(this)), board(board)
+BoardView::BoardView(chess::Board* board, QGraphicsView* view) : QGraphicsView(view), scene(new QGraphicsScene(this)), board(board)
 {
     setScene(scene);
     setRenderHint(QPainter::Antialiasing);
@@ -25,8 +25,8 @@ void BoardView::initializeBoard()
     QColor lightBlue(230, 237, 245);
     QColor darkBlue(113, 140, 173);
 
-    for (int row = 0; row < chess::Board::rows; ++row) {
-        for (int col = 0; col < chess::Board::columns; ++col) {
+    for (int row = 0; row < chess::Board::rows; row++) {
+        for (int col = 0; col < chess::Board::columns; col++) {
             QGraphicsRectItem* square = new QGraphicsRectItem(col * squareSize, row * squareSize, squareSize, squareSize);
             
             square->setBrush((row + col) % 2 == 0 ? darkBlue : lightBlue);
@@ -57,7 +57,7 @@ void BoardView::loadPieceIcons()
     loadSvgIcon("WhitePawn", basePath + "Chess_plt45.svg", targetSize);
 }
 
-void BoardView::loadSvgIcon(const QString &key, const QString &filePath, int size)
+void BoardView::loadSvgIcon(const QString& key, const QString& filePath, int size)
 {
     QSvgRenderer svgRenderer(filePath);
     if (!svgRenderer.isValid()) {
@@ -73,9 +73,7 @@ void BoardView::loadSvgIcon(const QString &key, const QString &filePath, int siz
     pieceIcons[key] = pixmap;
 }
 
-
-
-std::unique_ptr<QGraphicsPixmapItem> BoardView::createPiece(const QString &pieceType, int row, int col)
+std::unique_ptr<QGraphicsPixmapItem> BoardView::createPiece(const QString& pieceType, int row, int col)
 {
     auto item = std::make_unique<QGraphicsPixmapItem>(pieceIcons[pieceType]);
 
@@ -91,8 +89,8 @@ std::unique_ptr<QGraphicsPixmapItem> BoardView::createPiece(const QString &piece
 
 void BoardView::updateBoard()
 {
-    for (int row = 0; row < chess::Board::rows; ++row) {
-        for (int col = 0; col < chess::Board::columns; ++col) {
+    for (int row = 0; row < chess::Board::rows; row++) {
+        for (int col = 0; col < chess::Board::columns; col++) {
             chess::Piece* piece = board->getPiece({col, row});
 
             if (piece) {
@@ -113,14 +111,14 @@ void BoardView::updateBoard()
     }
 }
 
-chess::Position BoardView::getBoardPosition(const QPoint &viewPos) const
+chess::Position BoardView::getBoardPosition(const QPoint& viewPos) const
 {
     int x = viewPos.x() / squareSize;
     int y = viewPos.y() / squareSize;
     return {x, y};
 }
 
-void BoardView::mousePressEvent(QMouseEvent *event)
+void BoardView::mousePressEvent(QMouseEvent* event)
 {
     QPoint clickPos = event->pos();
     chess::Position boardPos = getBoardPosition(clickPos);

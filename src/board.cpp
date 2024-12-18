@@ -59,7 +59,6 @@ void Board::cleanBoard()
     }
 }
 
-
 bool Board::isPositionValid(Position pos) const
 { 
     return (pos.x >= 0 && pos.x < columns && pos.y >= 0 && pos.y < rows); 
@@ -107,15 +106,9 @@ bool Board::movePiece(Position current, Position destination)
     return true;
 }
 
-
 void Board::switchPlayer()
 {
-    if (currentPlayer_ == Player::White) {
-        currentPlayer_ = Player::Black;
-    }
-    else {
-        currentPlayer_ = Player::White;
-    }
+    currentPlayer_ == Player::White ? currentPlayer_ = Player::Black : currentPlayer_ = Player::White; 
 }
 
 }
