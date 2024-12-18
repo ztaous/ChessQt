@@ -6,20 +6,20 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>1000</width>
-    <height>750</height>
+    <width>900</width>
+    <height>850</height>
    </rect>
   </property>
   <property name="minimumSize">
    <size>
-    <width>1000</width>
-    <height>750</height>
+    <width>900</width>
+    <height>850</height>
    </size>
   </property>
   <property name="maximumSize">
    <size>
-    <width>1000</width>
-    <height>750</height>
+    <width>900</width>
+    <height>850</height>
    </size>
   </property>
   <property name="mouseTracking">
@@ -38,8 +38,8 @@
    <widget class="QWidget" name="gridLayoutWidget">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>680</y>
+      <x>150</x>
+      <y>700</y>
       <width>601</width>
       <height>21</height>
      </rect>
@@ -130,9 +130,9 @@
    <widget class="QWidget" name="gridLayoutWidget_3">
     <property name="geometry">
      <rect>
-      <x>30</x>
-      <y>70</y>
-      <width>21</width>
+      <x>110</x>
+      <y>80</y>
+      <width>20</width>
       <height>601</height>
      </rect>
     </property>
@@ -153,40 +153,10 @@
        </property>
       </widget>
      </item>
-     <item row="7" column="0">
-      <widget class="QLabel" name="label_8">
-       <property name="text">
-        <string>1</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
      <item row="1" column="0">
       <widget class="QLabel" name="label_2">
        <property name="text">
         <string>7</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="4" column="0">
-      <widget class="QLabel" name="label_5">
-       <property name="text">
-        <string>4</string>
-       </property>
-       <property name="alignment">
-        <set>Qt::AlignmentFlag::AlignCenter</set>
-       </property>
-      </widget>
-     </item>
-     <item row="5" column="0">
-      <widget class="QLabel" name="label_6">
-       <property name="text">
-        <string>3</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -213,10 +183,40 @@
        </property>
       </widget>
      </item>
+     <item row="5" column="0">
+      <widget class="QLabel" name="label_6">
+       <property name="text">
+        <string>3</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="4" column="0">
+      <widget class="QLabel" name="label_5">
+       <property name="text">
+        <string>4</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
      <item row="6" column="0">
       <widget class="QLabel" name="label_7">
        <property name="text">
         <string>2</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignmentFlag::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item row="7" column="0">
+      <widget class="QLabel" name="label_8">
+       <property name="text">
+        <string>1</string>
        </property>
        <property name="alignment">
         <set>Qt::AlignmentFlag::AlignCenter</set>
@@ -228,8 +228,8 @@
    <widget class="QGraphicsView" name="graphicsViewBoard">
     <property name="geometry">
      <rect>
-      <x>60</x>
-      <y>70</y>
+      <x>150</x>
+      <y>80</y>
       <width>600</width>
       <height>600</height>
      </rect>
@@ -262,7 +262,7 @@
      <enum>QFrame::Shadow::Plain</enum>
     </property>
     <property name="lineWidth">
-     <number>0</number>
+     <number>1</number>
     </property>
     <property name="midLineWidth">
      <number>0</number>
@@ -280,11 +280,17 @@
    <widget class="QLabel" name="gameStatus">
     <property name="geometry">
      <rect>
-      <x>190</x>
-      <y>40</y>
+      <x>280</x>
+      <y>20</y>
       <width>341</width>
       <height>20</height>
      </rect>
+    </property>
+    <property name="font">
+     <font>
+      <pointsize>12</pointsize>
+      <bold>true</bold>
+     </font>
     </property>
     <property name="text">
      <string/>
@@ -293,19 +299,49 @@
      <set>Qt::AlignmentFlag::AlignCenter</set>
     </property>
    </widget>
+   <widget class="QFrame" name="boardFrame">
+    <property name="geometry">
+     <rect>
+      <x>130</x>
+      <y>60</y>
+      <width>641</width>
+      <height>641</height>
+     </rect>
+    </property>
+    <property name="autoFillBackground">
+     <bool>false</bool>
+    </property>
+    <property name="styleSheet">
+     <string notr="true">background-color: rgb(192, 201, 210);</string>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Shape::NoFrame</enum>
+    </property>
+    <property name="frameShadow">
+     <enum>QFrame::Shadow::Plain</enum>
+    </property>
+    <property name="lineWidth">
+     <number>1</number>
+    </property>
+   </widget>
+   <zorder>boardFrame</zorder>
+   <zorder>gridLayoutWidget</zorder>
+   <zorder>gridLayoutWidget_3</zorder>
+   <zorder>graphicsViewBoard</zorder>
+   <zorder>gameStatus</zorder>
   </widget>
   <widget class="QMenuBar" name="menuBar">
    <property name="geometry">
     <rect>
      <x>0</x>
      <y>0</y>
-     <width>1000</width>
+     <width>900</width>
      <height>24</height>
     </rect>
    </property>
    <widget class="QMenu" name="menuPositions">
     <property name="title">
-     <string>Position</string>
+     <string>Test Positions</string>
     </property>
     <addaction name="separator"/>
     <addaction name="actionposition_1"/>
@@ -316,11 +352,13 @@
     <property name="title">
      <string>Game</string>
     </property>
+    <addaction name="actionNewGame"/>
+    <addaction name="actionImportGame"/>
+    <addaction name="separator"/>
+    <addaction name="actionPracticeBoard"/>
+    <addaction name="separator"/>
     <addaction name="actionReset"/>
     <addaction name="actionQuit"/>
-    <addaction name="separator"/>
-    <addaction name="actionFreeBoard"/>
-    <addaction name="actionImportGame"/>
    </widget>
    <widget class="QMenu" name="menuEngine">
     <property name="title">
@@ -328,8 +366,8 @@
     </property>
    </widget>
    <addaction name="menuGame"/>
-   <addaction name="menuPositions"/>
    <addaction name="menuEngine"/>
+   <addaction name="menuPositions"/>
   </widget>
   <action name="actionReset">
    <property name="text">
@@ -356,14 +394,19 @@
     <string>Queen vs. Knight and Bishop</string>
    </property>
   </action>
-  <action name="actionFreeBoard">
+  <action name="actionPracticeBoard">
    <property name="text">
-    <string>Free Board</string>
+    <string>Practice Board</string>
    </property>
   </action>
   <action name="actionImportGame">
    <property name="text">
     <string>Import Game</string>
+   </property>
+  </action>
+  <action name="actionNewGame">
+   <property name="text">
+    <string>New Game</string>
    </property>
   </action>
  </widget>
