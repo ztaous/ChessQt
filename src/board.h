@@ -31,13 +31,13 @@ public:
     ~Board();
     void cleanBoard();
     void setupBoard(int scenario);
-    
+      
     bool isPositionValid(Position pos) const;
     bool isOccupied(Position pos) const;
     bool isOppositePiece(const Piece* piece1, const Piece* piece2) const;
    
     Piece* getPiece(const Position& pos) const;
-    bool movePiece(Position current, Position destination);
+    bool movePiece(Position current, Position destination, bool withTurns=true);
 
     Player getCurrentPlayer() const { return currentPlayer_; }
     void setCurrentPlayer(const Player& player) { currentPlayer_ = player; }

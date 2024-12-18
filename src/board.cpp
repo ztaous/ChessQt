@@ -79,7 +79,7 @@ Piece* Board::getPiece(const Position& pos) const
     return grid[pos.y][pos.x]; 
 }
 
-bool Board::movePiece(Position current, Position destination)
+bool Board::movePiece(Position current, Position destination, bool withTurns)
 {
     if (!isPositionValid(current) || !isPositionValid(destination))
         return false;
@@ -101,8 +101,11 @@ bool Board::movePiece(Position current, Position destination)
     grid[destination.y][destination.x] = piece;
     grid[current.y][current.x] = nullptr;
     piece->setPosition(destination);
-    switchPlayer();
     
+    if (withTurns) {
+        switchPlayer();
+    }
+        
     return true;
 }
 
