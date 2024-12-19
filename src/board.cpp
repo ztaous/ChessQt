@@ -98,6 +98,9 @@ bool Board::movePiece(Position current, Position destination)
 
     Piece* targetPiece = getPiece(destination);
     if (targetPiece != nullptr && isOppositePiece(targetPiece, piece)) {
+        if (targetPiece->type() == PieceType::King)
+            return false;
+        
         delete targetPiece;
         grid[destination.y][destination.x] = nullptr;
     }
