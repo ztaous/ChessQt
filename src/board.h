@@ -19,15 +19,22 @@ enum class Player
 };
 
 
+enum class GameMode
+{
+    standard,
+    practice
+};
+
+
 namespace chess {
 
 class Board : public QObject
 {
-
     Q_OBJECT
 
 public:
-    explicit Board(QObject *parent = nullptr);
+    explicit Board(QObject* parent = nullptr);
+
     ~Board();
     void cleanBoard();
     void setupBoard(int scenario);
@@ -41,19 +48,23 @@ public:
 
     Player getCurrentPlayer() const { return currentPlayer_; }
     void setCurrentPlayer(const Player& player) { currentPlayer_ = player; }
+    void setGameMode(const GameMode& mode) { currentGameMode_ = mode; }
+    GameMode getGameMode() { return currentGameMode_; };
 
     static const int rows = 8; 
     static const int columns = 8; 
     
 signals:
-    void pieceMoved(const Position &current, const Position &destination);
+    void pieceMoved(const Position& current, const Position& destination);
     void playerChanged(Player currentPlayer);
     
 private:
     void switchPlayer();
+    bool canMove(Player player) const;
 
     Piece* grid[rows][columns];
     Player currentPlayer_ = Player::White;
+    GameMode currentGameMode_ = GameMode::standard;
 };
 
 }

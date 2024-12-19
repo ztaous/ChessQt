@@ -38,8 +38,6 @@ public:
     ~MainWindow();
 
 private slots:
-    void newGame();
-    void practiceBoard();
     void resetGame();
     void selectScenario(int scenario);
 
@@ -48,6 +46,7 @@ private:
     chess::Board* board;
     BoardView* boardView;
 
+    void setGameMode(GameMode mode);
     void updateGameStatus();
     int savedScenario = 0;
 };

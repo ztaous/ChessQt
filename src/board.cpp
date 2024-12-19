@@ -81,11 +81,15 @@ Piece* Board::getPiece(const Position& pos) const
 
 bool Board::movePiece(Position current, Position destination)
 {
+    
     if (!isPositionValid(current) || !isPositionValid(destination))
         return false;
 
     Piece* piece = getPiece(current);
     if (piece == nullptr)
+        return false;
+
+    if (!canMove(piece->getColour() == Colour::White ? Player::White : Player::Black))
         return false;
         
     std::vector<Position> validMoves = piece->getValidMoves(*this);
@@ -103,7 +107,6 @@ bool Board::movePiece(Position current, Position destination)
     piece->setPosition(destination);
     
     switchPlayer();
-        
     return true;
 }
 
@@ -111,6 +114,14 @@ void Board::switchPlayer()
 {
     currentPlayer_ == Player::White ? currentPlayer_ = Player::Black : currentPlayer_ = Player::White;
     emit playerChanged(currentPlayer_); 
+}
+
+bool Board::canMove(Player player) const
+{
+    if (currentGameMode_ == GameMode::practice) {
+        return true;
+    }
+    return player == currentPlayer_;
 }
 
 }

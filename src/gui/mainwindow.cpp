@@ -9,9 +9,9 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
     boardView = new BoardView(board, ui->graphicsViewBoard);
 
-    connect(ui->actionNewGame, &QAction::triggered, this, &MainWindow::newGame);
+    connect(ui->actionNewGame, &QAction::triggered, this, [this](){ setGameMode(GameMode::standard); });
     connect(ui->actionReset, &QAction::triggered, this, &MainWindow::resetGame);
-    connect(ui->actionPracticeBoard, &QAction::triggered, this, &MainWindow::practiceBoard);
+    connect(ui->actionPracticeBoard, &QAction::triggered, this, [this]() { setGameMode(GameMode::practice); });
     connect(ui->actionQuit, &QAction::triggered, this, &QMainWindow::close);
     
     connect(board, &chess::Board::playerChanged, this, &MainWindow::updateGameStatus);
@@ -25,42 +25,42 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
 
 MainWindow::~MainWindow()
 {
-    delete ui;
+    delete boardView;
     delete board;
+    delete ui;
 }
 
 void MainWindow::selectScenario(int scenario)
 {
     savedScenario = scenario;
     board->setupBoard(scenario);
-
     board->setCurrentPlayer(Player::White);
     boardView->updateBoard();
-    ui->gameStatus->setText("White to move");
+    updateGameStatus();
 }
 
 void MainWindow::resetGame()
-{
-    delete board;
-    board = new chess::Board();
-    
-    selectScenario(savedScenario);
+{    
+    board->setupBoard(savedScenario);
+    board->setCurrentPlayer(Player::White);
     boardView->updateBoard();
+    updateGameStatus();
 }
 
-void MainWindow::newGame()
+void MainWindow::setGameMode(GameMode mode)
 {
-
-}
-
-void MainWindow::practiceBoard()
-{
-
-
+    board->setGameMode(mode);
+    resetGame();
+    updateGameStatus();
 }
 
 void MainWindow::updateGameStatus()
 {
+    if (board->getGameMode() == GameMode::practice) {
+        ui->gameStatus->setText("Practice mode");
+        return;
+    }
+    
     QString status = (board->getCurrentPlayer() == Player::White) ? "White to move" : "Black to move";
     ui->gameStatus->setText(status);    
 }
