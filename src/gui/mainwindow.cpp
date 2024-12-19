@@ -4,14 +4,17 @@
 #include "boardview.h"
 
 
-MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow), board(new chess::Board())
+MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindow), board(new chess::Board())
 {
     ui->setupUi(this);
-
     boardView = new BoardView(board, ui->graphicsViewBoard);
 
+    connect(ui->actionNewGame, &QAction::triggered, this, &MainWindow::newGame);
     connect(ui->actionReset, &QAction::triggered, this, &MainWindow::resetGame);
+    connect(ui->actionPracticeBoard, &QAction::triggered, this, &MainWindow::practiceBoard);
     connect(ui->actionQuit, &QAction::triggered, this, &QMainWindow::close);
+    
+    connect(board, &chess::Board::playerChanged, this, &MainWindow::updateGameStatus);
 
     connect(ui->menuPositions->actions().at(1), &QAction::triggered, this, [this](){ selectScenario(1); });
     connect(ui->menuPositions->actions().at(2), &QAction::triggered, this, [this](){ selectScenario(2); });
@@ -30,6 +33,7 @@ void MainWindow::selectScenario(int scenario)
 {
     savedScenario = scenario;
     board->setupBoard(scenario);
+
     board->setCurrentPlayer(Player::White);
     boardView->updateBoard();
     ui->gameStatus->setText("White to move");
@@ -40,9 +44,19 @@ void MainWindow::resetGame()
     delete board;
     board = new chess::Board();
     
-    // selectScenario(savedScenario);
-
+    selectScenario(savedScenario);
     boardView->updateBoard();
+}
+
+void MainWindow::newGame()
+{
+
+}
+
+void MainWindow::practiceBoard()
+{
+
+
 }
 
 void MainWindow::updateGameStatus()

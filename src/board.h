@@ -37,7 +37,7 @@ public:
     bool isOppositePiece(const Piece* piece1, const Piece* piece2) const;
    
     Piece* getPiece(const Position& pos) const;
-    bool movePiece(Position current, Position destination, bool withTurns=true);
+    bool movePiece(Position current, Position destination);
 
     Player getCurrentPlayer() const { return currentPlayer_; }
     void setCurrentPlayer(const Player& player) { currentPlayer_ = player; }
@@ -47,6 +47,7 @@ public:
     
 signals:
     void pieceMoved(const Position &current, const Position &destination);
+    void playerChanged(Player currentPlayer);
     
 private:
     void switchPlayer();

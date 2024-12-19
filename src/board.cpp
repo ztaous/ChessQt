@@ -79,7 +79,7 @@ Piece* Board::getPiece(const Position& pos) const
     return grid[pos.y][pos.x]; 
 }
 
-bool Board::movePiece(Position current, Position destination, bool withTurns)
+bool Board::movePiece(Position current, Position destination)
 {
     if (!isPositionValid(current) || !isPositionValid(destination))
         return false;
@@ -102,16 +102,15 @@ bool Board::movePiece(Position current, Position destination, bool withTurns)
     grid[current.y][current.x] = nullptr;
     piece->setPosition(destination);
     
-    if (withTurns) {
-        switchPlayer();
-    }
+    switchPlayer();
         
     return true;
 }
 
 void Board::switchPlayer()
 {
-    currentPlayer_ == Player::White ? currentPlayer_ = Player::Black : currentPlayer_ = Player::White; 
+    currentPlayer_ == Player::White ? currentPlayer_ = Player::Black : currentPlayer_ = Player::White;
+    emit playerChanged(currentPlayer_); 
 }
 
 }
