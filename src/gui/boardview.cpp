@@ -40,22 +40,19 @@ void BoardView::initializeBoard()
 void BoardView::loadPieceIcons()
 {
     pieceIcons.clear();
-    
-    QString basePath = "resources/chess_icons/";
-    int targetSize = squareSize; // icone aura la même taille que la case
 
-    pieceIcons["BlackKing"] = loadAndRenderSvg(basePath + "/Chess_kdt45.svg", targetSize);
-    pieceIcons["WhiteKing"] = loadAndRenderSvg(basePath + "/Chess_klt45.svg", targetSize);
-    pieceIcons["BlackQueen"] = loadAndRenderSvg(basePath + "/Chess_qdt45.svg", targetSize);
-    pieceIcons["WhiteQueen"] = loadAndRenderSvg(basePath + "/Chess_qlt45.svg", targetSize);
-    pieceIcons["BlackBishop"] = loadAndRenderSvg(basePath + "/Chess_bdt45.svg", targetSize);
-    pieceIcons["WhiteBishop"] = loadAndRenderSvg(basePath + "/Chess_blt45.svg", targetSize);
-    pieceIcons["BlackRook"] = loadAndRenderSvg(basePath + "/Chess_rdt45.svg", targetSize);
-    pieceIcons["WhiteRook"] = loadAndRenderSvg(basePath + "/Chess_rlt45.svg", targetSize);
-    pieceIcons["BlackKnight"] = loadAndRenderSvg(basePath + "/Chess_ndt45.svg", targetSize);
-    pieceIcons["WhiteKnight"] = loadAndRenderSvg(basePath + "/Chess_nlt45.svg", targetSize);
-    pieceIcons["BlackPawn"] = loadAndRenderSvg(basePath + "/Chess_pdt45.svg", targetSize);
-    pieceIcons["WhitePawn"] = loadAndRenderSvg(basePath + "/Chess_plt45.svg", targetSize);
+    pieceIcons["BlackKing"] = loadAndRenderSvg(basePath + "/Chess_kdt45.svg", squareSize);
+    pieceIcons["WhiteKing"] = loadAndRenderSvg(basePath + "/Chess_klt45.svg", squareSize);
+    pieceIcons["BlackQueen"] = loadAndRenderSvg(basePath + "/Chess_qdt45.svg", squareSize);
+    pieceIcons["WhiteQueen"] = loadAndRenderSvg(basePath + "/Chess_qlt45.svg", squareSize);
+    pieceIcons["BlackBishop"] = loadAndRenderSvg(basePath + "/Chess_bdt45.svg", squareSize);
+    pieceIcons["WhiteBishop"] = loadAndRenderSvg(basePath + "/Chess_blt45.svg", squareSize);
+    pieceIcons["BlackRook"] = loadAndRenderSvg(basePath + "/Chess_rdt45.svg", squareSize);
+    pieceIcons["WhiteRook"] = loadAndRenderSvg(basePath + "/Chess_rlt45.svg", squareSize);
+    pieceIcons["BlackKnight"] = loadAndRenderSvg(basePath + "/Chess_ndt45.svg", squareSize);
+    pieceIcons["WhiteKnight"] = loadAndRenderSvg(basePath + "/Chess_nlt45.svg", squareSize);
+    pieceIcons["BlackPawn"] = loadAndRenderSvg(basePath + "/Chess_pdt45.svg", squareSize);
+    pieceIcons["WhitePawn"] = loadAndRenderSvg(basePath + "/Chess_plt45.svg", squareSize);
 }
 
 
