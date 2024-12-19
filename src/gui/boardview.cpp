@@ -6,23 +6,16 @@
 
 #include "boardview.h"
 
-namespace
-{
-    constexpr qreal INITIAL_SCALE = 1.0; // scale initial des pieces
-    constexpr qreal SELECTED_SCALE = 1.15; // scale lorsque la piece est selectionné
-}
-
 
 BoardView::BoardView(chess::Board* board, QGraphicsView* view) : QGraphicsView(view), scene(new QGraphicsScene(this)), board(board)
 {
     setScene(scene);
-    setRenderHint(QPainter::Antialiasing, false);
-    setRenderHint(QPainter::SmoothPixmapTransform, false);
     scene->setSceneRect(0, 0, view->width(), view->height());
 
     initializeBoard();
     updateBoard();
 }
+
 
 void BoardView::initializeBoard()
 {
@@ -36,37 +29,45 @@ void BoardView::initializeBoard()
             QGraphicsRectItem* square = new QGraphicsRectItem(col * squareSize, row * squareSize, squareSize, squareSize);
             
             square->setBrush((row + col) % 2 == 0 ? dark : light);
-            square->setPen(Qt::NoPen); // enleve les bordures
+            square->setPen(Qt::NoPen);
             scene->addItem(square);
             squares[row][col] = square;
         }
     }
 }
 
+
 void BoardView::loadPieceIcons()
 {
+    pieceIcons.clear();
+    
     QString basePath = "resources/chess_icons/";
     int targetSize = squareSize; // icone aura la même taille que la case
 
-    loadSvgIcon("BlackKing", basePath + "Chess_kdt45.svg", targetSize);
-    loadSvgIcon("WhiteKing", basePath + "Chess_klt45.svg", targetSize);
-    loadSvgIcon("BlackQueen", basePath + "Chess_qdt45.svg", targetSize);
-    loadSvgIcon("WhiteQueen", basePath + "Chess_qlt45.svg", targetSize);
-    loadSvgIcon("BlackBishop", basePath + "Chess_bdt45.svg", targetSize);
-    loadSvgIcon("WhiteBishop", basePath + "Chess_blt45.svg", targetSize);
-    loadSvgIcon("BlackRook", basePath + "Chess_rdt45.svg", targetSize);
-    loadSvgIcon("WhiteRook", basePath + "Chess_rlt45.svg", targetSize);
-    loadSvgIcon("BlackKnight", basePath + "Chess_ndt45.svg", targetSize);
-    loadSvgIcon("WhiteKnight", basePath + "Chess_nlt45.svg", targetSize);
-    loadSvgIcon("BlackPawn", basePath + "Chess_pdt45.svg", targetSize);
-    loadSvgIcon("WhitePawn", basePath + "Chess_plt45.svg", targetSize);
+    pieceIcons["BlackKing"] = loadAndRenderSvg(basePath + "/Chess_kdt45.svg", targetSize);
+    pieceIcons["WhiteKing"] = loadAndRenderSvg(basePath + "/Chess_klt45.svg", targetSize);
+    pieceIcons["BlackQueen"] = loadAndRenderSvg(basePath + "/Chess_qdt45.svg", targetSize);
+    pieceIcons["WhiteQueen"] = loadAndRenderSvg(basePath + "/Chess_qlt45.svg", targetSize);
+    pieceIcons["BlackBishop"] = loadAndRenderSvg(basePath + "/Chess_bdt45.svg", targetSize);
+    pieceIcons["WhiteBishop"] = loadAndRenderSvg(basePath + "/Chess_blt45.svg", targetSize);
+    pieceIcons["BlackRook"] = loadAndRenderSvg(basePath + "/Chess_rdt45.svg", targetSize);
+    pieceIcons["WhiteRook"] = loadAndRenderSvg(basePath + "/Chess_rlt45.svg", targetSize);
+    pieceIcons["BlackKnight"] = loadAndRenderSvg(basePath + "/Chess_ndt45.svg", targetSize);
+    pieceIcons["WhiteKnight"] = loadAndRenderSvg(basePath + "/Chess_nlt45.svg", targetSize);
+    pieceIcons["BlackPawn"] = loadAndRenderSvg(basePath + "/Chess_pdt45.svg", targetSize);
+    pieceIcons["WhitePawn"] = loadAndRenderSvg(basePath + "/Chess_plt45.svg", targetSize);
 }
 
-QPixmap BoardView::renderSvg(const QString& filePath, int targetSize) const
+
+QPixmap BoardView::loadAndRenderSvg(const QString& filePath, int size) const
 {
     QSvgRenderer svgRenderer(filePath);
+    if (!svgRenderer.isValid()) {
+        qWarning() << "Failed to load SVG:" << filePath;
+        return QPixmap();
+    }
 
-    QPixmap pixmap(targetSize, targetSize);
+    QPixmap pixmap(size, size);
     pixmap.fill(Qt::transparent);
 
     QPainter painter(&pixmap);
@@ -75,27 +76,30 @@ QPixmap BoardView::renderSvg(const QString& filePath, int targetSize) const
     return pixmap;
 }
 
+
+void BoardView::setPieceStyle(const QString& style)
+{
+    basePath = "resources/chess_icons/" + style;
+    loadPieceIcons();
+    updateBoard();
+}
+
+
 std::unique_ptr<QGraphicsPixmapItem> BoardView::createPiece(const QString& pieceType, int row, int col)
 {
     auto item = std::make_unique<QGraphicsPixmapItem>();
 
     QPixmap pixmap = pieceIcons[pieceType];
     item->setPixmap(pixmap);
-    item->setScale(INITIAL_SCALE);
+    item->setScale(1.0);
 
-    qreal xOffset = (squareSize - pixmap.width() * INITIAL_SCALE) / 2;
-    qreal yOffset = (squareSize - pixmap.height() * INITIAL_SCALE) / 2;
+    qreal xOffset = (squareSize - pixmap.width() * 1.0) / 2;
+    qreal yOffset = (squareSize - pixmap.height() * 1.0) / 2;
     item->setPos(col * squareSize + xOffset, row * squareSize + yOffset);
 
     return item;
 }
 
-
-void BoardView::adjustPositionForScale(QGraphicsPixmapItem* item, qreal initScale, qreal finalScale)
-{
-    qreal adjustment = (finalScale - initScale) * squareSize / 2.0;
-    item->setPos(item->x() - adjustment, item->y() - adjustment);
-}
 
 void BoardView::clearAllPieces()
 {
@@ -109,6 +113,7 @@ void BoardView::clearAllPieces()
     }
 }
 
+
 void BoardView::updateBoard()
 {
     clearAllPieces();
@@ -118,29 +123,14 @@ void BoardView::updateBoard()
             chess::Piece* piece = board->getPiece({col, row});
 
             if (piece) {
-                QString key = QString::fromStdString((piece->isBlack() ? "Black" : "White") + piece->typeAsString());
-                pieceItems[row][col] = createPiece(key, row, col);
+                QString pieceType = QString::fromStdString((piece->isBlack() ? "Black" : "White") + piece->typeAsString());
+                pieceItems[row][col] = createPiece(pieceType, row, col);
                 scene->addItem(pieceItems[row][col].get());
             }
         }
     }
 }
 
-void BoardView::loadSvgIcon(const QString& key, const QString& filePath, int size)
-{
-    QSvgRenderer svgRenderer(filePath);
-    if (!svgRenderer.isValid()) {
-        qWarning() << "Failed to load SVG:" << filePath;
-        return;
-    }
-
-    QPixmap pixmap(size, size);
-    pixmap.fill(Qt::transparent);
-
-    QPainter painter(&pixmap);
-    svgRenderer.render(&painter);
-    pieceIcons[key] = pixmap;
-}
 
 void BoardView::selectPiece(const chess::Position& pos)
 {
@@ -148,22 +138,28 @@ void BoardView::selectPiece(const chess::Position& pos)
 
     selectedPiece = pos;
 
-    if (pieceItems[pos.y][pos.x]) {
-        selectedPieceItem = pieceItems[pos.y][pos.x].get();
-        adjustPositionForScale(selectedPieceItem, INITIAL_SCALE, SELECTED_SCALE);
-        selectedPieceItem->setScale(SELECTED_SCALE);
+    if (squares[pos.y][pos.x]) {
+        QGraphicsRectItem* square = squares[pos.y][pos.x];
+    
+        originalColor = square->brush().color();
+        QColor selectedColor(173, 216, 230);
+        square->setBrush(selectedColor);
     }
 }
 
+
 void BoardView::deselectPiece()
 {
-    if (selectedPieceItem) {
-        adjustPositionForScale(selectedPieceItem, SELECTED_SCALE, INITIAL_SCALE);
-        selectedPieceItem->setScale(INITIAL_SCALE);
-        selectedPieceItem = nullptr;
+    if (selectedPiece.x != -1 && selectedPiece.y != -1) {
+        QGraphicsRectItem* square = squares[selectedPiece.y][selectedPiece.x];
+        if (square) {
+            square->setBrush(originalColor);
+        }
     }
+
     selectedPiece = {-1, -1};
 }
+
 
 void BoardView::mousePressEvent(QMouseEvent* event)
 {
@@ -173,21 +169,23 @@ void BoardView::mousePressEvent(QMouseEvent* event)
     if (!board->isPositionValid(boardPos)) {
         return;
     }
+
     if (selectedPiece.x == -1 && selectedPiece.y == -1) {
         if (board->getPiece(boardPos)) {
             selectPiece(boardPos);
         }
+        return;
     }
-    else {
-        if (board->movePiece(selectedPiece, boardPos)) {
-            deselectPiece();
-            updateBoard();
-        }
+
+    if (board->movePiece(selectedPiece, boardPos)) {
         deselectPiece();
+        updateBoard();
     }
+    deselectPiece();
 
     QGraphicsView::mousePressEvent(event);
 }
+
 
 chess::Position BoardView::getBoardPosition(const QPoint& viewPos) const
 {
