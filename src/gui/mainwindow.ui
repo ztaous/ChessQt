@@ -26,7 +26,11 @@
    <bool>true</bool>
   </property>
   <property name="windowTitle">
-   <string>ChessLabQt</string>
+   <string>ChessQt</string>
+  </property>
+  <property name="windowIcon">
+   <iconset>
+    <normaloff>../../../../kindpng_971357.png</normaloff>../../../../kindpng_971357.png</iconset>
   </property>
   <property name="animated">
    <bool>false</bool>
