@@ -34,13 +34,17 @@ struct Position
         return x == other.x && y == other.y;
     }
 
-    void operator +=(const Position& other)
+    bool operator!=(const Position& other) const {
+        return x != other.x && y != other.y;
+    }
+
+    void operator+=(const Position& other)
     {
         x += other.x;
         y += other.y;
     }
 
-    void operator -=(const Position& other)
+    void operator-=(const Position& other)
     {
         x -= other.x;
         y -= other.y;
