@@ -10,6 +10,7 @@
 #include "rook.h"
 #include "bishop.h"
 #include "knight.h"
+#include "pawn.h"
 
 enum class Player
 {

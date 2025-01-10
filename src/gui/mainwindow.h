@@ -10,14 +10,6 @@
 #include <QStatusBar>
 #include <QLabel>
 
-#include "../piece.h"
-#include "../board.h"
-#include "../king.h"
-#include "../rook.h"
-#include "../bishop.h"
-#include "../knight.h"
-#include "../queen.h"
-
 #include <QMainWindow>
 #include "../board.h"
 #include "boardview.h"

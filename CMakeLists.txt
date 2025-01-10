@@ -22,8 +22,6 @@ set(PROJECT_SOURCES
     src/gui/boardview.h
     src/gui/boardview.cpp
 
-    src/board.cpp
-    src/board.h
     src/piece.h
     src/king.cpp
     src/king.h
@@ -35,6 +33,10 @@ set(PROJECT_SOURCES
     src/bishop.h
     src/knight.cpp
     src/knight.h
+    src/pawn.cpp
+    src/pawn.h
+    src/board.cpp
+    src/board.h
 )
 
 if(${QT_VERSION_MAJOR} GREATER_EQUAL 6)

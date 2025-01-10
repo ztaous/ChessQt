@@ -44,9 +44,10 @@ void Board::setupBoard(int scenario)
         
         default:
             // White Pieces
-            // for (int i = 0; i < 8; i++) {
-            //     addPiece("e" + i, new Pawn());
-            // }
+            for (int i = 0; i < 8; i++) {
+                std::string position = std::string(1, 'a' + i) + "2";
+                addPiece(position, new Pawn(Colour::White));
+            }
             addPiece("e1", new King(Colour::White));
             addPiece("d1", new Queen(Colour::White));
             addPiece("a1", new Rook(Colour::White));
@@ -57,9 +58,10 @@ void Board::setupBoard(int scenario)
             addPiece("f1", new Bishop(Colour::White));
 
             // Black Pieces
-            // for (int i = 0; i < 8; i++) {
-            //     addPiece("e" + i, new Pawn());
-            // }
+            for (int i = 0; i < 8; i++) {
+                std::string position = std::string(1, 'a' + i) + "7";
+                addPiece(position, new Pawn(Colour::Black));
+            }
             addPiece("e8", new King(Colour::Black));
             addPiece("d8", new Queen(Colour::Black));
             addPiece("a8", new Rook(Colour::Black));

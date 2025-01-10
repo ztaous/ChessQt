@@ -33,6 +33,18 @@ struct Position
     {
         return x == other.x && y == other.y;
     }
+
+    void operator +=(const Position& other)
+    {
+        x += other.x;
+        y += other.y;
+    }
+
+    void operator -=(const Position& other)
+    {
+        x -= other.x;
+        y -= other.y;
+    }
 };
 
 class Board;
