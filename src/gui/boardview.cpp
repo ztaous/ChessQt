@@ -28,7 +28,7 @@ void BoardView::initializeBoard()
         for (int col = 0; col < chess::Board::columns; col++) {
             QGraphicsRectItem* square = new QGraphicsRectItem(col * squareSize, row * squareSize, squareSize, squareSize);
             
-            square->setBrush((row + col) % 2 == 0 ? dark : light);
+            square->setBrush((row + col) % 2 == 0 ? light : dark);
             square->setPen(Qt::NoPen);
             scene->addItem(square);
             squares[row][col] = square;

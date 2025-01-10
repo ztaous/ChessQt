@@ -73,6 +73,7 @@
         "qpropertyanimation": "cpp",
         "qmouseevent": "cpp",
         "qgraphicsitemanimation": "cpp",
-        "qsvgrenderer": "cpp"
+        "qsvgrenderer": "cpp",
+        "qdebug": "cpp"
     }
 }
