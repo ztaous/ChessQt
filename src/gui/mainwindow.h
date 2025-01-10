@@ -30,6 +30,7 @@ public:
     ~MainWindow();
 
 private slots:
+    void newGame();
     void resetGame();
     void selectScenario(int scenario);
 

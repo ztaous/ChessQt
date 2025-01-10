@@ -364,13 +364,7 @@
     <addaction name="actionReset"/>
     <addaction name="actionQuit"/>
    </widget>
-   <widget class="QMenu" name="menuEngine">
-    <property name="title">
-     <string>Engine</string>
-    </property>
-   </widget>
    <addaction name="menuGame"/>
-   <addaction name="menuEngine"/>
    <addaction name="menuPositions"/>
   </widget>
   <action name="actionReset">
@@ -380,7 +374,7 @@
   </action>
   <action name="actionQuit">
    <property name="text">
-    <string>Quit</string>
+    <string>Exit</string>
    </property>
   </action>
   <action name="actionposition_1">
@@ -405,7 +399,7 @@
   </action>
   <action name="actionImportGame">
    <property name="text">
-    <string>Import Game</string>
+    <string>Open Game...</string>
    </property>
   </action>
   <action name="actionNewGame">

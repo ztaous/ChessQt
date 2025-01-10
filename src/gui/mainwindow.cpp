@@ -9,7 +9,7 @@ MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
     boardView = new BoardView(board, ui->graphicsViewBoard);
 
-    connect(ui->actionNewGame, &QAction::triggered, this, [this](){ setGameMode(GameMode::standard); });
+    connect(ui->actionNewGame, &QAction::triggered, this, &MainWindow:: newGame);
     connect(ui->actionReset, &QAction::triggered, this, &MainWindow::resetGame);
     connect(ui->actionPracticeBoard, &QAction::triggered, this, [this]() { setGameMode(GameMode::practice); });
     connect(ui->actionQuit, &QAction::triggered, this, &QMainWindow::close);
@@ -30,13 +30,10 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
-void MainWindow::selectScenario(int scenario)
+void MainWindow::newGame()
 {
-    savedScenario = scenario;
-    board->setupBoard(scenario);
-    board->setCurrentPlayer(Player::White);
-    boardView->updateBoard();
-    updateGameStatus();
+    setGameMode(GameMode::standard);
+    selectScenario(0);  // default classic position
 }
 
 void MainWindow::resetGame()
@@ -47,10 +44,18 @@ void MainWindow::resetGame()
     updateGameStatus();
 }
 
+void MainWindow::selectScenario(int scenario)
+{
+    savedScenario = scenario;
+    board->setupBoard(scenario);
+    board->setCurrentPlayer(Player::White);
+    boardView->updateBoard();
+    updateGameStatus();
+}
+
 void MainWindow::setGameMode(GameMode mode)
 {
     board->setGameMode(mode);
-    resetGame();
     updateGameStatus();
 }
 
