@@ -12,7 +12,7 @@ namespace chess {
 class Knight : public Piece
 {
 public:
-    Knight(Colour inputColour, const Position& startPosition) : Piece(inputColour, startPosition) {}
+    using Piece::Piece;
     ~Knight() = default;
 
     std::vector<Position> getValidMoves(const Board& board) const override;

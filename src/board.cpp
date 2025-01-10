@@ -19,33 +19,56 @@ void Board::setupBoard(int scenario)
 
     switch(scenario) {
         case 1:
-            grid[1][5] = new King(Colour::Black, {5, 1});
-            grid[7][2] = new King(Colour::White, {2, 7});
-            grid[7][3] = new Rook(Colour::White, {3, 7});
-            grid[6][3] = new Rook(Colour::White, {3, 6});
-            grid[3][4] = new Bishop(Colour::Black, {4, 3});
-            grid[2][6] = new Bishop(Colour::Black, {6, 2});
+            addPiece("f7", new King(Colour::Black));
+            addPiece("c1", new King(Colour::White));
+            addPiece("d1", new Rook(Colour::White));
+            addPiece("d2", new Rook(Colour::White));
+            addPiece("e5", new Bishop(Colour::Black));
+            addPiece("g6", new Bishop(Colour::Black));
             break;
         
         case 2:
-            grid[5][7] = new King(Colour::Black, {7, 5});
-            grid[2][4] = new King(Colour::White, {4, 2});
-            grid[2][1] = new Knight(Colour::Black, {1, 2});
-            grid[1][5] = new Rook(Colour::White, {5, 1});
+            addPiece("h3", new King(Colour::Black));
+            addPiece("e6", new King(Colour::White));
+            addPiece("b6", new Knight(Colour::Black));
+            addPiece("f7", new Rook(Colour::White));
             break;
 
         case 3:
-            grid[7][2] = new King(Colour::Black, {2, 7});
-            grid[1][1] = new King(Colour::White, {1, 1});
-            grid[5][0] = new Knight(Colour::White, {0, 5});
-            grid[2][0] = new Rook(Colour::White, {0, 2});
-            grid[4][3] = new Queen(Colour::Black, {3, 4});
+            addPiece("c1", new King(Colour::Black));
+            addPiece("b8", new King(Colour::White));
+            addPiece("a4", new Knight(Colour::White));
+            addPiece("a6", new Rook(Colour::White));
+            addPiece("d4", new Queen(Colour::Black));
             break;    
         
         default:
-            grid[0][4] = new King(Colour::Black, {4, 0});
-            grid[7][4] = new King(Colour::White, {3, 7});
-            break;  
+            // White Pieces
+            // for (int i = 0; i < 8; i++) {
+            //     addPiece("e" + i, new Pawn());
+            // }
+            addPiece("e1", new King(Colour::White));
+            addPiece("d1", new Queen(Colour::White));
+            addPiece("a1", new Rook(Colour::White));
+            addPiece("h1", new Rook(Colour::White));
+            addPiece("b1", new Knight(Colour::White));
+            addPiece("g1", new Knight(Colour::White));
+            addPiece("c1", new Bishop(Colour::White));
+            addPiece("f1", new Bishop(Colour::White));
+
+            // Black Pieces
+            // for (int i = 0; i < 8; i++) {
+            //     addPiece("e" + i, new Pawn());
+            // }
+            addPiece("e8", new King(Colour::Black));
+            addPiece("d8", new Queen(Colour::Black));
+            addPiece("a8", new Rook(Colour::Black));
+            addPiece("h8", new Rook(Colour::Black));
+            addPiece("b8", new Knight(Colour::Black));
+            addPiece("g8", new Knight(Colour::Black));
+            addPiece("c8", new Bishop(Colour::Black));
+            addPiece("f8", new Bishop(Colour::Black));
+            break;
     }
 }
 
@@ -79,9 +102,53 @@ Piece* Board::getPiece(const Position& pos) const
     return grid[pos.y][pos.x]; 
 }
 
+void Board::addPiece(const std::string& notation, Piece* piece)
+{
+    Position pos = convertNotationToGrid(notation);
+    if (!isPositionValid(pos)) {
+        std::cerr << "Invalid position for added piece at : " << notation << std::endl;
+        delete piece;
+        return;
+    }
+
+    if (grid[pos.y][pos.x] != nullptr) {
+        std::cerr << "Position already occupied at : " << notation << std::endl;
+        delete piece;
+        return;
+    }
+
+    grid[pos.y][pos.x] = piece;
+    piece->setPosition(pos);
+}
+
+Position Board::convertNotationToGrid (const std::string& notation)
+{
+    Position pos;
+
+    if (notation.length() != 2) {
+        std::cerr << "Invalid notation format" << std::endl;
+        return {-1, -1};
+    }
+
+    char colChar = notation[0];
+    char rowChar = notation[1];
+
+    pos.x = colChar - 'a';
+    pos.y = 8 - (rowChar - '0');
+
+    return pos;
+}
+
+void Board::removePiece(const Position& pos)
+{
+    Piece* piece = getPiece(pos);
+
+    delete piece;
+    grid[pos.y][pos.x] = nullptr;
+}
+
 bool Board::movePiece(Position current, Position destination)
 {
-    
     if (!isPositionValid(current) || !isPositionValid(destination))
         return false;
 

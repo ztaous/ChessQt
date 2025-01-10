@@ -11,20 +11,17 @@
 #include "bishop.h"
 #include "knight.h"
 
-
 enum class Player
 {
     White,
     Black
 };
 
-
 enum class GameMode
 {
     standard,
     practice
 };
-
 
 namespace chess {
 
@@ -44,7 +41,10 @@ public:
     bool isOppositePiece(const Piece* piece1, const Piece* piece2) const;
    
     Piece* getPiece(const Position& pos) const;
+    void addPiece(const std::string& notation, Piece* piece);
+    void removePiece(const Position& position);
     bool movePiece(Position current, Position destination);
+  
 
     Player getCurrentPlayer() const { return currentPlayer_; }
     void setCurrentPlayer(const Player& player) { currentPlayer_ = player; }
@@ -61,6 +61,7 @@ signals:
 private:
     void switchPlayer();
     bool canMove(Player player) const;
+    Position convertNotationToGrid (const std::string& notation);
 
     Piece* grid[rows][columns];
     Player currentPlayer_ = Player::White;

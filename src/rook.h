@@ -12,7 +12,7 @@ namespace chess {
 class Rook : public Piece
 {
 public:
-    Rook(Colour inputColour, const Position& startPosition) : Piece(inputColour, startPosition) {}
+    using Piece::Piece;
     ~Rook() = default;
 
     std::vector<Position> getValidMoves(const Board& board) const override;
