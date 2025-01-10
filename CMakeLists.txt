@@ -84,5 +84,5 @@ install(TARGETS ChessQt
 )
 
 if(QT_VERSION_MAJOR EQUAL 6)
-    qt_finalize_executable(ChessLabQt)
+    qt_finalize_executable(ChessQt)
 endif()
