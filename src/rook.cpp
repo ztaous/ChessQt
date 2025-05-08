@@ -1,6 +1,5 @@
 #include "rook.h"
 
-
 namespace chess {
 
 std::vector<Position> Rook::getValidMoves(const Board& board) const

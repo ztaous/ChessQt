@@ -1,6 +1,5 @@
 #include "board.h"
 
-
 namespace chess {
 
 Board::Board(QObject* parent) : QObject(parent), grid{}

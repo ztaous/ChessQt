@@ -6,7 +6,6 @@
 
 #include "boardview.h"
 
-
 BoardView::BoardView(chess::Board* board, QGraphicsView* view) : QGraphicsView(view), scene(new QGraphicsScene(this)), board(board)
 {
     setScene(scene);
@@ -15,7 +14,6 @@ BoardView::BoardView(chess::Board* board, QGraphicsView* view) : QGraphicsView(v
     initializeBoard();
     updateBoard();
 }
-
 
 void BoardView::initializeBoard()
 {
@@ -36,7 +34,6 @@ void BoardView::initializeBoard()
     }
 }
 
-
 void BoardView::loadPieceIcons()
 {
     pieceIcons.clear();
@@ -55,7 +52,6 @@ void BoardView::loadPieceIcons()
     pieceIcons["WhitePawn"] = loadAndRenderSvg(basePath + "/Chess_plt45.svg", squareSize);
 }
 
-
 QPixmap BoardView::loadAndRenderSvg(const QString& filePath, int size) const
 {
     QSvgRenderer svgRenderer(filePath);
@@ -73,14 +69,12 @@ QPixmap BoardView::loadAndRenderSvg(const QString& filePath, int size) const
     return pixmap;
 }
 
-
 void BoardView::setPieceStyle(const QString& style)
 {
     basePath = "resources/chess_icons/" + style;
     loadPieceIcons();
     updateBoard();
 }
-
 
 std::unique_ptr<QGraphicsPixmapItem> BoardView::createPiece(const QString& pieceType, int row, int col)
 {
@@ -97,7 +91,6 @@ std::unique_ptr<QGraphicsPixmapItem> BoardView::createPiece(const QString& piece
     return item;
 }
 
-
 void BoardView::clearAllPieces()
 {
     for (int row = 0; row < chess::Board::rows; row++) {
@@ -109,7 +102,6 @@ void BoardView::clearAllPieces()
         }
     }
 }
-
 
 void BoardView::updateBoard()
 {
@@ -128,7 +120,6 @@ void BoardView::updateBoard()
     }
 }
 
-
 void BoardView::selectPiece(const chess::Position& pos)
 {
     deselectPiece();
@@ -144,7 +135,6 @@ void BoardView::selectPiece(const chess::Position& pos)
     }
 }
 
-
 void BoardView::deselectPiece()
 {
     if (selectedPiece.x != -1 && selectedPiece.y != -1) {
@@ -156,7 +146,6 @@ void BoardView::deselectPiece()
 
     selectedPiece = {-1, -1};
 }
-
 
 void BoardView::mousePressEvent(QMouseEvent* event)
 {
@@ -182,7 +171,6 @@ void BoardView::mousePressEvent(QMouseEvent* event)
 
     QGraphicsView::mousePressEvent(event);
 }
-
 
 chess::Position BoardView::getBoardPosition(const QPoint& viewPos) const
 {

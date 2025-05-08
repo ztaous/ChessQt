@@ -1,6 +1,5 @@
 #include "knight.h"
 
-
 namespace chess {
 
 std::vector<Position> Knight::getValidMoves(const Board& board) const

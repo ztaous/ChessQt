@@ -5,7 +5,6 @@
 #include <algorithm>
 #include <string>
 
-
 namespace chess {
 
 enum class Colour

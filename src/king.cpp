@@ -1,7 +1,6 @@
 #include "king.h"
 #include "tempMovePiece.h"
 
-
 namespace chess {
 
 std::vector<Position> King::getValidMoves(const Board& board) const
@@ -10,7 +9,6 @@ std::vector<Position> King::getValidMoves(const Board& board) const
     Position currentPos = this->getPosition();
 
     std::vector<std::pair<int, int>> directions = {{1,0}, {0,1}, {0, -1}, {-1, 0}, {1, 1}, {-1, -1}, {-1, 1}, {1, -1}};
-
 
     for (auto& dir : directions) {
         Position newPos = {currentPos.x + dir.first, currentPos.y + dir.second};

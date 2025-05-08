@@ -1,6 +1,5 @@
 #include "bishop.h"
 
-
 namespace chess {
 
 std::vector<Position> Bishop::getValidMoves(const Board& board) const
@@ -9,7 +8,6 @@ std::vector<Position> Bishop::getValidMoves(const Board& board) const
     Position currentPos = this->getPosition();
 
     std::vector<std::pair<int, int>> directions = {{1, 1}, {-1, 1}, {-1, -1}, {1, -1}};
-    
     
     for (auto& dir : directions) {
         Position newPos = currentPos;

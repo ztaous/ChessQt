@@ -14,7 +14,6 @@
 #include "../board.h"
 #include "boardview.h"
 
-
 QT_BEGIN_NAMESPACE
 namespace Ui {
 class MainWindow;
@@ -26,7 +25,7 @@ class MainWindow : public QMainWindow
     Q_OBJECT
 
 public:
-    MainWindow(QWidget *parent = nullptr);
+    MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
 
 private slots:
@@ -35,7 +34,7 @@ private slots:
     void selectScenario(int scenario);
 
 private:
-    Ui::MainWindow *ui;
+    Ui::MainWindow* ui;
     chess::Board* board;
     BoardView* boardView;
 

@@ -1,6 +1,5 @@
 #include "queen.h"
 
-
 namespace chess {
 
 std::vector<Position> Queen::getValidMoves(const Board& board) const

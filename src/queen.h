@@ -6,7 +6,6 @@
 #include "piece.h"
 #include "board.h"
 
-
 namespace chess {
 
 class Queen : public Piece
@@ -21,4 +20,3 @@ public:
 };
 
 }
-

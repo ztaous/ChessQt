@@ -3,7 +3,6 @@
 #include "../board.h"
 #include "boardview.h"
 
-
 MainWindow::MainWindow(QWidget* parent) : QMainWindow(parent), ui(new Ui::MainWindow), board(new chess::Board())
 {
     ui->setupUi(this);
