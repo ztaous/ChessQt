@@ -31,6 +31,7 @@ public:
 private slots:
     void newGame();
     void resetGame();
+    void endGame(Player winner); 
     void selectScenario(int scenario);
 
 private:

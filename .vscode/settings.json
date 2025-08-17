@@ -75,6 +75,10 @@
         "qgraphicsitemanimation": "cpp",
         "qsvgrenderer": "cpp",
         "qdebug": "cpp",
-        "qtimeline": "cpp"
+        "qtimeline": "cpp",
+        "set": "cpp",
+        "unordered_set": "cpp",
+        "queue": "cpp",
+        "ranges": "cpp"
     }
 }

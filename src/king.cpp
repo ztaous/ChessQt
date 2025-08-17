@@ -64,14 +64,11 @@ bool King::isCheck(const Board& board) const
     return isPositionAttacked(currentPos, board) || otherKingAttack(currentPos, board);
 }
 
-bool King::isCheckMate(const Board& board) const
-{ 
-    // ne correspond pas au comportement exact, 
-    // mais fonctionne generalement bien pour les fins de jeu
-    // À RECTIFIER
-    
-    std::vector<Position> possibleMoves = this->getValidMoves(board);
-    return possibleMoves.empty() && isCheck(board);
-}
+bool King::isCheckmate(const Board& board) const
+{
+    if (!isCheck(board)) return false;
 
+    std::vector<Position> moves = this->getValidMoves(board);
+    return moves.empty();
+}
 }

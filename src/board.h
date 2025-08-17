@@ -45,7 +45,6 @@ public:
     void addPiece(const std::string& notation, Piece* piece);
     void removePiece(const Position& position);
     bool movePiece(Position current, Position destination);
-  
 
     Player getCurrentPlayer() const { return currentPlayer_; }
     void setCurrentPlayer(const Player& player) { currentPlayer_ = player; }
@@ -58,11 +57,16 @@ public:
 signals:
     void pieceMoved(const Position& current, const Position& destination);
     void playerChanged(Player currentPlayer);
+    void gameOver(Player winner);
     
 private:
     void switchPlayer();
     bool canMove(Player player) const;
     Position convertNotationToGrid (const std::string& notation);
+
+    bool isCheckmate(Player side) const;
+    static Colour colourOf(Player p) { return (p == Player::White) ? Colour::White : Colour::Black; }
+    static Player opponentOf(Player p) { return (p == Player::White) ? Player::Black : Player::White; }
 
     Piece* grid[rows][columns];
     Player currentPlayer_ = Player::White;

@@ -154,11 +154,13 @@ bool Board::movePiece(Position current, Position destination)
         return false;
 
     Piece* piece = getPiece(current);
-    if (piece == nullptr)
+    if (!piece)
         return false;
+
 
     if (!canMove(piece->getColour() == Colour::White ? Player::White : Player::Black))
         return false;
+       
         
     std::vector<Position> validMoves = piece->getValidMoves(*this);
     if(std::find(validMoves.begin(), validMoves.end(), destination) == validMoves.end())
@@ -178,8 +180,18 @@ bool Board::movePiece(Position current, Position destination)
     piece->setPosition(destination);
     
     switchPlayer();
+    if (isCheckmate(currentPlayer_)) {
+        emit gameOver(opponentOf(currentPlayer_));
+    }
+
     return true;
 }
+
+bool Board::isCheckmate(Player player) const
+{
+
+}
+
 
 void Board::switchPlayer()
 {

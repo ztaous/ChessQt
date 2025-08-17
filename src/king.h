@@ -22,7 +22,7 @@ public:
     bool otherKingAttack(Position kingPosition, const Board& board) const;
     
     bool isCheck(const Board& board) const;
-    bool isCheckMate(const Board& board) const;
+    bool isCheckmate(const Board& board) const;
 };
 
 }
