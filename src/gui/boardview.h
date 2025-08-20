@@ -5,7 +5,6 @@
 #include <QGraphicsScene>
 #include <QGraphicsRectItem>
 #include <QGraphicsPixmapItem>
-#include <QObject>
 #include <QMap>
 
 #include "../board.h"
@@ -13,14 +12,17 @@
 class BoardView : public QGraphicsView
 {
     Q_OBJECT
-
 public:
-    explicit BoardView(chess::Board* board, QGraphicsView* view = nullptr);
+    explicit BoardView(chess::Board* board, QWidget* parent = nullptr);
     void updateBoard();
     void setPieceStyle(const QString& style);
-    
+
 signals:
-    void pieceMoved(const chess::Position& from, const chess::Position& to);
+    void squareClicked(chess::Position pos);
+
+public slots:
+    void showSelection(chess::Position pos);
+    void clearSelection();
 
 protected:
     void mousePressEvent(QMouseEvent *event) override;
@@ -29,16 +31,13 @@ private:
     void initializeBoard();
     void loadPieceIcons();
     QPixmap loadAndRenderSvg(const QString &filePath, int size) const;
- 
     void clearAllPieces();
-    std::unique_ptr<QGraphicsPixmapItem> createPiece(const QString &pieceType, int row, int col);
-    chess::Position getBoardPosition(const QPoint &viewPos) const;
+    std::unique_ptr<QGraphicsPixmapItem> createPiece(const QString& key, int row, int col);
+    chess::Position getBoardPosition(const QPoint& viewPos) const;
 
-    void selectPiece(const chess::Position& pos);
-    void deselectPiece();
-
-    QGraphicsScene* scene;
-    chess::Board* board;
+private:
+    QGraphicsScene* scene = nullptr;
+    chess::Board*   board = nullptr;
 
     static constexpr int squareSize = 75;
     QGraphicsRectItem* squares[chess::Board::rows][chess::Board::columns] = {};
@@ -46,6 +45,5 @@ private:
     QMap<QString, QPixmap> pieceIcons;
 
     QString basePath = "resources/chess_icons/default";
-    QColor originalColor;
-    chess::Position selectedPiece{-1, -1}; // piece selectionnée (-1, -1 par défaut)
+    QGraphicsRectItem* selectionItem { nullptr };
 };

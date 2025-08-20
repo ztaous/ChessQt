@@ -161,7 +161,6 @@ bool Board::movePiece(Position current, Position destination)
     if (!canMove(piece->getColour() == Colour::White ? Player::White : Player::Black))
         return false;
        
-        
     std::vector<Position> validMoves = piece->getValidMoves(*this);
     if(std::find(validMoves.begin(), validMoves.end(), destination) == validMoves.end())
         return false;
@@ -189,9 +188,9 @@ bool Board::movePiece(Position current, Position destination)
 
 bool Board::isCheckmate(Player player) const
 {
-
+    // À faire implémentation
+    return false;
 }
-
 
 void Board::switchPlayer()
 {

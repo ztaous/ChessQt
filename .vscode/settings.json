@@ -79,6 +79,7 @@
         "set": "cpp",
         "unordered_set": "cpp",
         "queue": "cpp",
-        "ranges": "cpp"
+        "ranges": "cpp",
+        "qpainter": "cpp"
     }
 }

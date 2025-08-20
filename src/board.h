@@ -50,6 +50,7 @@ public:
     void setCurrentPlayer(const Player& player) { currentPlayer_ = player; }
     void setGameMode(const GameMode& mode) { currentGameMode_ = mode; }
     GameMode getGameMode() { return currentGameMode_; };
+    bool canMove(Player player) const;
 
     static const int rows = 8; 
     static const int columns = 8; 
@@ -61,7 +62,6 @@ signals:
     
 private:
     void switchPlayer();
-    bool canMove(Player player) const;
     Position convertNotationToGrid (const std::string& notation);
 
     bool isCheckmate(Player side) const;

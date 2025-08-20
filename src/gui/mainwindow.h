@@ -2,45 +2,40 @@
 #define MAINWINDOW_H
 
 #include <QMainWindow>
-#include <QPushButton>
-#include <QString>
-#include <QIcon>
-#include <QMap>
-#include <QTimer>
-#include <QStatusBar>
-#include <QLabel>
-
-#include <QMainWindow>
 #include "../board.h"
-#include "boardview.h"
 
 QT_BEGIN_NAMESPACE
-namespace Ui {
-class MainWindow;
-}
+namespace Ui { class MainWindow; }
 QT_END_NAMESPACE
+
+class BoardView;
 
 class MainWindow : public QMainWindow
 {
     Q_OBJECT
-
 public:
-    MainWindow(QWidget* parent = nullptr);
+    explicit MainWindow(QWidget* parent = nullptr);
     ~MainWindow();
+
+public slots:
+    void onBoardSquareClicked(chess::Position pos);
 
 private slots:
     void newGame();
     void resetGame();
-    void endGame(Player winner); 
+    void endGame(Player winner);
     void selectScenario(int scenario);
 
 private:
-    Ui::MainWindow* ui;
-    chess::Board* board;
-    BoardView* boardView;
-
     void setGameMode(GameMode mode);
     void updateGameStatus();
-    int savedScenario = 0;
+
+private:
+    Ui::MainWindow* ui = nullptr;
+    chess::Board*   board = nullptr;
+    BoardView*      boardView = nullptr;
+    chess::Position selectingFrom { -1, -1 };
+    int             savedScenario = 0;
 };
+
 #endif // MAINWINDOW_H
