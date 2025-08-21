@@ -36,6 +36,8 @@ private:
     BoardView*      boardView = nullptr;
     chess::Position selectingFrom { -1, -1 };
     int             savedScenario = 0;
+
+    void refreshBoard();
 };
 
 #endif // MAINWINDOW_H

@@ -3,6 +3,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 #include "piece.h"
 #include "board.h"
 
@@ -20,7 +21,7 @@ public:
     
     bool isPositionAttacked(Position kingPosition, const Board& board) const;
     bool otherKingAttack(Position kingPosition, const Board& board) const;
-    
+
     bool isCheck(const Board& board) const;
     bool isCheckmate(const Board& board) const;
 };

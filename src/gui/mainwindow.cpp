@@ -42,15 +42,14 @@ void MainWindow::newGame()
 void MainWindow::endGame(Player winner)
 {
     const char* who = (winner == Player::White) ? "White" : "Black";
-    ui->gameStatus->setText(QString("CHECKMATE - %1 wins").arg(who));
+    ui->gameStatus->setText(QString("Checkmate - %1 wins").arg(who));
 }
 
 void MainWindow::resetGame()
 {
     board->setupBoard(savedScenario);
     board->setCurrentPlayer(Player::White);
-    boardView->updateBoard();
-    updateGameStatus();
+    refreshBoard();
 }
 
 void MainWindow::selectScenario(int scenario)
@@ -58,8 +57,7 @@ void MainWindow::selectScenario(int scenario)
     savedScenario = scenario;
     board->setupBoard(scenario);
     board->setCurrentPlayer(Player::White);
-    boardView->updateBoard();
-    updateGameStatus();
+    refreshBoard();
 }
 
 void MainWindow::setGameMode(GameMode mode)
@@ -81,18 +79,61 @@ void MainWindow::updateGameStatus()
 void MainWindow::onBoardSquareClicked(chess::Position pos)
 {
     if (selectingFrom.x == -1 && selectingFrom.y == -1) {
-        if (board->getPiece(pos)) {
-            selectingFrom = pos;
-            boardView->showSelection(pos);
+        chess::Piece* p = board->getPiece(pos);
+        if (!p) return;
+
+        const bool pieceIsWhite = !p->isBlack();
+        const bool whiteToMove  = (board->getCurrentPlayer() == Player::White);
+
+        if ((whiteToMove && !pieceIsWhite) || (!whiteToMove && pieceIsWhite)) {
+            return;
         }
+
+        selectingFrom = pos;
+        boardView->showSelection(pos);
+
+        std::vector<chess::Position> moves;
+        moves = board->legalMovesFrom(pos);
+
+        std::vector<chess::Position> quiet, caps;
+        quiet.reserve(moves.size());
+        caps.reserve(moves.size());
+
+        for (const auto& to : moves) {
+            if (auto* t = board->getPiece(to)) {
+                if (t->isBlack() != p->isBlack()) caps.push_back(to);
+                else quiet.push_back(to);
+            } else {
+                quiet.push_back(to);
+            }
+        }
+
+        boardView->showMoveHints(quiet, caps);
         return;
     }
 
     const chess::Position from = selectingFrom;
     selectingFrom = { -1, -1 };
     boardView->clearSelection();
+    boardView->clearMoveHints();
 
     if (board->movePiece(from, pos)) {
-        boardView->updateBoard();
+        refreshBoard();
     }
+}
+
+void MainWindow::refreshBoard()
+{
+    boardView->updateBoard();
+
+    const Player side = board->getCurrentPlayer();
+    const chess::Position kingPos = board->findKing(side);
+
+    if (kingPos.x != -1 && kingPos.y != -1 && board->isInCheck(side)) {
+        boardView->showKingCheck(kingPos);
+    } else {
+        boardView->clearKingCheck();
+    }
+
+    updateGameStatus();
 }

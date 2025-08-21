@@ -31,44 +31,49 @@ class Board : public QObject
     Q_OBJECT
 
 public:
-    explicit Board(QObject* parent = nullptr);
+    static constexpr int rows = 8;
+    static constexpr int columns = 8;
 
+    explicit Board(QObject* parent = nullptr);
     ~Board();
-    void cleanBoard();
+
     void setupBoard(int scenario);
-      
+    void cleanBoard();
+
     bool isPositionValid(Position pos) const;
     bool isOccupied(Position pos) const;
     bool isOppositePiece(const Piece* piece1, const Piece* piece2) const;
-   
+
     Piece* getPiece(const Position& pos) const;
     void addPiece(const std::string& notation, Piece* piece);
-    void removePiece(const Position& position);
+    Position convertNotationToGrid(const std::string& notation);
+    void removePiece(const Position& pos);
+
     bool movePiece(Position current, Position destination);
 
-    Player getCurrentPlayer() const { return currentPlayer_; }
-    void setCurrentPlayer(const Player& player) { currentPlayer_ = player; }
-    void setGameMode(const GameMode& mode) { currentGameMode_ = mode; }
-    GameMode getGameMode() { return currentGameMode_; };
+    void switchPlayer();
     bool canMove(Player player) const;
 
-    static const int rows = 8; 
-    static const int columns = 8; 
-    
+    std::vector<Position> legalMovesFrom(Position from);
+    Position findKing(Player player) const;
+    bool isInCheck(Player player) const;
+    bool isCheckmate(Player player) const;
+
+    Player getCurrentPlayer() const { return currentPlayer_; }
+    void setCurrentPlayer(Player p) { currentPlayer_ = p; emit playerChanged(currentPlayer_); }
+
+    GameMode getGameMode() const { return currentGameMode_; }
+    void setGameMode(GameMode m) { currentGameMode_ = m; }
+
+    static Colour colourOf(Player p);
+    static Player opponentOf(Player p);
+
 signals:
-    void pieceMoved(const Position& current, const Position& destination);
-    void playerChanged(Player currentPlayer);
-    void gameOver(Player winner);
-    
+    void playerChanged(Player);
+    void gameOver(Player);
+
 private:
-    void switchPlayer();
-    Position convertNotationToGrid (const std::string& notation);
-
-    bool isCheckmate(Player side) const;
-    static Colour colourOf(Player p) { return (p == Player::White) ? Colour::White : Colour::Black; }
-    static Player opponentOf(Player p) { return (p == Player::White) ? Player::Black : Player::White; }
-
-    Piece* grid[rows][columns];
+    Piece* grid[rows][columns]{};
     Player currentPlayer_ = Player::White;
     GameMode currentGameMode_ = GameMode::standard;
 };

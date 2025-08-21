@@ -102,6 +102,7 @@ void BoardView::clearAllPieces()
 
 void BoardView::updateBoard()
 {
+    clearMoveHints();
     clearAllPieces();
 
     for (int row = 0; row < chess::Board::rows; ++row) {
@@ -137,8 +138,7 @@ void BoardView::mousePressEvent(QMouseEvent* event)
 
 void BoardView::showSelection(chess::Position pos)
 {
-    if (!board || !board->isPositionValid(pos) || !scene)
-        return;
+    if (!board || !board->isPositionValid(pos) || !scene) return;
 
     const QRectF r(pos.x * squareSize, pos.y * squareSize, squareSize, squareSize);
 
@@ -160,4 +160,70 @@ void BoardView::clearSelection()
     if (selectionItem) {
         selectionItem->setVisible(false);
     }
+}
+
+void BoardView::showKingCheck(chess::Position pos)
+{
+    if (!board || !scene) return;
+
+    const QRectF r(pos.x * squareSize, pos.y * squareSize, squareSize, squareSize);
+    const QPen border (QColor(180, 20, 20, 110), 1.5);
+    const QBrush fill (QColor(200, 20, 20, 28));
+
+    if (!kingCheckItem) {
+        kingCheckItem = scene->addRect(r, border, fill);
+        kingCheckItem->setZValue(900);
+    } else {
+        kingCheckItem->setRect(r);
+        kingCheckItem->setVisible(true);
+    }
+}
+
+void BoardView::clearKingCheck()
+{
+    if (kingCheckItem) kingCheckItem->setVisible(false);
+}
+
+void BoardView::showMoveHints(const std::vector<chess::Position>& movement, const std::vector<chess::Position>& captures)
+{
+    clearMoveHints();
+
+    const qreal rDot   = squareSize * 0.18;
+    const qreal rRing  = squareSize * 0.46;
+    const qreal center = squareSize * 0.5;
+
+    const QBrush dotBrush(QColor(20, 20, 20, 45));
+    QPen ringPen(QColor(40, 40, 40, 60), 3.0);
+    ringPen.setCosmetic(true);
+
+    ringPen.setCosmetic(true);
+    ringPen.setCapStyle(Qt::RoundCap);
+    ringPen.setJoinStyle(Qt::RoundJoin);
+
+    // Movement moves (dot)
+    for (const auto& pos : movement) {
+        const qreal cx = pos.x * squareSize + center;
+        const qreal cy = pos.y * squareSize + center;
+        auto* dot = scene->addEllipse(cx - rDot, cy - rDot, 2*rDot, 2*rDot, Qt::NoPen, dotBrush);
+        dot->setZValue(200);
+        moveHintItems.push_back(dot);
+    }
+
+    // Capture moves (ring)
+    for (const auto& pos : captures) {
+        const qreal x = pos.x * squareSize + (squareSize - 2*rRing) * 0.5;
+        const qreal y = pos.y * squareSize + (squareSize - 2*rRing) * 0.5;
+        auto* ring = scene->addEllipse(x, y, 2*rRing, 2*rRing, ringPen, Qt::NoBrush);
+        ring->setZValue(1100);
+        moveHintItems.push_back(ring);
+    }
+}
+
+void BoardView::clearMoveHints()
+{
+    for (QGraphicsItem* item : moveHintItems) {
+        if (item) scene->removeItem(item);
+        delete item;
+    }
+    moveHintItems.clear();
 }

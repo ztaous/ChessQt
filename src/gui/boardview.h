@@ -24,6 +24,12 @@ public slots:
     void showSelection(chess::Position pos);
     void clearSelection();
 
+    void showKingCheck(chess::Position pos);
+    void clearKingCheck();
+
+    void showMoveHints(const std::vector<chess::Position>& quiet, const std::vector<chess::Position>& captures);
+    void clearMoveHints();
+
 protected:
     void mousePressEvent(QMouseEvent *event) override;
 
@@ -46,4 +52,6 @@ private:
 
     QString basePath = "resources/chess_icons/default";
     QGraphicsRectItem* selectionItem { nullptr };
+    QGraphicsRectItem* kingCheckItem { nullptr };
+    std::vector<QGraphicsItem*> moveHintItems;
 };
