@@ -1,10 +1,11 @@
 #include "boardview.h"
-#include <QMouseEvent>
-#include <QSvgRenderer>
-#include <QPainter>
 #include <QDebug>
+#include <QMouseEvent>
+#include <QPainter>
+#include <QSvgRenderer>
 
-BoardView::BoardView(chess::Board* board, QWidget* parent): QGraphicsView(parent), scene(new QGraphicsScene(this)), board(board)
+BoardView::BoardView(chess::Board* board, QWidget* parent)
+    : QGraphicsView(parent), scene(new QGraphicsScene(this)), board(board)
 {
     setScene(scene);
     scene->setSceneRect(0, 0, squareSize * chess::Board::columns, squareSize * chess::Board::rows);
@@ -34,18 +35,18 @@ void BoardView::initializeBoard()
 void BoardView::loadPieceIcons()
 {
     pieceIcons.clear();
-    pieceIcons["BlackKing"]   = loadAndRenderSvg(basePath + "/Chess_kdt45.svg", squareSize);
-    pieceIcons["WhiteKing"]   = loadAndRenderSvg(basePath + "/Chess_klt45.svg", squareSize);
-    pieceIcons["BlackQueen"]  = loadAndRenderSvg(basePath + "/Chess_qdt45.svg", squareSize);
-    pieceIcons["WhiteQueen"]  = loadAndRenderSvg(basePath + "/Chess_qlt45.svg", squareSize);
+    pieceIcons["BlackKing"] = loadAndRenderSvg(basePath + "/Chess_kdt45.svg", squareSize);
+    pieceIcons["WhiteKing"] = loadAndRenderSvg(basePath + "/Chess_klt45.svg", squareSize);
+    pieceIcons["BlackQueen"] = loadAndRenderSvg(basePath + "/Chess_qdt45.svg", squareSize);
+    pieceIcons["WhiteQueen"] = loadAndRenderSvg(basePath + "/Chess_qlt45.svg", squareSize);
     pieceIcons["BlackBishop"] = loadAndRenderSvg(basePath + "/Chess_bdt45.svg", squareSize);
     pieceIcons["WhiteBishop"] = loadAndRenderSvg(basePath + "/Chess_blt45.svg", squareSize);
-    pieceIcons["BlackRook"]   = loadAndRenderSvg(basePath + "/Chess_rdt45.svg", squareSize);
-    pieceIcons["WhiteRook"]   = loadAndRenderSvg(basePath + "/Chess_rlt45.svg", squareSize);
+    pieceIcons["BlackRook"] = loadAndRenderSvg(basePath + "/Chess_rdt45.svg", squareSize);
+    pieceIcons["WhiteRook"] = loadAndRenderSvg(basePath + "/Chess_rlt45.svg", squareSize);
     pieceIcons["BlackKnight"] = loadAndRenderSvg(basePath + "/Chess_ndt45.svg", squareSize);
     pieceIcons["WhiteKnight"] = loadAndRenderSvg(basePath + "/Chess_nlt45.svg", squareSize);
-    pieceIcons["BlackPawn"]   = loadAndRenderSvg(basePath + "/Chess_pdt45.svg", squareSize);
-    pieceIcons["WhitePawn"]   = loadAndRenderSvg(basePath + "/Chess_plt45.svg", squareSize);
+    pieceIcons["BlackPawn"] = loadAndRenderSvg(basePath + "/Chess_pdt45.svg", squareSize);
+    pieceIcons["WhitePawn"] = loadAndRenderSvg(basePath + "/Chess_plt45.svg", squareSize);
 }
 
 QPixmap BoardView::loadAndRenderSvg(const QString& filePath, int size) const
@@ -81,7 +82,7 @@ std::unique_ptr<QGraphicsPixmapItem> BoardView::createPiece(const QString& key, 
     item->setPixmap(pixmap);
     item->setScale(1.0);
 
-    const qreal xOffset = (squareSize - pixmap.width())  / 2.0;
+    const qreal xOffset = (squareSize - pixmap.width()) / 2.0;
     const qreal yOffset = (squareSize - pixmap.height()) / 2.0;
     item->setPos(col * squareSize + xOffset, row * squareSize + yOffset);
 
@@ -110,8 +111,7 @@ void BoardView::updateBoard()
             chess::Piece* piece = board->getPiece({col, row});
             if (piece) {
                 const QString key = QString::fromStdString(
-                    (piece->isBlack() ? std::string("Black") : std::string("White")) + piece->typeAsString()
-                );
+                    (piece->isBlack() ? std::string("Black") : std::string("White")) + piece->typeAsString());
                 pieceItems[row][col] = createPiece(key, row, col);
                 scene->addItem(pieceItems[row][col].get());
             }
@@ -138,16 +138,13 @@ void BoardView::mousePressEvent(QMouseEvent* event)
 
 void BoardView::showSelection(chess::Position pos)
 {
-    if (!board || !board->isPositionValid(pos) || !scene) return;
+    if (!board || !board->isPositionValid(pos) || !scene)
+        return;
 
     const QRectF r(pos.x * squareSize, pos.y * squareSize, squareSize, squareSize);
 
     if (!selectionItem) {
-        selectionItem = scene->addRect(
-            r,
-            QPen(QColor(255, 215, 0, 200), 2.0),
-            QBrush(QColor(255, 215, 0, 60))
-        );
+        selectionItem = scene->addRect(r, QPen(QColor(255, 215, 0, 200), 2.0), QBrush(QColor(255, 215, 0, 60)));
         selectionItem->setZValue(1000);
     } else {
         selectionItem->setRect(r);
@@ -164,11 +161,12 @@ void BoardView::clearSelection()
 
 void BoardView::showKingCheck(chess::Position pos)
 {
-    if (!board || !scene) return;
+    if (!board || !scene)
+        return;
 
     const QRectF r(pos.x * squareSize, pos.y * squareSize, squareSize, squareSize);
-    const QPen border (QColor(180, 20, 20, 110), 1.5);
-    const QBrush fill (QColor(200, 20, 20, 28));
+    const QPen border(QColor(180, 20, 20, 110), 1.5);
+    const QBrush fill(QColor(200, 20, 20, 28));
 
     if (!kingCheckItem) {
         kingCheckItem = scene->addRect(r, border, fill);
@@ -181,15 +179,17 @@ void BoardView::showKingCheck(chess::Position pos)
 
 void BoardView::clearKingCheck()
 {
-    if (kingCheckItem) kingCheckItem->setVisible(false);
+    if (kingCheckItem)
+        kingCheckItem->setVisible(false);
 }
 
-void BoardView::showMoveHints(const std::vector<chess::Position>& movement, const std::vector<chess::Position>& captures)
+void BoardView::showMoveHints(const std::vector<chess::Position>& movement,
+                              const std::vector<chess::Position>& captures)
 {
     clearMoveHints();
 
-    const qreal rDot   = squareSize * 0.18;
-    const qreal rRing  = squareSize * 0.46;
+    const qreal rDot = squareSize * 0.18;
+    const qreal rRing = squareSize * 0.46;
     const qreal center = squareSize * 0.5;
 
     const QBrush dotBrush(QColor(20, 20, 20, 45));
@@ -204,16 +204,16 @@ void BoardView::showMoveHints(const std::vector<chess::Position>& movement, cons
     for (const auto& pos : movement) {
         const qreal cx = pos.x * squareSize + center;
         const qreal cy = pos.y * squareSize + center;
-        auto* dot = scene->addEllipse(cx - rDot, cy - rDot, 2*rDot, 2*rDot, Qt::NoPen, dotBrush);
+        auto* dot = scene->addEllipse(cx - rDot, cy - rDot, 2 * rDot, 2 * rDot, Qt::NoPen, dotBrush);
         dot->setZValue(200);
         moveHintItems.push_back(dot);
     }
 
     // Capture moves (ring)
     for (const auto& pos : captures) {
-        const qreal x = pos.x * squareSize + (squareSize - 2*rRing) * 0.5;
-        const qreal y = pos.y * squareSize + (squareSize - 2*rRing) * 0.5;
-        auto* ring = scene->addEllipse(x, y, 2*rRing, 2*rRing, ringPen, Qt::NoBrush);
+        const qreal x = pos.x * squareSize + (squareSize - 2 * rRing) * 0.5;
+        const qreal y = pos.y * squareSize + (squareSize - 2 * rRing) * 0.5;
+        auto* ring = scene->addEllipse(x, y, 2 * rRing, 2 * rRing, ringPen, Qt::NoBrush);
         ring->setZValue(1100);
         moveHintItems.push_back(ring);
     }
@@ -222,7 +222,8 @@ void BoardView::showMoveHints(const std::vector<chess::Position>& movement, cons
 void BoardView::clearMoveHints()
 {
     for (QGraphicsItem* item : moveHintItems) {
-        if (item) scene->removeItem(item);
+        if (item)
+            scene->removeItem(item);
         delete item;
     }
     moveHintItems.clear();

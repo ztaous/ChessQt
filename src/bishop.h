@@ -1,22 +1,29 @@
 #pragma once
 
-#include <iostream>
-#include <vector>
-#include <string>
-#include "piece.h"
 #include "board.h"
+#include "piece.h"
+#include <iostream>
+#include <string>
+#include <vector>
 
-namespace chess {
+namespace chess
+{
 
 class Bishop : public Piece
 {
-public:
+  public:
     using Piece::Piece;
     ~Bishop() = default;
 
     std::vector<Position> getValidMoves(const Board& board) const override;
-    PieceType type() const override { return chess::PieceType::Bishop; }
-    std::string typeAsString() const override { return "Bishop"; }
+    PieceType type() const override
+    {
+        return chess::PieceType::Bishop;
+    }
+    std::string typeAsString() const override
+    {
+        return "Bishop";
+    }
 };
 
-}
+} // namespace chess

@@ -1,24 +1,31 @@
 #pragma once
 
-#include <iostream>
-#include <vector>
-#include <string>
-#include <algorithm>
-#include "piece.h"
 #include "board.h"
+#include "piece.h"
+#include <algorithm>
+#include <iostream>
+#include <string>
+#include <vector>
 
-namespace chess {
+namespace chess
+{
 
 class King : public Piece
 {
-public:
+  public:
     using Piece::Piece;
     ~King() = default;
-    
+
     std::vector<Position> getValidMoves(const Board& board) const override;
-    PieceType type() const override { return chess::PieceType::King; }
-    std::string typeAsString() const override { return "King"; }
-    
+    PieceType type() const override
+    {
+        return chess::PieceType::King;
+    }
+    std::string typeAsString() const override
+    {
+        return "King";
+    }
+
     bool isPositionAttacked(Position kingPosition, const Board& board) const;
     bool otherKingAttack(Position kingPosition, const Board& board) const;
 
@@ -26,4 +33,4 @@ public:
     bool isCheckmate(const Board& board) const;
 };
 
-}
+} // namespace chess

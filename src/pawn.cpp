@@ -1,16 +1,17 @@
 #include "pawn.h"
 
-namespace chess {
+namespace chess
+{
 
 std::vector<Position> Pawn::getValidMoves(const Board& board) const
 {
     std::vector<Position> possibleMoves;
     Position currentPos = this->getPosition();
-    
+
     int direction = (this->getColour() == Colour::White) ? -1 : 1; // direction dépend de la couleur (board flipped)
-    bool isFirstMove = 
-    (this->getColour() == Colour::White && currentPos.y == 6) || 
-    (this->getColour() == Colour::Black && currentPos.y == 1); // vérifie si les pions sur la seconde ou avant dernière rangée
+    bool isFirstMove = (this->getColour() == Colour::White && currentPos.y == 6) ||
+                       (this->getColour() == Colour::Black &&
+                        currentPos.y == 1); // vérifie si les pions sur la seconde ou avant dernière rangée
 
     // Avancer
     Position moveUpOne = {currentPos.x, currentPos.y + direction};
@@ -39,5 +40,4 @@ std::vector<Position> Pawn::getValidMoves(const Board& board) const
     return possibleMoves;
 }
 
-}
-
+} // namespace chess

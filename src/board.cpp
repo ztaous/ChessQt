@@ -1,6 +1,7 @@
 #include "board.h"
 
-namespace chess {
+namespace chess
+{
 
 Board::Board(QObject* parent) : QObject(parent), grid{}
 {
@@ -122,7 +123,7 @@ Position Board::convertNotationToGrid(const std::string& notation)
 {
     if (notation.length() != 2) {
         std::cerr << "Invalid notation format" << std::endl;
-        return { -1, -1 };
+        return {-1, -1};
     }
     char colChar = notation[0];
     char rowChar = notation[1];
@@ -189,7 +190,8 @@ void Board::switchPlayer()
 
 bool Board::canMove(Player player) const
 {
-    if (currentGameMode_ == GameMode::practice) return true;
+    if (currentGameMode_ == GameMode::practice)
+        return true;
     return player == currentPlayer_;
 }
 
@@ -198,7 +200,8 @@ std::vector<Position> Board::legalMovesFrom(Position from)
     std::vector<Position> out;
 
     Piece* moving = getPiece(from);
-    if (!moving) return out;
+    if (!moving)
+        return out;
 
     std::vector<Position> candidates = moving->getValidMoves(*this);
     const Player mover = getCurrentPlayer();
@@ -217,7 +220,8 @@ std::vector<Position> Board::legalMovesFrom(Position from)
         grid[to.y][to.x] = captured;
         moving->setPosition(saved);
 
-        if (!illegal) out.push_back(to);
+        if (!illegal)
+            out.push_back(to);
     }
     return out;
 }
@@ -229,20 +233,22 @@ Position Board::findKing(Player player) const
         for (int col = 0; col < columns; ++col) {
             Piece* piece = grid[row][col];
             if (piece && piece->type() == PieceType::King && piece->getColour() == colour) {
-                return { col, row };
+                return {col, row};
             }
         }
     }
-    return { -1, -1 };
+    return {-1, -1};
 }
 
 bool Board::isInCheck(Player player) const
 {
     Position kingPos = findKing(player);
-    if (kingPos.x < 0 || kingPos.y < 0) return false;
+    if (kingPos.x < 0 || kingPos.y < 0)
+        return false;
 
     Piece* kingPiece = getPiece(kingPos);
-    if (!kingPiece || kingPiece->type() != PieceType::King) return false;
+    if (!kingPiece || kingPiece->type() != PieceType::King)
+        return false;
 
     const King* king = static_cast<const King*>(kingPiece);
     return king->isPositionAttacked(kingPos, *this) || king->otherKingAttack(kingPos, *this);
@@ -250,16 +256,18 @@ bool Board::isInCheck(Player player) const
 
 bool Board::isCheckmate(Player player) const
 {
-    if (!isInCheck(player)) return false;
+    if (!isInCheck(player))
+        return false;
 
     Colour colour = colourOf(player);
     for (int row = 0; row < rows; ++row) {
         for (int col = 0; col < columns; ++col) {
             Piece* piece = grid[row][col];
-            if (!piece || piece->getColour() != colour) continue;
+            if (!piece || piece->getColour() != colour)
+                continue;
 
             std::vector<Position> moves = piece->getValidMoves(*this);
-            const Position from = { col, row };
+            const Position from = {col, row};
             const Position saved = piece->getPosition();
 
             for (const Position& to : moves) {
@@ -275,7 +283,8 @@ bool Board::isCheckmate(Player player) const
                 const_cast<Board*>(this)->grid[to.y][to.x] = captured;
                 piece->setPosition(saved);
 
-                if (!stillInCheck) return false;
+                if (!stillInCheck)
+                    return false;
             }
         }
     }
@@ -292,4 +301,4 @@ Player Board::opponentOf(Player p)
     return (p == Player::White) ? Player::Black : Player::White;
 }
 
-}
+} // namespace chess

@@ -1,26 +1,26 @@
 #pragma once
 
-#include <memory>
-#include <QGraphicsView>
-#include <QGraphicsScene>
-#include <QGraphicsRectItem>
 #include <QGraphicsPixmapItem>
+#include <QGraphicsRectItem>
+#include <QGraphicsScene>
+#include <QGraphicsView>
 #include <QMap>
+#include <memory>
 
 #include "../board.h"
 
 class BoardView : public QGraphicsView
 {
     Q_OBJECT
-public:
+  public:
     explicit BoardView(chess::Board* board, QWidget* parent = nullptr);
     void updateBoard();
     void setPieceStyle(const QString& style);
 
-signals:
+  signals:
     void squareClicked(chess::Position pos);
 
-public slots:
+  public slots:
     void showSelection(chess::Position pos);
     void clearSelection();
 
@@ -30,20 +30,20 @@ public slots:
     void showMoveHints(const std::vector<chess::Position>& quiet, const std::vector<chess::Position>& captures);
     void clearMoveHints();
 
-protected:
-    void mousePressEvent(QMouseEvent *event) override;
+  protected:
+    void mousePressEvent(QMouseEvent* event) override;
 
-private:
+  private:
     void initializeBoard();
     void loadPieceIcons();
-    QPixmap loadAndRenderSvg(const QString &filePath, int size) const;
+    QPixmap loadAndRenderSvg(const QString& filePath, int size) const;
     void clearAllPieces();
     std::unique_ptr<QGraphicsPixmapItem> createPiece(const QString& key, int row, int col);
     chess::Position getBoardPosition(const QPoint& viewPos) const;
 
-private:
+  private:
     QGraphicsScene* scene = nullptr;
-    chess::Board*   board = nullptr;
+    chess::Board* board = nullptr;
 
     static constexpr int squareSize = 75;
     QGraphicsRectItem* squares[chess::Board::rows][chess::Board::columns] = {};
@@ -51,7 +51,7 @@ private:
     QMap<QString, QPixmap> pieceIcons;
 
     QString basePath = ":/chess_icons/default";
-    QGraphicsRectItem* selectionItem { nullptr };
-    QGraphicsRectItem* kingCheckItem { nullptr };
+    QGraphicsRectItem* selectionItem{nullptr};
+    QGraphicsRectItem* kingCheckItem{nullptr};
     std::vector<QGraphicsItem*> moveHintItems;
 };

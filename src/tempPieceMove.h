@@ -1,24 +1,30 @@
 #pragma once
-#include <vector>
-#include "piece.h"
 #include "board.h"
+#include "piece.h"
+#include <vector>
 
-namespace chess {
+namespace chess
+{
 
-class TempPieceMove {
-public:
-    TempPieceMove(Piece* piece, const Position& newPosition)
-        : piece_(piece), savedPosition_(piece->getPosition())
-    { piece_->setPosition(newPosition); }
+class TempPieceMove
+{
+  public:
+    TempPieceMove(Piece* piece, const Position& newPosition) : piece_(piece), savedPosition_(piece->getPosition())
+    {
+        piece_->setPosition(newPosition);
+    }
 
-    ~TempPieceMove() { piece_->setPosition(savedPosition_); }
+    ~TempPieceMove()
+    {
+        piece_->setPosition(savedPosition_);
+    }
 
     TempPieceMove(const TempPieceMove&) = delete;
     TempPieceMove& operator=(const TempPieceMove&) = delete;
 
-private:
-    Piece*   piece_;
+  private:
+    Piece* piece_;
     Position savedPosition_;
 };
 
-}
+} // namespace chess

@@ -1,16 +1,16 @@
 #pragma once
 
+#include <QObject>
 #include <iostream>
 #include <vector>
-#include <QObject>
 
-#include "piece.h"
-#include "king.h"
-#include "queen.h"
-#include "rook.h"
 #include "bishop.h"
+#include "king.h"
 #include "knight.h"
 #include "pawn.h"
+#include "piece.h"
+#include "queen.h"
+#include "rook.h"
 
 enum class Player
 {
@@ -24,13 +24,14 @@ enum class GameMode
     practice
 };
 
-namespace chess {
+namespace chess
+{
 
 class Board : public QObject
 {
     Q_OBJECT
 
-public:
+  public:
     static constexpr int rows = 8;
     static constexpr int columns = 8;
 
@@ -59,23 +60,36 @@ public:
     bool isInCheck(Player player) const;
     bool isCheckmate(Player player) const;
 
-    Player getCurrentPlayer() const { return currentPlayer_; }
-    void setCurrentPlayer(Player p) { currentPlayer_ = p; emit playerChanged(currentPlayer_); }
+    Player getCurrentPlayer() const
+    {
+        return currentPlayer_;
+    }
+    void setCurrentPlayer(Player p)
+    {
+        currentPlayer_ = p;
+        emit playerChanged(currentPlayer_);
+    }
 
-    GameMode getGameMode() const { return currentGameMode_; }
-    void setGameMode(GameMode m) { currentGameMode_ = m; }
+    GameMode getGameMode() const
+    {
+        return currentGameMode_;
+    }
+    void setGameMode(GameMode m)
+    {
+        currentGameMode_ = m;
+    }
 
     static Colour colourOf(Player p);
     static Player opponentOf(Player p);
 
-signals:
+  signals:
     void playerChanged(Player);
     void gameOver(Player);
 
-private:
+  private:
     Piece* grid[rows][columns]{};
     Player currentPlayer_ = Player::White;
     GameMode currentGameMode_ = GameMode::standard;
 };
 
-}
+} // namespace chess
