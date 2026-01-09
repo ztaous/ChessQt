@@ -1,0 +1,16 @@
+<RCC>
+    <qresource prefix="/chess_icons">
+        <file alias="default/Chess_kdt45.svg">chess_icons/default/Chess_kdt45.svg</file>
+        <file alias="default/Chess_klt45.svg">chess_icons/default/Chess_klt45.svg</file>
+        <file alias="default/Chess_qdt45.svg">chess_icons/default/Chess_qdt45.svg</file>
+        <file alias="default/Chess_qlt45.svg">chess_icons/default/Chess_qlt45.svg</file>
+        <file alias="default/Chess_bdt45.svg">chess_icons/default/Chess_bdt45.svg</file>
+        <file alias="default/Chess_blt45.svg">chess_icons/default/Chess_blt45.svg</file>
+        <file alias="default/Chess_rdt45.svg">chess_icons/default/Chess_rdt45.svg</file>
+        <file alias="default/Chess_rlt45.svg">chess_icons/default/Chess_rlt45.svg</file>
+        <file alias="default/Chess_ndt45.svg">chess_icons/default/Chess_ndt45.svg</file>
+        <file alias="default/Chess_nlt45.svg">chess_icons/default/Chess_nlt45.svg</file>
+        <file alias="default/Chess_pdt45.svg">chess_icons/default/Chess_pdt45.svg</file>
+        <file alias="default/Chess_plt45.svg">chess_icons/default/Chess_plt45.svg</file>
+    </qresource>
+</RCC>

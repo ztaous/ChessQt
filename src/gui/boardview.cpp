@@ -69,7 +69,7 @@ QPixmap BoardView::loadAndRenderSvg(const QString& filePath, int size) const
 
 void BoardView::setPieceStyle(const QString& style)
 {
-    basePath = "resources/chess_icons/" + style;
+    basePath = ":/chess_icons/" + style;
     loadPieceIcons();
     updateBoard();
 }

@@ -50,7 +50,7 @@ private:
     std::unique_ptr<QGraphicsPixmapItem> pieceItems[chess::Board::rows][chess::Board::columns] = {};
     QMap<QString, QPixmap> pieceIcons;
 
-    QString basePath = "resources/chess_icons/default";
+    QString basePath = ":/chess_icons/default";
     QGraphicsRectItem* selectionItem { nullptr };
     QGraphicsRectItem* kingCheckItem { nullptr };
     std::vector<QGraphicsItem*> moveHintItems;
