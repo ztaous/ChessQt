@@ -1,6 +1,12 @@
 # ChessQt
 
-A simple chess game built with C++ and Qt6.
+## Description
+
+ChessQt is a simple chess interface built with C++ and Qt. It features a chessboard where users can move pieces, play chess and experiment with test positions.
+
+## Demo
+
+![ChessQt Screenshot](https://github.com/user-attachments/assets/a1ca5ed8-8d0a-43da-8fcb-fff60f5188a2)
 
 ## Features
 
@@ -8,10 +14,6 @@ A simple chess game built with C++ and Qt6.
 - Piece and movement highlighting
 - Practice mode (free piece movement)
 - Pre made scenarios (test positions)
-
-## Demo
-
-![ChessQt Screenshot](https://github.com/user-attachments/assets/a1ca5ed8-8d0a-43da-8fcb-fff60f5188a2)
 
 ## Building
 
