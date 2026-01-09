@@ -50,3 +50,12 @@ install(TARGETS ChessQt
     BUNDLE DESTINATION .
     RUNTIME DESTINATION ${CMAKE_INSTALL_BINDIR}
 )
+
+find_program(CLANG_FORMAT clang-format)
+if(CLANG_FORMAT)
+    file(GLOB_RECURSE ALL_SOURCE_FILES src/*.cpp src/*.h)
+    add_custom_target(format
+        COMMAND ${CLANG_FORMAT} -i ${ALL_SOURCE_FILES}
+        COMMENT "Running clang-format"
+    )
+endif()
