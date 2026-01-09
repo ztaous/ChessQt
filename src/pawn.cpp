@@ -30,7 +30,7 @@ std::vector<Position> Pawn::getValidMoves(const Board& board) const
     for (int diagonalDirection : {-1, 1}) {
         Position capturePos = {currentPos.x + diagonalDirection, currentPos.y + direction};
         if (board.isPositionValid(capturePos)) {
-            const Piece* target = board.getPiece(capturePos);
+            Piece* target = board.getPiece(capturePos);
             if (target && board.isOppositePiece(this, target)) {
                 possibleMoves.push_back(capturePos);
             }

@@ -46,7 +46,7 @@ class Board : public QObject
     bool isOppositePiece(const Piece* piece1, const Piece* piece2) const;
 
     Piece* getPiece(const Position& pos) const;
-    void addPiece(const std::string& notation, Piece* piece);
+    void addPiece(const std::string& notation, std::unique_ptr<Piece> piece);
     Position convertNotationToGrid(const std::string& notation);
     void removePiece(const Position& pos);
 
@@ -87,7 +87,7 @@ class Board : public QObject
     void gameOver(Player);
 
   private:
-    Piece* grid[rows][columns]{};
+    std::unique_ptr<Piece> grid[rows][columns]{};
     Player currentPlayer_ = Player::White;
     GameMode currentGameMode_ = GameMode::standard;
 };
