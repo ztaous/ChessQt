@@ -72,7 +72,15 @@ void MainWindow::updateGameStatus()
         ui->gameStatus->setText("Practice mode");
         return;
     }
-    const char* who = (board->getCurrentPlayer() == Player::White) ? "White" : "Black";
+
+    const Player current = board->getCurrentPlayer();
+    if (board->isCheckmate(current)) {
+        const char* winner = (current == Player::White) ? "Black" : "White";
+        ui->gameStatus->setText(QString("Checkmate - %1 wins").arg(winner));
+        return;
+    }
+
+    const char* who = (current == Player::White) ? "White" : "Black";
     ui->gameStatus->setText(QString("%1 to move").arg(who));
 }
 

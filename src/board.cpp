@@ -149,7 +149,7 @@ bool Board::movePiece(Position current, Position destination)
     if (!canMove(piece->getColour() == Colour::White ? Player::White : Player::Black))
         return false;
 
-    std::vector<Position> validMoves = piece->getValidMoves(*this);
+    std::vector<Position> validMoves = legalMovesFrom(current);
     if (std::find(validMoves.begin(), validMoves.end(), destination) == validMoves.end())
         return false;
 
@@ -248,14 +248,10 @@ bool Board::isCheckmate(Player player) const
             if (!piece || piece->getColour() != colour)
                 continue;
 
-            std::vector<Position> moves = piece->getValidMoves(*this);
-            const Position from = {col, row};
-
-            for (const Position& to : moves) {
-                TempMove temp(*const_cast<Board*>(this), from, to);
-                if (!isInCheck(player))
-                    return false;
-            }
+            Position from = {col, row};
+            std::vector<Position> legalMoves = const_cast<Board*>(this)->legalMovesFrom(from);
+            if (!legalMoves.empty())
+                return false;
         }
     }
     return true;
