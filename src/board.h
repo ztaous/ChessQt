@@ -27,9 +27,12 @@ enum class GameMode
 namespace chess
 {
 
+class TempMove;
+
 class Board : public QObject
 {
     Q_OBJECT
+    friend class TempMove;
 
   public:
     static constexpr int rows = 8;

@@ -1,5 +1,4 @@
 #include "king.h"
-#include "tempPieceMove.h"
 
 namespace chess
 {
@@ -17,8 +16,6 @@ std::vector<Position> King::getValidMoves(const Board& board) const
 
         if (board.isPositionValid(newPos) &&
             (!board.isOccupied(newPos) || board.isOppositePiece(this, board.getPiece(newPos)))) {
-            TempPieceMove temp(const_cast<King*>(this), newPos);
-
             if (!isPositionAttacked(newPos, board) && !otherKingAttack(newPos, board))
                 possibleMoves.push_back(newPos);
         }

@@ -1,4 +1,5 @@
 #include "board.h"
+#include "tempmove.h"
 
 namespace chess
 {
@@ -198,23 +199,10 @@ std::vector<Position> Board::legalMovesFrom(Position from)
 
     std::vector<Position> candidates = moving->getValidMoves(*this);
     const Player mover = getCurrentPlayer();
-    const Position saved = moving->getPosition();
 
     for (const Position& to : candidates) {
-        // bouger piece temporairement
-        std::unique_ptr<Piece> capturedOwner = std::move(grid[to.y][to.x]);
-
-        grid[to.y][to.x] = std::move(grid[from.y][from.x]);
-        moving->setPosition(to);
-
-        const bool illegal = isInCheck(mover);
-
-        // retablir etat du board
-        grid[from.y][from.x] = std::move(grid[to.y][to.x]);
-        grid[to.y][to.x] = std::move(capturedOwner);
-        moving->setPosition(saved);
-
-        if (!illegal)
+        TempMove temp(*this, from, to);
+        if (!isInCheck(mover))
             out.push_back(to);
     }
     return out;
@@ -262,25 +250,10 @@ bool Board::isCheckmate(Player player) const
 
             std::vector<Position> moves = piece->getValidMoves(*this);
             const Position from = {col, row};
-            const Position saved = piece->getPosition();
 
             for (const Position& to : moves) {
-                // bouger piece temporairement
-                auto& fromCase = const_cast<Board*>(this)->grid[from.y][from.x];
-                auto& toCase = const_cast<Board*>(this)->grid[to.y][to.x];
-                std::unique_ptr<Piece> capturedOwner = std::move(toCase);
-
-                toCase = std::move(fromCase);
-                piece->setPosition(to);
-
-                bool stillInCheck = isInCheck(player);
-
-                // retablir etat du board
-                fromCase = std::move(toCase);
-                toCase = std::move(capturedOwner);
-                piece->setPosition(saved);
-
-                if (!stillInCheck)
+                TempMove temp(*const_cast<Board*>(this), from, to);
+                if (!isInCheck(player))
                     return false;
             }
         }
