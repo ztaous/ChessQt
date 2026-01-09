@@ -6,7 +6,7 @@ ChessQt is a simple chess interface built with C++ and Qt. It features a chessbo
 
 ## Demo
 
-![ChessQt Screenshot](https://github.com/user-attachments/assets/a1ca5ed8-8d0a-43da-8fcb-fff60f5188a2)
+![demo_chessqt](https://github.com/user-attachments/assets/a4ae1e3a-d32f-4304-8989-9048c8f88231)
 
 ## Features
 
@@ -51,3 +51,4 @@ src/
 ## License
 
 MIT License - see [LICENSE](LICENSE) for details.
+
