@@ -34,7 +34,7 @@ struct Position
     }
 
     bool operator!=(const Position& other) const {
-        return x != other.x && y != other.y;
+        return x != other.x || y != other.y;
     }
 
     void operator+=(const Position& other)
