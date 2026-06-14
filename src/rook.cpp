@@ -1,6 +1,7 @@
 #include "rook.h"
 
-namespace chess {
+namespace chess
+{
 
 std::vector<Position> Rook::getValidMoves(const Board& board) const
 {
@@ -8,7 +9,7 @@ std::vector<Position> Rook::getValidMoves(const Board& board) const
     Position currentPos = this->getPosition();
 
     std::vector<std::pair<int, int>> directions = {{0, 1}, {0, -1}, {1, 0}, {-1, 0}};
-    
+
     for (auto& dir : directions) {
         Position newPos = currentPos;
 
@@ -21,7 +22,7 @@ std::vector<Position> Rook::getValidMoves(const Board& board) const
 
             if (board.isOccupied(newPos)) {
                 Piece* piece = board.getPiece(newPos);
-                
+
                 if (board.isOppositePiece(piece, this)) {
                     possibleMoves.push_back(newPos);
                 }
@@ -35,4 +36,4 @@ std::vector<Position> Rook::getValidMoves(const Board& board) const
     return possibleMoves;
 }
 
-}
+} // namespace chess

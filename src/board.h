@@ -1,16 +1,16 @@
 #pragma once
 
+#include <QObject>
 #include <iostream>
 #include <vector>
-#include <QObject>
 
-#include "piece.h"
-#include "king.h"
-#include "queen.h"
-#include "rook.h"
 #include "bishop.h"
+#include "king.h"
 #include "knight.h"
 #include "pawn.h"
+#include "piece.h"
+#include "queen.h"
+#include "rook.h"
 
 enum class Player
 {
@@ -24,13 +24,17 @@ enum class GameMode
     practice
 };
 
-namespace chess {
+namespace chess
+{
+
+class TempMove;
 
 class Board : public QObject
 {
     Q_OBJECT
+    friend class TempMove;
 
-public:
+  public:
     static constexpr int rows = 8;
     static constexpr int columns = 8;
 
@@ -45,7 +49,7 @@ public:
     bool isOppositePiece(const Piece* piece1, const Piece* piece2) const;
 
     Piece* getPiece(const Position& pos) const;
-    void addPiece(const std::string& notation, Piece* piece);
+    void addPiece(const std::string& notation, std::unique_ptr<Piece> piece);
     Position convertNotationToGrid(const std::string& notation);
     void removePiece(const Position& pos);
 
@@ -59,23 +63,36 @@ public:
     bool isInCheck(Player player) const;
     bool isCheckmate(Player player) const;
 
-    Player getCurrentPlayer() const { return currentPlayer_; }
-    void setCurrentPlayer(Player p) { currentPlayer_ = p; emit playerChanged(currentPlayer_); }
+    Player getCurrentPlayer() const
+    {
+        return currentPlayer_;
+    }
+    void setCurrentPlayer(Player p)
+    {
+        currentPlayer_ = p;
+        emit playerChanged(currentPlayer_);
+    }
 
-    GameMode getGameMode() const { return currentGameMode_; }
-    void setGameMode(GameMode m) { currentGameMode_ = m; }
+    GameMode getGameMode() const
+    {
+        return currentGameMode_;
+    }
+    void setGameMode(GameMode m)
+    {
+        currentGameMode_ = m;
+    }
 
     static Colour colourOf(Player p);
     static Player opponentOf(Player p);
 
-signals:
+  signals:
     void playerChanged(Player);
     void gameOver(Player);
 
-private:
-    Piece* grid[rows][columns]{};
+  private:
+    std::unique_ptr<Piece> grid[rows][columns]{};
     Player currentPlayer_ = Player::White;
     GameMode currentGameMode_ = GameMode::standard;
 };
 
-}
+} // namespace chess
